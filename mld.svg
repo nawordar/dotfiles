@@ -8,8 +8,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="200"
-   height="200"
+   width="264.78125"
+   height="30.96875"
    version="1.1"
    id="svg4"
    sodipodi:docname="mld.svg"
@@ -22,6 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,7 +64,8 @@
        y1="-8.828125"
        x2="267.92188"
        y2="-7.9806676"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-3.140625,24.3125)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -79,8 +81,8 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="1.18"
-     inkscape:cx="100"
-     inkscape:cy="100.42373"
+     inkscape:cx="94.317002"
+     inkscape:cy="-61.987818"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -98,6 +100,8 @@
 </font> -->
   <!-- <text font-family="Super Sans">My text uses Super Sans</text> -->
   <text
-     style="font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;font-weight:600;font-size:32px;fill:url(#linearGradient825);fill-opacity:1"
-     id="text2">My Little Dotfiles</text>
+     style="font-weight:600;font-size:32px;font-family:'-apple-system', BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';fill:url(#linearGradient825);fill-opacity:1"
+     id="text2"
+     x="-3.140625"
+     y="24.3125">My Little Dotfiles</text>
 </svg>
