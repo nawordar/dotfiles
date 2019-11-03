@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Set wallpaper on plugging the screen
-wal -R
