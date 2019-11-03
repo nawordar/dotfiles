@@ -1,0 +1,21 @@
+# For a detailed description on the different options and how to configure them,
+# refer to the user guide: https://github.com/talal/bonclay/blob/master/doc/guide.md
+backup:
+  overwrite: false
+
+restore:
+  overwrite: false
+
+sync:
+  clean: true
+  overwrite: true
+
+spec:
+  ~/.bashrc: bash/bashrc
+  ~/.config/i3/config: i3/config
+  ~/.config/autorandr/postswitch: autorandr/postswitch
+  ~/.config/polybar/config: polybar/config
+  ~/.config/polybar/launch.sh: polybar/launch.sh
+  ~/.config/dunst/dunstrc: dunst/dunstrc
+  ~/.config/pywal/config.rasi: pywal/config.rasi
+  ~/.config/kitty/kitty.conf: kitty/kitty.conf
