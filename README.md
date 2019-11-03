@@ -1,2 +1,1 @@
-# dotfiles
-My Little Dotfiles
+![My Little Dotfiles](mld.svg)
