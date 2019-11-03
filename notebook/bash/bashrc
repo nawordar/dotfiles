@@ -155,5 +155,4 @@ shopt -s autocd
 eval "$(thefuck --alias)"
 
 # Add Yarn to PATH
-
-export PATH="/home/cdrozak/.yarn/bin:/home/cdrozak/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin"
+export PATH="$(yarn global bin)":$PATH
