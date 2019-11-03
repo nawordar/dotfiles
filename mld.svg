@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200"
+   height="200"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="mld.svg"
+   inkscape:version="0.92.4 (f8dce91, 2019-08-02)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient823">
+      <stop
+         style="stop-color:#e50000;stop-opacity:1"
+         offset="0"
+         id="stop819" />
+      <stop
+         id="stop829"
+         offset="0.19616692"
+         style="stop-color:#ff8d00;stop-opacity:1" />
+      <stop
+         style="stop-color:#ffee00;stop-opacity:1"
+         offset="0.37541083"
+         id="stop831" />
+      <stop
+         id="stop833"
+         offset="0.58341843"
+         style="stop-color:#008121;stop-opacity:0.601" />
+      <stop
+         id="stop827"
+         offset="0.80107915"
+         style="stop-color:#004cff;stop-opacity:1" />
+      <stop
+         style="stop-color:#750188;stop-opacity:1"
+         offset="1"
+         id="stop821" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient823"
+       id="linearGradient825"
+       x1="3.140625"
+       y1="-8.828125"
+       x2="267.92188"
+       y2="-7.9806676"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1006"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="1.18"
+     inkscape:cx="100"
+     inkscape:cy="100.42373"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <!--
+<font id="Font1" horiz-adv-x="1000">
+  <font-face font-family="Super Sans" font-weight="bold" font-style="normal"
+      units-per-em="1000" cap-height="600" x-height="400"
+      ascent="700" descent="300"
+      alphabetic="0" mathematical="350" ideographic="400" hanging="500">
+    <font-face-src>
+      <font-face-name name="Super Sans Bold"/>
+    </font-face-src>
+  </font-face>
+</font> -->
+  <!-- <text font-family="Super Sans">My text uses Super Sans</text> -->
+  <text
+     style="font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;font-weight:600;font-size:32px;fill:url(#linearGradient825);fill-opacity:1"
+     id="text2">My Little Dotfiles</text>
+</svg>
