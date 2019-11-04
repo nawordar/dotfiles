@@ -19,3 +19,4 @@ spec:
   ~/.config/dunst/dunstrc: notebook/dunst/dunstrc
   ~/.config/rofi/config.rasi: notebook/rofi/config.rasi
   ~/.config/kitty/kitty.conf: notebook/kitty/kitty.conf
+  ~/scripts/toggle-fullscreen.sh: notebook/scripts/toggle-fullscreen.sh
