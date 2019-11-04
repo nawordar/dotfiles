@@ -259,10 +259,11 @@ gaps inner 12
 
 # === Look & Feel === #
 
-# Set background
+# Set Xrandr and background
 # exec --no-startup-id  feh --bg-scale /home/cdrozak/wallpapers/sunrise.jpg
 #exec --no-startup-id wal -i wallpapers/pixelart/waterfall.png --saturate 0.7
-exec --no-startup-id wal -R
+# exec --no-startup-id wal -R
+exec --no-startup-id autorandr -c
 
 # # Set colours
 
@@ -313,7 +314,7 @@ client.background       $bg
 # PROTIP: You can also dynamically set dmenu's colors this way:
 # bindsym $mod+d exec dmenu_run -nb "$color0" -nf "$border" -sb "$border" -sf "$color0" -fn 'Cascadia Code'
 
-bindsym $mod+d exec rofi -show
+bindsym $mod+d exec rofi -m -1 -show
 
 # client.background       #ffffff
 
