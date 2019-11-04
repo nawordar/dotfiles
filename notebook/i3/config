@@ -121,7 +121,8 @@ bindsym $mod+c split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# bindsym $mod+f fullscreen toggle
+bindsym $mod+f exec --no-startup-id ~/scripts/toggle-fullscreen.sh
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -252,7 +253,6 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym XF86PowerOff mode "$mode_system"
 
 # Set gaps
-gaps outer 0
 gaps inner 12
 # smart_gaps off
 # smart_borders on
@@ -260,19 +260,10 @@ gaps inner 12
 # === Look & Feel === #
 
 # Set Xrandr and background
-# exec --no-startup-id  feh --bg-scale /home/cdrozak/wallpapers/sunrise.jpg
-#exec --no-startup-id wal -i wallpapers/pixelart/waterfall.png --saturate 0.7
+# exec --no-startup-id feh --bg-scale /home/cdrozak/wallpapers/sunrise.jpg
+# exec --no-startup-id wal -i wallpapers/pixelart/waterfall.png --saturate 0.7
 # exec --no-startup-id wal -R
-exec --no-startup-id autorandr -c
-
-# # Set colours
-
-# # class                 border  backgr. text    indicator child_border
-# client.focused          #4c7899 #2F6B2C #ffffff #9F8229   #2F6B2C
-# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-# client.urgent           #2f343a #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+exec --no-startup-id autorandr -c --force
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use
