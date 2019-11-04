@@ -14,10 +14,11 @@ if type "xrandr"; then
     MONITOR=$m polybar main &
   done
 else
-  polybar --reload &
-  polybar --reload &
+  polybar dummy &
+  polybar main &
 fi
-# polybar dummy &
-# polybar main &
+
+# Compton breaks after launching polybar
+killall -q compton && compton -b &
 
 echo "Polybar launched..."
