@@ -121,8 +121,8 @@ bindsym $mod+c split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-# bindsym $mod+f fullscreen toggle
-bindsym $mod+f exec --no-startup-id ~/scripts/toggle-fullscreen.sh
+bindsym $mod+f fullscreen toggle
+# bindsym $mod+f exec --no-startup-id ~/scripts/toggle-fullscreen.sh
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -253,6 +253,7 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym XF86PowerOff mode "$mode_system"
 
 # Set gaps
+gaps top 28
 gaps inner 12
 # smart_gaps off
 # smart_borders on
