@@ -5,9 +5,8 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# Sources:
+# Locking when lid is closed: https://www.reddit.com/r/i3wm/comments/9ebemt/locking_i3_when_lid_of_laptop_is_closed/
 
 set $mod Mod4
 
@@ -30,7 +29,7 @@ font pango:Cascadia Code 10
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -233,14 +232,15 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id /home/cdrozak/.config/polybar/launch.sh &
 
 # Power management mode
-set $Locker i3lock-fancy && sleep 1
+set $Locker betterlockscreen -l
+# set $Suspend sleep 1 && xset dpms force suspend
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
