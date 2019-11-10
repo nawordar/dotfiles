@@ -2,3 +2,7 @@
 
 # Set wallpaper
 wal -R
+
+# Restart polybar
+/home/cdrozak/.config/polybar/launch.sh &
+
