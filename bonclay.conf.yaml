@@ -13,6 +13,7 @@ sync:
 spec:
   ~/.bashrc: notebook/bash/bashrc
   ~/.config/i3/config: notebook/i3/config
+  ~/.config/i3/lock.sh: notebook/i3/lock.sh
   ~/.config/autorandr/postswitch: notebook/autorandr/postswitch
   ~/.config/polybar/config: notebook/polybar/config
   ~/.config/polybar/launch.sh: notebook/polybar/launch.sh
