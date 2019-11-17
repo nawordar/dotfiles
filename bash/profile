@@ -12,13 +12,13 @@ case $HOSTNAME in
 
 # PC
 nawordar-H81M-S1)
-    export EDITOR=/snap/bin/code
+    export EDITOR=vim
     export TERMINAL=/usr/bin/xfce4-terminal
     ;;
 
 # Notebook
 cezary-notebook)
-    export EDITOR=/usr/bin/code
+    export EDITOR=vim
     export TERMINAL=/usr/bin/kitty
     ;;
 esac
