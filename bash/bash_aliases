@@ -8,3 +8,6 @@ alias more=less
 alias seti3="vim ~/.config/i3/config"
 
 # Ubuntu only aliases
+
+
+hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'
