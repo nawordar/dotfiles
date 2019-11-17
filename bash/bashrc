@@ -1,8 +1,32 @@
-#
-# ~/.bashrc
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
 #
 
+# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 colors() {
 	local fgc bgc vals seq0
@@ -90,12 +114,13 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
-alias mkdir="mkdir -p"
-alias more=less
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 xhost +local:root > /dev/null 2>&1
 
@@ -110,9 +135,6 @@ shopt -s checkwinsize
 shopt -s expand_aliases
 
 # export QT_SELECT=4
-
-# Enable history appending instead of overwriting.  #139609
-shopt -s histappend
 
 #
 # # ex - archive extractor
@@ -138,9 +160,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-alias seti3="vim ~/.config/i3/config"
-export TERMINAL="/usr/bin/kitty"
 
 # Bind man to Alt+H
 bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
