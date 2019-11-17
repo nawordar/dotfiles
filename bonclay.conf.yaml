@@ -8,7 +8,7 @@ restore:
 
 sync:
   clean: true
-  overwrite: true
+  overwrite: false
 
 spec:
   ~/.bashrc: bash/bashrc
