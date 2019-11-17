@@ -13,6 +13,7 @@ sync:
 spec:
   ~/.bashrc: bash/bashrc
   ~/.bash_aliases: bash/bash_aliases
+  ~/.profile: bash/profile
   ~/.config/i3/config: i3/config
   ~/.config/i3/lock.sh: i3/lock.sh
   ~/.config/autorandr/postswitch: autorandr/postswitch
