@@ -33,7 +33,7 @@ if which apt; then
 fi
 
 # File managment
-alias ..='cd ..'
+# alias ..='cd ..'
 alias md=mkdir
 alias rm.='YEET=`pwd` && cd .. && rm "$YEET" -r'
 
