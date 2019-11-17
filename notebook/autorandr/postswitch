@@ -4,4 +4,4 @@
 wal -R
 
 # Restart polybar
-/home/cdrozak/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh &
