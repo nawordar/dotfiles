@@ -9,13 +9,19 @@
 #umask 022
 
 case $HOSTNAME in
-    
+    # PC
+    nawordar-H81M-S1)
+    export EDITOR=/snap/bin/code;
+    export TERMINAL=/usr/bin/xfce4-terminal;;
+
+    # Notebook
+    cezary-notebook)
+    export EDITOR=/usr/bin/code;
+    export TERMINAL=/usr/bin/kitty;;
 esac
 
-export EDITOR=/usr/bin/code
 export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
-export EDITOR="code"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
