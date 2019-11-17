@@ -9,15 +9,17 @@
 #umask 022
 
 case $HOSTNAME in
-    # PC
-    nawordar-H81M-S1)
-    export EDITOR=/snap/bin/code;
-    export TERMINAL=/usr/bin/xfce4-terminal;;
+# PC
+nawordar-H81M-S1)
+    export EDITOR=/snap/bin/code
+    export TERMINAL=/usr/bin/xfce4-terminal
+    ;;
 
-    # Notebook
-    cezary-notebook)
-    export EDITOR=/usr/bin/code;
-    export TERMINAL=/usr/bin/kitty;;
+# Notebook
+cezary-notebook)
+    export EDITOR=/usr/bin/code
+    export TERMINAL=/usr/bin/kitty
+    ;;
 esac
 
 export TERMINAL=/usr/bin/kitty
@@ -27,20 +29,44 @@ export XDG_CONFIG_HOME="$HOME/.config"
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+add_dir_to_path() {
+    if [ -d "$1" ]; then
+        PATH="$1:$PATH"
+    fi
+}
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+add_dir_to_path "$HOME/bin"
 
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
+# set PATH so it includes user's private bin if it exists
+add_dir_to_path "$HOME/.local/bin"
+
+add_dir_to_path "$HOME/.cargo/bin"
+
+# if [ -d "$HOME/bin" ]; then
+#     PATH="$HOME/bin:$PATH"
+# fi
+
+# if [ -d "$HOME/.local/bin" ]; then
+#     PATH="$HOME/.local/bin:$PATH"
+# fi
+
+# if [ -d "$HOME/.cargo/bin" ]; then
+#     PATH="$HOME/.cargo/bin:$PATH"
+# fi
+
+# Add Yarn to PATH
+export PATH="$(yarn global bin --offline)":$PATH
+
+# Alias tmatrix
+alias tmatrix="tmatrix -C red -s 10"
+
+# Run emacs in CLI
+alias emacs="emacs -nw"
+
+# Vim's :q
+alias :q="exit"
