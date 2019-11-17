@@ -9,6 +9,7 @@
 #umask 022
 
 case $HOSTNAME in
+
 # PC
 nawordar-H81M-S1)
     export EDITOR=/snap/bin/code

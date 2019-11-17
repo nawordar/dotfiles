@@ -1,13 +1,53 @@
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias cp="cp -i"     # confirm before overwriting something
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias mkdir="mkdir -p"
 alias more=less
 
 alias seti3="vim ~/.config/i3/config"
 
-# Ubuntu only aliases
+# APT aliases
+if which apt; then
+    alias sai='sudo apt install'
+    alias sau='sudo apt update'
+    alias sag='sudo apt upgrade'
 
+    # Made before discovering the mighty fuck
+    # Use as follows: errinst python3 # Any noninstalled command with suggested package
+    errinst() {
+        command=$($1 2>&1 | grep --color=never 'sudo \+apt \+install*')
 
-hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'
+        if [ -z "$command" ]; then
+            echo "Could not find recommended APT command"
+            return 1
+        fi
+
+        read -p "It will run: $command. Do you want to continue? (Y/n)"
+
+        if [[ "${REPLY^^}" =~ ^(YES|Y) ]] || [[ -z $REPLY ]]; then
+            eval "${command/apt/apt-get}"
+            return 0
+        fi
+    }
+fi
+
+# File managment
+alias ..='cd ..'
+alias md=mkdir
+alias rm.='YEET=`pwd` && cd .. && rm "$YEET" -r'
+
+# Make dir and slide in
+mdcd() {
+    mkdir $1 && cd $1
+}
+
+# Go to project directory
+if [ -d "$HOST/Projects" ]; then
+    alias gtp="cd $HOST/Projects"
+
+elif [ -d "$HOST/projects" ]; then
+    alias gtp="cd $HOST/projects"
+fi
+
+# hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'

@@ -172,3 +172,12 @@ shopt -s autocd
 
 # Fuck it
 eval "$(thefuck --alias)"
+
+# If I make another tool than needs to be at the end, then what?
+if [ ! -d "/home/nawordar/.sdkman" ]; then
+	return 0
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/nawordar/.sdkman"
+[[ -s "/home/nawordar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/nawordar/.sdkman/bin/sdkman-init.sh"
