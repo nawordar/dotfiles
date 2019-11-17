@@ -1,0 +1,4 @@
+export EDITOR=/usr/bin/code
+export TERMINAL=/usr/bin/kitty
+export XDG_CONFIG_HOME="$HOME/.config"
+
