@@ -59,3 +59,5 @@ alias emacs="emacs -nw"
 
 # Vim's :q
 alias :q="exit"
+
+unset -f add_dir_to_path
