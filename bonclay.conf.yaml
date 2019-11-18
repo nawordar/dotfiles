@@ -24,3 +24,4 @@ spec:
   ~/.config/kitty/kitty.conf: kitty/kitty.conf
   ~/.config/wal/templates/colors-rofi-dark.rasi: wal/templates/colors-rofi-dark.rasi
   ~/scripts/toggle-fullscreen.sh: scripts/toggle-fullscreen.sh
+  ~/scripts/set-wallpaper.sh: scripts/set-wallpaper.sh
