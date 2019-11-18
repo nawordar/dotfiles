@@ -16,6 +16,7 @@ spec:
   ~/.profile: bash/profile
   ~/.config/i3/config: i3/config
   ~/.config/i3/lock.sh: i3/lock.sh
+  ~/.config/compton/compton.conf: compton/compton.conf
   ~/.config/autorandr/postswitch: autorandr/postswitch
   ~/.config/polybar/config: polybar/config
   ~/.config/polybar/launch.sh: polybar/launch.sh
