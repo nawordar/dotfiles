@@ -43,10 +43,10 @@ mdcd() {
 }
 
 # Go to project directory
-if [ -d "$HOST/Projects" ]; then
+if [ -d "$HOME/Projects" ]; then
     alias cdp="cd $HOST/Projects"
 
-elif [ -d "$HOST/projects" ]; then
+elif [ -d "$HOME/projects" ]; then
     alias cdp="cd $HOST/projects"
 fi
 
