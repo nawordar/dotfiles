@@ -35,6 +35,9 @@ exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Launch compton
+exec --no-startup-id compton -b --respect-prop-shadow
+
 # Launch polkit
 exec --no-startup-id "/usr/lib/polkit-kde-authentication-agent-1"
 
