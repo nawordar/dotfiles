@@ -229,7 +229,7 @@ bindsym $mod+r mode "resize"
 #         # status_command i3status
 #         status_command polybar
 # }
-exec_always --no-startup-id /home/cdrozak/.config/polybar/launch.sh &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # Power management mode
 set $Locker betterlockscreen -l
@@ -347,4 +347,4 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Set \text{} keybind
-bindsym $mod+q exec --no-startup-id $HOME/scripts/wrap-in-text.sh
+bindsym $mod+q exec --no-startup-id ~/scripts/wrap-in-text.sh
