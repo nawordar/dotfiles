@@ -8,21 +8,22 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-case $HOSTNAME in
+# case $HOSTNAME in
 
-# PC
-nawordar-H81M-S1)
-    export EDITOR=vim
-    export TERMINAL=/usr/bin/xfce4-terminal
-    ;;
+# # PC
+# nawordar-H81M-S1)
+#     export EDITOR=vim
+#     export TERMINAL=/usr/bin/xfce4-terminal
+#     ;;
 
-# Notebook
-cezary-notebook)
-    export EDITOR=vim
-    export TERMINAL=/usr/bin/kitty
-    ;;
-esac
+# # Notebook
+# cezary-notebook)
+#     export EDITOR=vim
+#     export TERMINAL=/usr/bin/kitty
+#     ;;
+# esac
 
+export EDITOR=nvim
 export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -48,18 +49,6 @@ add_dir_to_path "$HOME/.local/bin"
 
 add_dir_to_path "$HOME/.cargo/bin"
 
-# if [ -d "$HOME/bin" ]; then
-#     PATH="$HOME/bin:$PATH"
-# fi
-
-# if [ -d "$HOME/.local/bin" ]; then
-#     PATH="$HOME/.local/bin:$PATH"
-# fi
-
-# if [ -d "$HOME/.cargo/bin" ]; then
-#     PATH="$HOME/.cargo/bin:$PATH"
-# fi
-
 # Add Yarn to PATH
 export PATH="$(yarn global bin --offline)":$PATH
 
@@ -71,3 +60,5 @@ alias emacs="emacs -nw"
 
 # Vim's :q
 alias :q="exit"
+
+unset -f add_dir_to_path

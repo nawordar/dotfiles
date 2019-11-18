@@ -44,10 +44,10 @@ mdcd() {
 
 # Go to project directory
 if [ -d "$HOME/Projects" ]; then
-    alias cdp="cd $HOST/Projects"
+    alias cdp="cd $HOME/Projects"
 
 elif [ -d "$HOME/projects" ]; then
-    alias cdp="cd $HOST/projects"
+    alias cdp="cd $HOME/projects"
 fi
 
 # hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'
