@@ -48,18 +48,6 @@ add_dir_to_path "$HOME/.local/bin"
 
 add_dir_to_path "$HOME/.cargo/bin"
 
-# if [ -d "$HOME/bin" ]; then
-#     PATH="$HOME/bin:$PATH"
-# fi
-
-# if [ -d "$HOME/.local/bin" ]; then
-#     PATH="$HOME/.local/bin:$PATH"
-# fi
-
-# if [ -d "$HOME/.cargo/bin" ]; then
-#     PATH="$HOME/.cargo/bin:$PATH"
-# fi
-
 # Add Yarn to PATH
 export PATH="$(yarn global bin --offline)":$PATH
 
