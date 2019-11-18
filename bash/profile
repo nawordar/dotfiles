@@ -8,21 +8,22 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-case $HOSTNAME in
+# case $HOSTNAME in
 
-# PC
-nawordar-H81M-S1)
-    export EDITOR=vim
-    export TERMINAL=/usr/bin/xfce4-terminal
-    ;;
+# # PC
+# nawordar-H81M-S1)
+#     export EDITOR=vim
+#     export TERMINAL=/usr/bin/xfce4-terminal
+#     ;;
 
-# Notebook
-cezary-notebook)
-    export EDITOR=vim
-    export TERMINAL=/usr/bin/kitty
-    ;;
-esac
+# # Notebook
+# cezary-notebook)
+#     export EDITOR=vim
+#     export TERMINAL=/usr/bin/kitty
+#     ;;
+# esac
 
+export EDITOR=nvim
 export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
 
