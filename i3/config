@@ -54,8 +54,10 @@ exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # Start xfsettingsd
-exec --no-startup-id xfsettingsd --replace
+# exec --no-startup-id xfsettingsd --replace
 
+# Launch clipster
+exec --no-startup-id clipster -d
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
@@ -308,6 +310,9 @@ client.background       $bg
 
 bindsym $mod+d exec rofi -m -1 -show
 
+# Bind rofi-pass
+bindsym $mod+b exec --no-startup-id rofi-pass
+
 # client.background       #ffffff
 
 # Remove titlebars
@@ -324,6 +329,9 @@ for_window [class="Gpick"] floating enable
 
 # nm-connection-editor
 for_window [class="Nm-connection-editor"] floating enable
+
+# teensy
+for_window [class="Teensy"] floating enable
 
 bindsym $mod+shift+q kill
 
