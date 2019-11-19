@@ -14,15 +14,28 @@ spec:
   ~/.bashrc: bash/bashrc
   ~/.bash_aliases: bash/bash_aliases
   ~/.profile: bash/profile
+
   ~/.config/i3/config: i3/config
   ~/.config/i3/lock.sh: i3/lock.sh
+
   ~/.config/compton/compton.conf: compton/compton.conf
+
   ~/.config/autorandr/postswitch: autorandr/postswitch
+
   ~/.config/polybar/config: polybar/config
   ~/.config/polybar/launch.sh: polybar/launch.sh
+
   ~/.config/dunst/dunstrc: dunst/dunstrc
+
+  ~/.gtkrc-2.0: gtk/gtkrc-2.0
+  ~/.config/gtk-3.0/settings.ini: gtk/gtk-3.0/settings.ini
+  ~/.config/Trolltech.conf: gtk/Trolltech.conf
+
   ~/.config/rofi/config.rasi: rofi/config.rasi
+
   ~/.config/kitty/kitty.conf: kitty/kitty.conf
+
   ~/.config/wal/templates/colors-rofi-dark.rasi: wal/templates/colors-rofi-dark.rasi
+
   ~/scripts/toggle-fullscreen.sh: scripts/toggle-fullscreen.sh
   ~/scripts/set-wallpaper.sh: scripts/set-wallpaper.sh

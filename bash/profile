@@ -26,6 +26,7 @@
 export EDITOR=nvim
 export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
+export QT_QPA_PLATFORMTHEME=gtk2
 
 add_dir_to_path() {
     if [ -d "$1" ]; then
