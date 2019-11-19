@@ -36,7 +36,7 @@ exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 exec --no-startup-id nm-applet
 
 # Launch compton
-exec --no-startup-id compton -b
+exec --no-startup-id compton -b --respect-prop-shadow
 
 # Launch polkit
 exec --no-startup-id "/usr/lib/polkit-kde-authentication-agent-1"
@@ -54,8 +54,10 @@ exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 # Start xfsettingsd
-exec --no-startup-id xfsettingsd --replace
+# exec --no-startup-id xfsettingsd --replace
 
+# Launch clipster
+exec --no-startup-id clipster -d
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
@@ -176,8 +178,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # assign workspaces to specific screens
-workspace 3 output HDMI1
-workspace 4 output HDMI1
+workspace 1 output HDMI1
+workspace 2 output HDMI1
 # workspace 6 output HDMI1
 # workspace 7 output HDMI1
 
@@ -308,6 +310,9 @@ client.background       $bg
 
 bindsym $mod+d exec rofi -m -1 -show
 
+# Bind rofi-pass
+bindsym $mod+b exec --no-startup-id rofi-pass
+
 # client.background       #ffffff
 
 # Remove titlebars
@@ -325,14 +330,20 @@ for_window [class="Gpick"] floating enable
 # nm-connection-editor
 for_window [class="Nm-connection-editor"] floating enable
 
+# teensy
+for_window [class="Teensy"] floating enable
+
 bindsym $mod+shift+q kill
 
-# Set up volume control
+# Set up media control
 # bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmute
 # bindsym XF86AudioLowerVolume exec --no-startup-id  amixer -q set Master 2%- unmute
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse set Master toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl prev
+bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 # Set up brightness control
 bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 10
