@@ -20,6 +20,8 @@ spec:
 
   ~/.config/compton/compton.conf: compton/compton.conf
 
+  ~/.config/clipster/clipster.ini: clipster/clipster.ini
+
   ~/.config/autorandr/postswitch: autorandr/postswitch
 
   ~/.config/polybar/config: polybar/config
