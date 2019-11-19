@@ -20,6 +20,8 @@ spec:
 
   ~/.config/compton/compton.conf: compton/compton.conf
 
+  ~/.icons/default/index.theme: cursor/index.theme
+
   ~/.config/clipster/clipster.ini: clipster/clipster.ini
 
   ~/.config/autorandr/postswitch: autorandr/postswitch
