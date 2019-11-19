@@ -9,4 +9,5 @@
 - `compton` – Composer
 - `autorandr` – Automatic xrandr configuration manager
 - `clipster` – Clipboard manager
-- `QGtkStyle` – GTK style for KDE applications (qt5-style-plugin-gtk2 on Ubuntu, gt5-styleplugins on Arch)
+- `QGtkStyle` – GTK style for KDE applications (qt5-style-plugin-gtk2 on Ubuntu, qt5-styleplugins on Arch)
+- `Greybird` and `elementary-xfce` – Theme
