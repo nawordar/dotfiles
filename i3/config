@@ -9,6 +9,7 @@
 # Locking when lid is closed: https://www.reddit.com/r/i3wm/comments/9ebemt/locking_i3_when_lid_of_laptop_is_closed/
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -361,3 +362,6 @@ bindsym $mod+minus scratchpad show
 
 # Set \text{} keybind
 bindsym $mod+q exec --no-startup-id ~/scripts/wrap-in-text.sh
+
+# Application shortcuts
+bindsym $mod+$alt+c exec code # Visual Studio Code
