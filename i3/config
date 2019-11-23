@@ -267,7 +267,7 @@ mode "$keyboard_layout" {
     bindsym $mod+shift+z mode "default"
 }
 bindsym $mod+shift+z mode "$keyboard_layout"
-	
+
 # Set gaps
 gaps top 28
 gaps inner 12
@@ -379,3 +379,4 @@ bindsym $mod+q exec --no-startup-id ~/scripts/wrap-in-text.sh
 # Application shortcuts
 bindsym $mod+$alt+c exec code # Visual Studio Code
 bindsym $mod+$alt+f exec thunar # Thunar (File manager)
+bindsym $mod+$alt+m exec spotify # Spotify 
