@@ -167,11 +167,14 @@ bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 # Activate autocd
 shopt -s autocd
 
+<<<<<<< HEAD
 # Activate private scripts
 if [ -f ~/scripts/private.sh ]; then
     source ~/scripts/private.sh
 fi
 
+=======
+>>>>>>> Add .bashrc
 # Activate autojump
 . /usr/share/autojump/autojump.bash
 
