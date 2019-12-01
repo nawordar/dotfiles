@@ -62,8 +62,10 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id clipster -d
 
 # Assign Spotify to workspace 10
-assign [class="^Spotify$"] → 10
-# exec --no-startup-id spotify
+# assign [class="^Spotify$"] → 10
+exec --no-startup-id spotify
+# Source: https://github.com/i3/i3/issues/2060
+# for_window [class="Spotify"] move to workspace number 10, workspace --no-auto-back-and-forth number 10
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
