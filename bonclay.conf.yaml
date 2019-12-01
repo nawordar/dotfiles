@@ -11,6 +11,7 @@ sync:
   overwrite: false
 
 spec:
+  ~/.zshrc: zsh/zshrc
   ~/.bashrc: bash/bashrc
   ~/.bash_aliases: bash/bash_aliases
   ~/.profile: bash/profile
