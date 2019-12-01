@@ -61,6 +61,10 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # Launch clipster
 exec --no-startup-id clipster -d
 
+# Assign Spotify to workspace 10
+assign [class="^Spotify$"] → 10
+# exec --no-startup-id spotify
+
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
