@@ -8,7 +8,7 @@ alias more=less
 alias seti3="vim ~/.config/i3/config"
 
 # APT aliases
-if which apt >/dev/null; then
+if which apt &>/dev/null; then
     alias sai='sudo apt install'
     alias sau='sudo apt update'
     alias sag='sudo apt upgrade'
