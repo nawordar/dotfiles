@@ -242,7 +242,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # Power management mode
-set $Locker betterlockscreen -l
+# set $Locker multilockscreen -l
 # set $Suspend sleep 1 && xset dpms force suspend
 
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown

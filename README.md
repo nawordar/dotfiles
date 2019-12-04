@@ -7,6 +7,7 @@
 
 ## Used applications:
 - `bonclay` — for dotfile synchronization (planned move to chezmoi.io)
+- `multilockscreen`
 - `rofi`
 - `rofi-pass` – rofi script for autotyping passwords
 - `dunst` – for displaying notifications
