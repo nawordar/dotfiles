@@ -7,6 +7,9 @@
 
 ## Used applications:
 - `bonclay` — for dotfile synchronization (planned move to chezmoi.io)
+- `zsh`
+    - `oh-my-zsh`
+    - `zsh-autosuggestions`
 - `multilockscreen`
 - `rofi`
 - `rofi-pass` – rofi script for autotyping passwords
