@@ -33,7 +33,7 @@ if which apt &>/dev/null; then
 fi
 
 # Trash alias
-alias rmt=gio trash
+alias rmt='gio trash'
 
 # File managment
 # alias ..='cd ..'
