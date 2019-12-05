@@ -163,16 +163,16 @@ ex ()
 cdUndoKey() {
   popd
   zle       reset-prompt
-  echo
-  ls
+  # echo
+  # ls
   zle       reset-prompt
 }
 
 cdParentKey() {
   pushd ..
   zle      reset-prompt
-  echo
-  ls
+  # echo
+  # ls
   zle       reset-prompt
 }
 
