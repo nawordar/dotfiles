@@ -10,6 +10,8 @@
 - `zsh`
     - `oh-my-zsh`
     - `zsh-autosuggestions`
+    - `fz`/`fzf`/`z`
+    - `zplug`
 - `multilockscreen`
 - `rofi`
 - `rofi-pass` – rofi script for autotyping passwords

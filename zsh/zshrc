@@ -83,7 +83,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +107,25 @@ source $ZSH/oh-my-zsh.sh
 # Initialize completions
 autoload -U compinit
 compinit
+
+# === zplug === #
+# Load zplug
+source ~/.zplug/init.zsh
+
+# Load fz and z
+zplug "changyuheng/fz", defer:1
+zplug "rupa/z", use:z.sh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
 
 # Load aliases
 if [ -f ~/.bash_aliases ]; then
@@ -178,3 +197,5 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/nawordar/.sdkman"
 [[ -s "/home/nawordar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/nawordar/.sdkman/bin/sdkman-init.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
