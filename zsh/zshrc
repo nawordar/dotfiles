@@ -158,6 +158,11 @@ zle -N                 cdUndoKey
 bindkey '^[[1;3A'      cdParentKey
 bindkey '^[[1;3D'      cdUndoKey
 
+# Activate private scripts
+if [ -f ~/scripts/private.sh ]; then
+    source ~/scripts/private.sh
+fi
+
 # Fuck it
 eval "$(thefuck --alias)"
 
