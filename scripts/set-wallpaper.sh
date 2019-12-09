@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # -*- coding: utf-8 -*-
 
 wallpaper="$HOME/wallpapers/pixelart/waterfall.png"
