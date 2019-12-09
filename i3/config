@@ -62,12 +62,12 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id clipster -d
 
 # Assign Spotify to workspace 10
-exec --no-startup-id spotify
-# Sources:
-# - https://github.com/i3/i3/issues/2060
-# - https://wiki.archlinux.org/index.php/i3#Default_workspace_for_Spotify
-# - https://github.com/swaywm/sway/issues/3793#issuecomment-468889437
-for_window [class="Spotify"] move container to workspace number $ws10
+# exec --no-startup-id spotify
+# # Sources:
+# # - https://github.com/i3/i3/issues/2060
+# # - https://wiki.archlinux.org/index.php/i3#Default_workspace_for_Spotify
+# # - https://github.com/swaywm/sway/issues/3793#issuecomment-468889437
+# for_window [class="Spotify"] move container to workspace number $ws10
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
