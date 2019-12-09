@@ -12,6 +12,8 @@ sync:
 
 spec:
   ~/.zshrc: zsh/zshrc
+  ~/.zprofile: zsh/zprofile
+
   ~/.bashrc: bash/bashrc
   ~/.bash_aliases: bash/bash_aliases
   ~/.profile: bash/profile
@@ -44,3 +46,4 @@ spec:
 
   ~/scripts/toggle-fullscreen.sh: scripts/toggle-fullscreen.sh
   ~/scripts/set-wallpaper.sh: scripts/set-wallpaper.sh
+  ~/scripts/x.sh: scripts/x.sh
