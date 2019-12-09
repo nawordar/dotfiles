@@ -163,15 +163,20 @@ zle -N cdUndoKey
 bindkey '^[[1;3A' cdParentKey
 bindkey '^[[1;3D' cdUndoKey
 
-# Activate private scripts
-if [ -f ~/scripts/private.sh ]; then
-  source ~/scripts/private.sh
-fi
+# Activate scripts
+scripts=(
+  ~/scripts/private.sh
+  ~/scripts/x.sh
+  ~/.fzf.zsh
+)
+for script in ${scripts[@]}; do
+  if [ -f "$script" ]; then
+    source "$script"
+  fi
+done
 
 # Fuck it
 eval "$(thefuck --alias)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # If I make another tool than needs to be at the end, then what?
 if [ ! -d "/home/nawordar/.sdkman" ]; then
