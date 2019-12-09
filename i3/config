@@ -215,7 +215,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+set $slowResizeFactor 10 px or 10 ppt
+set $quickResizeFactor 30 px or 30 ppt
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -223,16 +225,28 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width $slowResizeFactor
+        bindsym j resize grow height $slowResizeFactor
+        bindsym k resize shrink height $slowResizeFactor
+        bindsym l resize grow width $slowResizeFactor
+
+        # Same bindings, but for the arrow keys
+        bindsym Left resize shrink width $slowResizeFactor
+        bindsym Down resize grow height $slowResizeFactor
+        bindsym Up resize shrink height $slowResizeFactor
+        bindsym Right resize grow width $slowResizeFactor
+
+        # Quicker resizing
+        bindsym Shift+h resize shrink width $quickResizeFactor
+        bindsym Shift+j resize grow height $quickResizeFactor
+        bindsym Shift+k resize shrink height $quickResizeFactor
+        bindsym Shift+l resize grow width $quickResizeFactor
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Shift+Left resize shrink width $quickResizeFactor
+        bindsym Shift+Down resize grow height $quickResizeFactor
+        bindsym Shift+Up resize shrink height $quickResizeFactor
+        bindsym Shift+Right resize grow width $quickResizeFactor
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
