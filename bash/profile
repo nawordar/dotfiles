@@ -43,11 +43,10 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
+add_dir_to_path "/bin"
+add_dir_to_path "/usr/local/bin"
 add_dir_to_path "$HOME/bin"
-
-# set PATH so it includes user's private bin if it exists
 add_dir_to_path "$HOME/.local/bin"
-
 add_dir_to_path "$HOME/.cargo/bin"
 
 # Add Yarn to PATH
