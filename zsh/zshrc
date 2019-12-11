@@ -139,6 +139,12 @@ ex() {
 # === Activate scripts === #
 scripts=(
 
+  # Adds function for checking if given command is available
+  ~/scripts/cmd_available.sh
+
+  # Adds apt ↔ yay bridge
+  ~/scripts/debian-arch-bridge.sh
+
   # Private things. Don't upload!
   ~/scripts/private.sh
 
