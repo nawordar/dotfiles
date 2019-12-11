@@ -136,7 +136,7 @@ ex() {
   fi
 }
 
-# === Activate scripts ===
+# === Activate scripts === #
 scripts=(
 
   # Private things. Don't upload!
