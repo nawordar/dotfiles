@@ -168,10 +168,16 @@ if [ -f ~/scripts/private.sh ]; then
   source ~/scripts/private.sh
 fi
 
+# Activate x (open in background using xdg-open)
+if [ -f ~/scripts/x.sh ]; then
+  source ~/scripts/x.sh
+fi
+
+# Activate fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Fuck it
 eval "$(thefuck --alias)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # If I make another tool than needs to be at the end, then what?
 if [ ! -d "/home/nawordar/.sdkman" ]; then
