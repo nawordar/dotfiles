@@ -10,6 +10,7 @@
 - `zsh`
     - `oh-my-zsh`
     - `zsh-autosuggestions`
+    - `zsh-syntax-highlighting`
     - `fz`/`fzf`/`z`
     - `zplug`
 - `multilockscreen`
