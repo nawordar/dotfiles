@@ -145,7 +145,7 @@ scripts=(
   # Open file in background without output using xdg-open
   ~/scripts/x.sh
 
-  # Apply fzf shortcuts i.e. M-c — go to file
+  # Apply fzf shortcuts e.g. M-c — go to file
   ~/.fzf.zsh
 
   # Load aliases (file is compatible with both bash and zsh)
