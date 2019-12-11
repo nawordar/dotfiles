@@ -158,7 +158,7 @@ scripts=(
   ~/.bash_aliases
 
   # Apply zsh-syntax-highlighting
-  ~/clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 )
 for script in ${scripts[@]}; do
