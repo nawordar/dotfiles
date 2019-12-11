@@ -165,14 +165,25 @@ bindkey '^[[1;3D' cdUndoKey
 
 # Activate scripts
 scripts=(
+
+  # Private things. Don't upload!
   ~/scripts/private.sh
+
+  # Open file in background without output using xdg-open
   ~/scripts/x.sh
+
+  # Apply fzf shortcuts i.e. M-c — go to file
   ~/.fzf.zsh
+
 )
 for script in ${scripts[@]}; do
-  if [ -f "$script" ]; then
+
+  # -s: True if file exists and has a size greater than zero.
+  # Source: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+  if [ -s "$script" ]; then
     source "$script"
   fi
+
 done
 
 # Fuck it
