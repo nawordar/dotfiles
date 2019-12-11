@@ -141,28 +141,6 @@ ex() {
   fi
 }
 
-# Set up GUI-file-manager-like keybindings. Source: https://wiki.archlinux.org/index.php/Zsh#File_manager_key_binds
-cdUndoKey() {
-  popd
-  zle reset-prompt
-  # echo
-  # ls
-  zle reset-prompt
-}
-
-cdParentKey() {
-  pushd ..
-  zle reset-prompt
-  # echo
-  # ls
-  zle reset-prompt
-}
-
-zle -N cdParentKey
-zle -N cdUndoKey
-bindkey '^[[1;3A' cdParentKey
-bindkey '^[[1;3D' cdUndoKey
-
 # Activate scripts
 scripts=(
 
