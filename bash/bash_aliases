@@ -7,14 +7,46 @@ alias more=less
 
 alias seti3="vim ~/.config/i3/config"
 
-# APT aliases
-if which apt &>/dev/null; then
+cmd_available() {
+
+    # Source: https://stackoverflow.com/a/677212/9327802
+    command -v "$1" >/dev/null
+
+}
+
+# === Debian ♥ Arch Linux === #
+# If apt or yay do not exists, create appropriate functions
+if ! cmd_available apt && cmd_available yay; then
+    apt() {
+
+        # Source: https://stackoverflow.com/a/59126818/9327802
+        local all_args=("$@")
+        local first_arg=$1
+        local rest_args=("${all_args[@]:1}")
+
+        case "$1" in
+        install)
+            yay -S "${rest_args[@]}"
+            ;;
+        search)
+            yay -Ss "${rest_args[@]}"
+            ;;
+        update)
+            echo "Not implemented"
+            ;;
+        *)
+            echo "Not implemented"
+            ;;
+        esac
+    }
+fi
+
+# apt aliases
+if cmd_available apt; then
     alias sai='sudo apt install'
     alias sau='sudo apt update'
     alias sag='sudo apt upgrade'
 fi
-
-# Debian ♥ Arch Linuux
 
 # Trash alias
 alias rmt='gio trash'
@@ -23,7 +55,6 @@ alias rmt='gio trash'
 # alias ..='cd ..'
 alias md=mkdir
 alias rm.='YEET=`pwd` && cd .. && rmt "$YEET"'
-
 
 # Make dir and slide in
 mdcd() {
