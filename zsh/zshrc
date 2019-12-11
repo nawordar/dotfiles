@@ -110,11 +110,6 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-# Load aliases (file is compatible with both bash and zsh)
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -152,6 +147,9 @@ scripts=(
 
   # Apply fzf shortcuts i.e. M-c — go to file
   ~/.fzf.zsh
+
+  # Load aliases (file is compatible with both bash and zsh)
+  ~/.bash_aliases
 
 )
 for script in ${scripts[@]}; do
