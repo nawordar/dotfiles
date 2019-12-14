@@ -302,6 +302,9 @@ bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 # Gpick
 for_window [class="Gpick"] floating enable
 
+# Gtick
+for_window [class="Gtick"] floating enable
+
 # nm-connection-editor
 for_window [class="Nm-connection-editor"] floating enable
 
