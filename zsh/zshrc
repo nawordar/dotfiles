@@ -98,6 +98,16 @@ source ~/.zplug/init.zsh
 zplug "changyuheng/fz", defer:1
 zplug "rupa/z", use:z.sh
 
+# Load careful_rm
+zplug "MikeDacre/careful_rm"
+
+# Load cdbk
+zplug "MikeDacre/cdbk"
+
+# Load you-should-use — reminds to use defined aliases
+zplug "MichaelAquilina/zsh-you-should-use"
+
+
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -109,6 +119,9 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# Make careful_rm -c default for $HOME
+[ ! -f "$HOME/.rm_recycle_home" ] && touch "$HOME/.rm_recycle_home"
 
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -170,6 +183,33 @@ for script in ${scripts[@]}; do
   fi
 
 done
+
+# Load zmv
+autoload -U zmv
+
+# Add alias for automatic asterisk replacement
+alias mmv='noglob zmv -W'
+
+# Add alias for copying instead of moving
+alias zcp='zmv -C'
+
+# Add alias for linking instead of moving
+alias zln='zmv -L'
+
+# Enable autopushd
+setopt autopushd
+
+# Load calc plugin manually after zsh-syntax-highlighting since they conflict
+autoload -U zcalc
+function __calc_plugin {
+    zcalc -e "$*"
+}
+aliases[calc]='noglob __calc_plugin'
+aliases[=]='noglob __calc_plugin'
+
+# Inspired by the above dc plugin
+function __dc_plugin { dc -e "$*pq" }
+aliases[==]='noglob __dc_plugin'
 
 # Fuck it
 eval "$(thefuck --alias)"
