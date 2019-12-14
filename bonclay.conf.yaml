@@ -11,6 +11,8 @@ sync:
   overwrite: false
 
 spec:
+  ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+
   ~/.zshrc: zsh/zshrc
   ~/.zprofile: zsh/zprofile
 
