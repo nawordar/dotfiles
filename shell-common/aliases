@@ -14,6 +14,15 @@ if cmd_available apt; then
     alias sag='sudo apt upgrade'
 fi
 
+# Alias tmatrix
+alias tmatrix="tmatrix -C red -s 10"
+
+# Run emacs in CLI
+alias emacs="emacs -nw"
+
+# Vim's :q
+alias :q="exit"
+
 # Trash alias
 alias rmt='gio trash'
 
