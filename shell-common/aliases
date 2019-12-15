@@ -36,12 +36,13 @@ mdcd() {
     mkdir $1 && cd $1
 }
 
-# Go to project directory
-if [ -d "$HOME/Projects" ]; then
-    alias cdp="cd $HOME/Projects"
-
-elif [ -d "$HOME/projects" ]; then
-    alias cdp="cd $HOME/projects"
+# Set up go-to-projects aliases if running bash. Use named directories in zsh
+if [ -n "$BASH_VERSION" ]; then
+    if [ -d "$HOME/Projects" ]; then
+        alias cdp="cd $HOME/Projects"
+    elif [ -d "$HOME/projects" ]; then
+        alias cdp="cd $HOME/projects"
+    fi
 fi
 
 # hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'
