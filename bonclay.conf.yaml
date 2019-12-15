@@ -14,6 +14,7 @@ spec:
   ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 
   ~/.zshrc: zsh/zshrc
+  ~/.zprofile: zsh/zprofile
 
   ~/.bashrc: bash/bashrc
   ~/.bash_aliases: bash/bash_aliases
