@@ -199,8 +199,13 @@ alias zcp='zmv -C'
 # Add alias for linking instead of moving
 alias zln='zmv -L'
 
-# Enable autopushd
-setopt autopushd
+# Load cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# Set completion style to menu
+zstyle ':completion:*:*:cdr:*:*' menu selection
+
 
 # Load calc plugin manually after zsh-syntax-highlighting since they conflict
 autoload -U zcalc
