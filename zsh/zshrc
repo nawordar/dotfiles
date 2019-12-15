@@ -171,7 +171,7 @@ scripts=(
   ~/.fzf.zsh
 
   # Load aliases (file is compatible with both bash and zsh)
-  ~/.bash_aliases
+  ~/.aliases
 
   # Apply zsh-syntax-highlighting
   /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,38 @@
+alias cp="cp -i"     # confirm before overwriting something
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias mkdir="mkdir -p"
+alias more=less
+
+alias seti3="vim ~/.config/i3/config"
+
+# apt aliases
+if cmd_available apt; then
+    alias sai='sudo apt install'
+    alias sau='sudo apt update'
+    alias sag='sudo apt upgrade'
+fi
+
+# Trash alias
+alias rmt='gio trash'
+
+# File managment
+# alias ..='cd ..'
+alias md=mkdir
+alias rm.='YEET=`pwd` && cd .. && rmt "$YEET"'
+
+# Make dir and slide in
+mdcd() {
+    mkdir $1 && cd $1
+}
+
+# Go to project directory
+if [ -d "$HOME/Projects" ]; then
+    alias cdp="cd $HOME/Projects"
+
+elif [ -d "$HOME/projects" ]; then
+    alias cdp="cd $HOME/projects"
+fi
+
+# hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'

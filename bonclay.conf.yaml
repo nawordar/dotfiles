@@ -46,6 +46,8 @@ spec:
 
   ~/.config/wal/templates/colors-rofi-dark.rasi: wal/templates/colors-rofi-dark.rasi
 
+  ~/.aliases: shell-common/aliases
+
   ~/scripts/clean-downloads.sh: scripts/clean-downloads.sh
   ~/scripts/cmd_available.sh: scripts/cmd_available.sh
   ~/scripts/debian-arch-bridge.sh: scripts/debian-arch-bridge.sh
