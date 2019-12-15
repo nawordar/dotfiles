@@ -17,7 +17,6 @@ spec:
   ~/.zprofile: zsh/zprofile
 
   ~/.bashrc: bash/bashrc
-  ~/.bash_aliases: bash/bash_aliases
   ~/.profile: bash/profile
 
   ~/.config/i3/config: i3/config
