@@ -29,7 +29,7 @@ alias rmt='gio trash'
 # File managment
 # alias ..='cd ..'
 alias md=mkdir
-alias rm.='YEET=`pwd` && cd .. && rmt "$YEET"'
+alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
 
 # Make dir and slide in
 mdcd() {
