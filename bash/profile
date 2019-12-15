@@ -59,5 +59,3 @@ add_dir_to_path "$DOTNET_ROOT"
 
 # Add Yarn to PATH
 export PATH="$(yarn global bin --offline)":$PATH
-
-unset -f add_dir_to_path
