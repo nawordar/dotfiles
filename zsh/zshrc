@@ -155,7 +155,7 @@ ex() {
 # === Activate scripts === #
 scripts=(
 
-  # Adds function for checking if given command is available. Required by debian-arch-bridge.sh and .bash_aliases
+  # Adds function for checking if given command is available. Required by debian-arch-bridge.sh
   ~/scripts/cmd_available.sh
 
   # Adds apt ↔ yay bridge
