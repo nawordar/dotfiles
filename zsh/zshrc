@@ -155,7 +155,7 @@ ex() {
 # === Activate scripts === #
 scripts=(
 
-  # Adds function for checking if given command is available. Required by debian-arch-bridge.sh and .bash_aliases
+  # Adds function for checking if given command is available. Required by debian-arch-bridge.sh
   ~/scripts/cmd_available.sh
 
   # Adds apt ↔ yay bridge
@@ -171,7 +171,7 @@ scripts=(
   ~/.fzf.zsh
 
   # Load aliases (file is compatible with both bash and zsh)
-  ~/.bash_aliases
+  ~/.aliases
 
   # Apply zsh-syntax-highlighting
   /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -199,8 +199,16 @@ alias zcp='zmv -C'
 # Add alias for linking instead of moving
 alias zln='zmv -L'
 
-# Enable autopushd
-setopt autopushd
+# Load cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# Use dynamic directories e.g. ~[1], ~[2] etc.
+add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
+
+# Set completion style to menu
+zstyle ':completion:*:*:cdr:*:*' menu selection
+
 
 # Load calc plugin manually after zsh-syntax-highlighting since they conflict
 autoload -U zcalc

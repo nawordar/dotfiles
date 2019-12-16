@@ -14,10 +14,8 @@ spec:
   ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 
   ~/.zshrc: zsh/zshrc
-  ~/.zprofile: zsh/zprofile
 
   ~/.bashrc: bash/bashrc
-  ~/.bash_aliases: bash/bash_aliases
   ~/.profile: bash/profile
 
   ~/.config/i3/config: i3/config
@@ -45,6 +43,8 @@ spec:
   ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
   ~/.config/wal/templates/colors-rofi-dark.rasi: wal/templates/colors-rofi-dark.rasi
+
+  ~/.aliases: shell-common/aliases
 
   ~/scripts/clean-downloads.sh: scripts/clean-downloads.sh
   ~/scripts/cmd_available.sh: scripts/cmd_available.sh
