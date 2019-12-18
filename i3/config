@@ -348,6 +348,9 @@ bindsym $mod+Control+s swap container with mark /
 # Set \text{} keybind
 bindsym $mod+q exec --no-startup-id ~/scripts/wrap-in-text.py
 
+# Set panic script keybinding
+bindsym $mod+semicolon exec --no-startup-id ~/scripts/panic.sh
+
 # Application shortcuts
 bindsym $mod+$alt+c exec code # Visual Studio Code
 bindsym $mod+$alt+f exec thunar # Thunar (File manager)

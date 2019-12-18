@@ -49,6 +49,7 @@ spec:
   ~/scripts/clean-downloads.sh: scripts/clean-downloads.sh
   ~/scripts/cmd_available.sh: scripts/cmd_available.sh
   ~/scripts/debian-arch-bridge.sh: scripts/debian-arch-bridge.sh
+  ~/scripts/panic.sh: scripts/panic.sh
   ~/scripts/toggle-fullscreen.sh: scripts/toggle-fullscreen.sh
   ~/scripts/set-wallpaper.sh: scripts/set-wallpaper.sh
   ~/scripts/x.sh: scripts/x.sh
