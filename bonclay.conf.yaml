@@ -39,6 +39,8 @@ spec:
   ~/.config/Trolltech.conf: gtk-theme/Trolltech.conf
 
   ~/.config/rofi/config.rasi: rofi/config.rasi
+  ~/.config/rofi/script-launcher.sh: rofi/script-launcher.sh
+  ~/.config/rofi/scripts.csv: rofi/scripts.csv
 
   ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
