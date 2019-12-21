@@ -30,6 +30,7 @@ alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
 
 # Aliases for tmux
 alias tks='tmux kill-session'
+alias tkss='tmux kill-server'
 
 # Make dir and slide in
 mdcd() {
