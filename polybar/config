@@ -106,7 +106,8 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+; label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -272,7 +273,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.cyan}
+format-underline = ${colors.primary}
 
 label = %date% %time%
 
@@ -337,7 +338,7 @@ interval = 1
 format-prefix = " "
 format = <label>
 exec = python /usr/share/polybar/scripts/spotify_status.py -f '{artist}: {song}'
-format-underline = #1db954
+format-underline = ${colors.primary}
 
 [module/battery]
 type = internal/battery
