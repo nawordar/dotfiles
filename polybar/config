@@ -25,6 +25,7 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 ; alert = ${xrdb:color3:#222}
 alert = #D97C2D
+cyan = #26CACF
 
 [bar/dummy]
 monitor = ${env:MONITOR:eDP1}
@@ -67,7 +68,7 @@ font-2 = "Siji:pixelsize=10;1"
 
 modules-left = i3 spotify alsa xbacklight
 modules-center = xwindow
-modules-right = filesystem xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xkeyboard memory cpu wlan eth battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -89,10 +90,10 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+; format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+; label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -210,7 +211,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+; format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -218,7 +219,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+; format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
@@ -271,7 +272,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.cyan}
 
 label = %date% %time%
 
@@ -377,9 +378,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+; format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-underline = ${colors.alert}
 
 label = %temperature-c%
 label-warn = %temperature-c%
