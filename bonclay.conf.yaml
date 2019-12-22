@@ -44,6 +44,8 @@ spec:
 
   ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
+  ~/.config/nvim/init.vim: nvim/init.vim
+
   ~/.config/wal/templates/colors-rofi-dark.rasi: wal/templates/colors-rofi-dark.rasi
 
   ~/.aliases: shell-common/aliases
