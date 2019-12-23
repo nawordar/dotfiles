@@ -20,8 +20,6 @@ alias tmatrix="tmatrix -C red -s 10"
 # Run emacs in CLI
 # alias emacs="emacs -nw"
 
-# Trash alias
-alias rmt='gio trash'
 
 # Aliases for tmux
 alias tks='tmux kill-session'
@@ -31,6 +29,9 @@ alias tkss='tmux kill-server'
 # alias ..='cd ..'
 alias md=mkdir
 alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
+
+# Trash alias
+alias rmt='gio trash'
 
 # Make a dir and slide in
 mdcd() {
