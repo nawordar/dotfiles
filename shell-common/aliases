@@ -23,14 +23,14 @@ alias tmatrix="tmatrix -C red -s 10"
 # Trash alias
 alias rmt='gio trash'
 
-# File managment
-# alias ..='cd ..'
-alias md=mkdir
-alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
-
 # Aliases for tmux
 alias tks='tmux kill-session'
 alias tkss='tmux kill-server'
+
+# === File managment === #
+# alias ..='cd ..'
+alias md=mkdir
+alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
 
 # Make a dir and slide in
 mdcd() {
