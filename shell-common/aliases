@@ -23,6 +23,7 @@ alias tmatrix="tmatrix -C red -s 10"
 
 # Aliases for tmux
 alias tks='tmux kill-session'
+alias tkst='tmux kill-session -t'
 alias tkss='tmux kill-server'
 
 # === Git Aliases === #
