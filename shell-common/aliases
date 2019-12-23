@@ -18,7 +18,7 @@ fi
 alias tmatrix="tmatrix -C red -s 10"
 
 # Run emacs in CLI
-alias emacs="emacs -nw"
+# alias emacs="emacs -nw"
 
 # Trash alias
 alias rmt='gio trash'
