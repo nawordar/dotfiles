@@ -50,6 +50,8 @@ spec:
 
   ~/.aliases: shell-common/aliases
 
+  ~/.tmux.conf: tmux/tmux.conf
+
   ~/scripts/clean-downloads.sh: scripts/clean-downloads.sh
   ~/scripts/cmd_available.sh: scripts/cmd_available.sh
   ~/scripts/debian-arch-bridge.sh: scripts/debian-arch-bridge.sh
