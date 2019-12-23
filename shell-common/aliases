@@ -25,6 +25,11 @@ alias tmatrix="tmatrix -C red -s 10"
 alias tks='tmux kill-session'
 alias tkss='tmux kill-server'
 
+# === Git Aliases === #
+alias gtc='git clone'
+alias gtpl='git pull'
+alias gtps='git push'
+
 # === File managment === #
 # alias ..='cd ..'
 alias md=mkdir
