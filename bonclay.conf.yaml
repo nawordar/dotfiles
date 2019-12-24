@@ -21,7 +21,7 @@ spec:
   ~/.config/i3/config: i3/config
   ~/.config/i3/lock.sh: i3/lock.sh
 
-  ~/.config/compton/compton.conf: compton/compton.conf
+  ~/.config/picom/picom.conf: picom/picom.conf
 
   ~/.icons/default/index.theme: cursor/index.theme
 
@@ -40,7 +40,6 @@ spec:
 
   ~/.config/rofi/config.rasi: rofi/config.rasi
   ~/.config/rofi/run-script.sh: rofi/run-script.sh
-  ~/.config/rofi/scripts.csv: rofi/scripts.csv
 
   ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
