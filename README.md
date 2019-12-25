@@ -18,8 +18,7 @@
 - `rofi-pass` – rofi script for autotyping passwords
 - `dunst` – for displaying notifications
 - `kitty` – Terminal emulator
-- `compton` – Composer
+- `picom` – Composer
 - `autorandr` – Automatic xrandr configuration manager
 - `clipster` – Clipboard manager
 - `QGtkStyle` – GTK style for KDE applications (qt5-style-plugin-gtk2 on Ubuntu, qt5-styleplugins on Arch)
-

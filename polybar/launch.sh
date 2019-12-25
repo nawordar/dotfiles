@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # https://wiki.archlinux.org/index.php/Polybar#Running_with_WM
 
 # Terminate already running bar instances
@@ -18,7 +18,7 @@ else
   polybar main &
 fi
 
-# Compton breaks after launching polybar
-killall -q compton && compton -b &
+# Picom breaks after launching polybar
+killall -q picom; picom -b &
 
 echo "Polybar launched..."
