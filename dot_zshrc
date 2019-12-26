@@ -89,10 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # Apply colours from pywal
 cat ~/.cache/wal/sequences
 
-# Initialize completions
-autoload -U +X compinit && compinit
-# autoload -U +X bashcompinit && bashcompinit
-
 # === zplug === #
 # Load zplug
 source ~/.zplug/init.zsh
@@ -109,6 +105,9 @@ zplug "MikeDacre/cdbk"
 
 # Load you-should-use — reminds to use defined aliases
 zplug "MichaelAquilina/zsh-you-should-use"
+
+# Load zsh-syntax-highlighting
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 
 # Install plugins if there are plugins that have not been installed
@@ -173,9 +172,6 @@ scripts=(
   # Load aliases (file is compatible with both bash and zsh)
   ~/.aliases
 
-  # Apply zsh-syntax-highlighting
-  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 )
 for script in ${scripts[@]}; do
 
@@ -224,6 +220,9 @@ aliases[==]='noglob __dc_plugin'
 
 # Fuck it
 eval "$(thefuck --alias)"
+
+# Initialize completions
+autoload -U +X compinit && compinit
 
 # If I make another tool than needs to be at the end, then what?
 if [ ! -d "/home/nawordar/.sdkman" ]; then
