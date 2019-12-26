@@ -6,8 +6,8 @@
 - Cursor: OpenZone
 
 ## Used applications:
-- `bonclay` — for dotfile synchronization (planned move to chezmoi.io)
-- `rofi`
+- `chezmoi` — for dotfile synchronization
+- `rofi` — Application launcher
 - `rofi-pass` – rofi script for autotyping passwords
 - `dunst` – for displaying notifications
 - `kitty` – Terminal emulator
