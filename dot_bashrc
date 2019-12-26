@@ -118,8 +118,8 @@ unset use_color safe_term match_lhs sh
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 xhost +local:root > /dev/null 2>&1
@@ -166,6 +166,11 @@ bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 
 # Activate autocd
 shopt -s autocd
+
+# Activate private scripts
+if [ -f ~/scripts/private.sh ]; then
+    source ~/scripts/private.sh
+fi
 
 # Activate autojump
 . /usr/share/autojump/autojump.bash
