@@ -26,10 +26,12 @@ nmap ga <Plug>(EasyAlign)
 " === Indentation settings === "
 " Source: Mainly adevore3's comment at https://coderwall.com/p/vyckiw/vim-auto-indent-4-spaces
 
-set copyindent    " Copy the previous indentation on autoindenting
-set expandtab     " Expand tabs by default
-set shiftround    " Use multiple of shiftwidth when indenting with '<' and '>'
-set smartindent   " Context-aware indenting. Source: https://vi.stackexchange.com/a/5844
-set shiftwidth=4  " Number of spaces to use for autoindenting
-set softtabstop=4 " When hitting <BS>, pretend like a tab is removed, even if spaces
-set tabstop=4     " tabs are n spaces
+set copyindent     " Copy the previous indentation on autoindenting
+set expandtab      " Expand tabs by default
+set shiftround     " Use multiple of shiftwidth when indenting with '<' and '>'
+set smartindent    " Context-aware indenting. Source: https://vi.stackexchange.com/a/5844
+set shiftwidth=4   " Number of spaces to use for autoindenting
+set softtabstop=4  " When hitting <BS>, pretend like a tab is removed, even if spaces
+set tabstop=4      " tabs are n spaces
+set number         " Display line numbers
+set relativenumber " Display numbers relatively
