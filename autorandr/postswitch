@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Restart polybar
-($HOME/.config/polybar/launch.sh >/dev/null &)
-
-# Set wallpaper
-(~/scripts/set-wallpaper.sh >/dev/null &)
