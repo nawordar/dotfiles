@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-rofi_config=""
+rofi_config_location="$XDG_CONFIG_HOME/rofi"
 
-private_script_map="$XDG_CONFIG_HOME/rofi/private_scripts.csv"
-public_script_map="$HOME/projects/dotfiles/rofi/public_scripts.csv"
+private_script_map="$rofi_config_location/private_script_map.csv"
+public_script_map="$rofi_config_location/public_script_map.csv"
 
 concat_script_maps() {
     cat "$private_script_map" "$public_script_map"
