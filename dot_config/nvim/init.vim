@@ -5,12 +5,14 @@ call plug#begin()
      Plug 'junegunn/fzf.vim'      " For :Files command
      Plug 'Yggdroot/indentLine'   " Adds indent hints
      Plug 'Shougo/deoplete.nvim', " Asynchronous completion
-      \ { 'do': ':UpdateRemotePlugins' } 
+      \ { 'do': ':UpdateRemotePlugins' }
      Plug 'SirVer/ultisnips'      " Snippet engine
 
      " Language plugs
-     Plug 'vim-latex/vim-latex',  " Latex engine
+     Plug 'vim-latex/vim-latex',     " Latex engine
       \ { 'for': 'latex' }
+     Plug 'tpope/vim-surround'       " Surround commands
+     Plug 'scrooloose/nerdcommenter' " Quick commenting
 call plug#end()
 
 
@@ -35,3 +37,8 @@ set softtabstop=4  " When hitting <BS>, pretend like a tab is removed, even if s
 set tabstop=4      " tabs are n spaces
 set number         " Display line numbers
 set relativenumber " Display numbers relatively
+
+" === NERD Commenter settings === "
+" Source: https://github.com/scrooloose/nerdcommenter
+
+let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
