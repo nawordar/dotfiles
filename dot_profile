@@ -24,7 +24,7 @@
 # esac
 
 export EDITOR=nvim
-export VISUAL=code
+export GIT_EDITOR="$EDITOR"
 export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORMTHEME=gtk2
