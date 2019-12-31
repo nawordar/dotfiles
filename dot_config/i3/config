@@ -375,6 +375,7 @@ bindsym $mod+semicolon exec --no-startup-id ~/scripts/panic.sh
 bindsym $mod+period exec "splatmoji type"
 
 # Application shortcuts
-bindsym $mod+$alt+c exec code # Visual Studio Code
-bindsym $mod+$alt+f exec thunar # Thunar (File manager)
-bindsym $mod+$alt+m exec spotify # Spotify
+bindsym $mod+$alt+c exec code
+bindsym $mod+$alt+f exec thunar # File manager – Thunar
+bindsym $mod+$alt+m exec spotify # Music – Spotify
+bindsym $mod+$alt+p exec gpick
