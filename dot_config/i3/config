@@ -25,6 +25,9 @@ exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Launch xfce4-power-manager
+exec --no-startup-id xfce4-power-manager
+
 # Launch picom
 exec --no-startup-id picom -b --respect-prop-shadow
 
