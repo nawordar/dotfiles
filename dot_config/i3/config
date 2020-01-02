@@ -182,6 +182,8 @@ bindsym $mod+Control+0 move container to workspace number $ws10, workspace $ws10
 # assign workspaces to specific screens
 workspace 1 output HDMI1
 workspace 2 output HDMI1
+workspace 9 output eDP1
+workspace 10 output eDP1
 # workspace 6 output HDMI1
 # workspace 7 output HDMI1
 
