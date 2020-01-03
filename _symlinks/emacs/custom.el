@@ -14,10 +14,18 @@
      (output-dvi "xdvi")
      (output-pdf "Zathura")
      (output-html "xdg-open"))))
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(custom-enabled-themes (quote (calmer-forest)))
+ '(custom-safe-themes
+   (quote
+    ("8dc7f4a05c53572d03f161d82158728618fb306636ddeec4cce204578432a06d" default)))
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (ergoemacs-mode 2048-game which-key ace-jump-mode auctex-latexmk))))
+    (calmer-forest-theme ergoemacs-mode 2048-game which-key ace-jump-mode auctex-latexmk))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
