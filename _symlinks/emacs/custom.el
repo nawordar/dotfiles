@@ -17,7 +17,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (which-key ace-jump-mode ergoemacs-mode auctex-latexmk))))
+    (ergoemacs-mode 2048-game which-key ace-jump-mode auctex-latexmk))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

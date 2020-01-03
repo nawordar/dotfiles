@@ -1,22 +1,22 @@
 ;; This file is largely copied from http://ergoemacs.org/emacs/organize_your_dot_emacs.html
 
 (require 'package)
-;; (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-;;                     (not (gnutls-available-p))))
-;;        (proto (if no-ssl "http" "https")))
-;;   (when no-ssl
-;;     (warn "\
-;; Your version of Emacs does not support SSL connections,
-;; which is unsafe because it allows man-in-the-middle attacks.
-;; There are two things you can do about this warning:
-;; 1. Install an Emacs version that does support SSL and be safe.
-;; 2. Remove this warning from your init file so you won't see it again."))
-;;   ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-;;   ;; (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-;;   (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-;;   (when (< emacs-major-version 24)
-;;     ;; For important compatibility libraries like cl-lib
-;;     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (when no-ssl
+    (warn "\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again."))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 
 (package-initialize)
 
@@ -46,17 +46,25 @@ To solve this problem, when your code only knows the relative path of another fi
   (concat (file-name-directory (or load-file-name buffer-file-name)) @file-relative-path)
 )
 
+;; Set file for custom variables
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;; --------------------------------------------------
 ;; load the plain emacs settings
 
-(load (xah-get-fullpath "settings"))
+;; (load (xah-get-fullpath "settings"))
 
 ;; --------------------------------------------------
 ;; load packages
 
 (require 'ace-jump-mode)
 
+(defvar ergoemacs-modify-transient-maps)
+(setq ergoemacs-theme nil)
+(setq ergoemacs-keyboard-layout "us")
 (require 'ergoemacs-mode)
+(ergoemacs-mode 1)
 
 (require 'auctex-latexmk)
 
