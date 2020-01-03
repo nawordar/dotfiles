@@ -53,7 +53,7 @@ To solve this problem, when your code only knows the relative path of another fi
 ;; --------------------------------------------------
 ;; load the plain emacs settings
 
-;; (load (xah-get-fullpath "settings"))
+(load (xah-get-fullpath "settings"))
 
 ;; --------------------------------------------------
 ;; load packages
