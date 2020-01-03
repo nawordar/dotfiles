@@ -62,7 +62,7 @@ exec --no-startup-id spotifywm
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty -e tmux
+bindsym $mod+Return exec kitty
 
 # change focus
 bindsym $mod+h focus left
