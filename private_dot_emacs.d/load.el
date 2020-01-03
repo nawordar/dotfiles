@@ -1,4 +1,4 @@
-;; This file is largely copied from http://ergoemacs.org/emacs/organize_your_dot_emacs.html
+;; This file is based on http://ergoemacs.org/emacs/organize_your_dot_emacs.html
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
