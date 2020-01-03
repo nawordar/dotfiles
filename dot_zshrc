@@ -218,6 +218,9 @@ aliases[=]='noglob __calc_plugin'
 function __dc_plugin { dc -e "$*pq" }
 aliases[==]='noglob __dc_plugin'
 
+# Don't remind me of these aliases
+export YSU_IGNORED_ALIASES=("...")
+
 # Fuck it
 eval "$(thefuck --alias)"
 
