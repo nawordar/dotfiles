@@ -1,3 +1,4 @@
+;; https://llazarek.com/2018/07/modal-editing-in-emacs.html
 (defun mc-mode ()
   "Major mode for managing multiple cursors"
   (interactive)
