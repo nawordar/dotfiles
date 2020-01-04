@@ -58,12 +58,6 @@ To solve this problem, when your code only knows the relative path of another fi
 ;; --------------------------------------------------
 ;; load packages
 
-(setq ergoemacs-theme nil)
-(setq ergoemacs-keyboard-layout "us")
-
-(ergoemacs-mode 1)
-
-(which-key-mode)
 
 ;; --------------------------------------------------
 ;; load files
