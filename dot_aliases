@@ -23,7 +23,7 @@ alias tmatrix="tmatrix -C red -s 10"
 
 # Aliases for tmux
 alias tn='tmux new-session'
-alias ta='tmux attach'
+alias ta='tmux a || tmux'
 alias tks='tmux
  kill-server'
 
