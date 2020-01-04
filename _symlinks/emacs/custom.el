@@ -25,7 +25,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (calmer-forest-theme ergoemacs-mode 2048-game which-key ace-jump-mode auctex-latexmk))))
+    (multiple-cursors calmer-forest-theme ergoemacs-mode 2048-game which-key ace-jump-mode auctex-latexmk))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
