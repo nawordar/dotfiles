@@ -27,10 +27,6 @@ alias ta='~/scripts/tmux_attach_or_new.sh'
 alias tks='tmux kill-session -t'
 alias tkss='tmux kill-server'
 
-# === Git Aliases === #
-alias gtc='git clone'
-alias gtpl='git pull'
-alias gtps='git push'
 
 # === File managment === #
 # alias ..='cd ..'
