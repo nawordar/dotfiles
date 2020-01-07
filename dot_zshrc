@@ -199,6 +199,9 @@ alias zln='zmv -L'
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
+# Run ls on changing directory
+# add-zsh-hook -Uz chpwd (){ ls; }
+
 # Use dynamic directories e.g. ~[1], ~[2] etc.
 add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
 
