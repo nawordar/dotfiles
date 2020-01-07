@@ -1,7 +1,11 @@
 ;; === ergoemacs === ;;
-(setq ergoemacs-theme nil) ;; Uses Standard Ergoemacs keyboard theme
-(setq ergoemacs-keyboard-layout "us") ;; Assumes QWERTY keyboard layout
+(setq ergoemacs-theme nil)
+(setq ergoemacs-keyboard-layout "us")
+
 (ergoemacs-mode 1)
+
+;; === which-key === ;;
+(which-key-mode)
 
 ;; === latex === ;;
 (auctex-latexmk-setup)

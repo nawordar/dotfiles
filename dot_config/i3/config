@@ -11,10 +11,6 @@ set $alt Mod1
 font pango:Cascadia Code 10
 
 
-# === Assign to workspaces === #
-
-assign [class="^Spotify$"] → 10
-
 # === Autostart === #
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -55,14 +51,27 @@ exec --no-startup-id ~/scripts/clean-downloads.sh
 # Launch polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
-# Launch spotify
+
+# === Autostart on a specific workspace === #
+
+# Launch spotify on 10th workspace
 exec --no-startup-id spotifywm
+assign [class="^Spotify$"] → 10
+
+
+# === Set up the scratchpad === #
+
+# Launch Ferdi
+exec --no-startup-id ferdi
+for_window [class="^Ferdi$"] move scratchpad
+bindsym $mod+c [class="^Ferdi$"] scratchpad show
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec kitty -e ~/scripts/tmux_attach_or_new.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -104,11 +113,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+c split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# Toggle the split container orientation
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
