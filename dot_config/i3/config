@@ -45,6 +45,9 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # Launch clipster
 exec --no-startup-id clipster -d
 
+# Launch mpris-proxy for headset controls
+exec --no-startup-id mpris-proxy
+
 # Clean downloads
 exec --no-startup-id ~/scripts/clean-downloads.sh
 
