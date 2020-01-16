@@ -28,3 +28,7 @@
 				     '("make" "latexmk -pdf %s"
 				       TeX-run-TeX nil t
 				       :help "Run Latexmk on file")))))
+
+;; === projectile === ;;
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
