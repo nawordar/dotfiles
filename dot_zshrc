@@ -1,6 +1,7 @@
 # Apply colours from pywal
 cat ~/.cache/wal/sequences
 
+# === zsh options === #
 setopt autocd
 setopt correct
 
@@ -9,6 +10,16 @@ autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
 bindkey "^[." insert-last-word
 bindkey "^[," copy-earlier-word
+
+# Load cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# Use dynamic directories e.g. ~[1], ~[2] etc.
+add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
+
+# Set completion style to menu
+zstyle ':completion:*:*:cdr:*:*' menu selection
 
 # === zinit === #
 source ~/zsh-scripts/init_zinit.sh
@@ -78,6 +89,9 @@ scripts=(
   # Load the calc plugin
   ~/zsh-scripts/calc.sh
 
+  # Load the zmv command
+  ~/zsh-scripts/zmv.sh
+
 )
 for script in ${scripts[@]}; do
 
@@ -88,28 +102,6 @@ for script in ${scripts[@]}; do
   # fi
 
 done
-
-# Load zmv
-autoload -U zmv
-
-# Add alias for automatic asterisk replacement
-alias mmv='noglob zmv -W'
-
-# Add alias for copying instead of moving
-alias zcp='zmv -C'
-
-# Add alias for linking instead of moving
-alias zln='zmv -L'
-
-# Load cdr
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-
-# Use dynamic directories e.g. ~[1], ~[2] etc.
-add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
-
-# Set completion style to menu
-zstyle ':completion:*:*:cdr:*:*' menu selection
 
 # Fuck it
 eval "$(thefuck --alias)"
