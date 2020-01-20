@@ -218,7 +218,7 @@ aliases[calc]='noglob __calc_plugin'
 aliases[=]='noglob __calc_plugin'
 
 # Inspired by the above dc plugin
-function __dc_plugin { dc -e "$*pq" }
+function __dc_plugin { dc -e "5k$*pq" }
 aliases[==]='noglob __dc_plugin'
 
 # Don't remind me of these aliases
