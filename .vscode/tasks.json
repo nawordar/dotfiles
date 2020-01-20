@@ -8,6 +8,22 @@
             "type": "shell",
             "command": "chezmoi apply",
             "problemMatcher": []
+        },
+        {
+            "type": "script",
+            "scriptType": "bash",
+            "cmdLine": "./watch.sh",
+            "path": "",
+            "fileName": "watch.sh",
+            "scriptFile": true,
+            "requiresArgs": false,
+            "uri": {
+                "$mid": 1,
+                "fsPath": "/home/nawordar/.local/share/chezmoi/watch.sh",
+                "path": "/home/nawordar/.local/share/chezmoi/watch.sh",
+                "scheme": "file"
+            },
+            "problemMatcher": []
         }
     ]
 }
