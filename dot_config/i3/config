@@ -325,7 +325,7 @@ client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
 # Bind rofi
-bindsym $mod+d exec rofi -m -1 -show
+bindsym $mod+d exec --no-startup-id rofi -m -1 -show
 
 # Bind rofi-pass
 bindsym $mod+b exec --no-startup-id rofi-pass
