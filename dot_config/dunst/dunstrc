@@ -270,8 +270,11 @@
     # e.g. check output of 'xmodmap -pke'
     history = mod4+grave
 
-    # Context menu.
-    context = mod4+shift+period
+    # # Context menu.
+    # context = mod4+shift+period
+
+    # Do action.
+    do_action = mod4+shift+period
 
 
 [urgency_low]
