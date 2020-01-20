@@ -51,8 +51,8 @@ exec --no-startup-id mpris-proxy
 # Clean downloads
 exec --no-startup-id ~/scripts/clean-downloads.sh
 
-# Launch polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+# Launch polybar and picom
+exec_always --no-startup-id ~/scripts/polycom.sh &
 
 
 # === Autostart on a specific workspace === #
