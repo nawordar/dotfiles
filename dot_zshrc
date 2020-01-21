@@ -5,10 +5,13 @@ cat ~/.cache/wal/sequences
 setopt autocd
 setopt correct
 
+# Set emacs mode (what is changing it to vi mode?)
+bindkey -e
+
 # Bind M-. and M-, | Source: https://stackoverflow.com/a/34861762/9327802
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
-bindkey "^[." insert-last-word
+# bindkey "^[." insert-last-word
 bindkey "^[," copy-earlier-word
 
 # Load cdr
