@@ -7,6 +7,8 @@ setopt correct
 
 # Set emacs mode (what is changing it to vi mode?)
 bindkey -e
+autoload -U select-word-style
+select-word-style bash
 
 # Bind M-. and M-, | Source: https://stackoverflow.com/a/34861762/9327802
 autoload -Uz copy-earlier-word
@@ -36,8 +38,8 @@ zinit load "MikeDacre/careful_rm"
 zinit wait lucid for \
   "MikeDacre/cdbk" \
   "MichaelAquilina/zsh-you-should-use" \
-  "zdharma/fast-syntax-highlighting" \
-  blockf "zsh-users/zsh-autosuggestions"
+  "zsh-users/zsh-autosuggestions" \
+  atinit'zpcompinit' "zdharma/fast-syntax-highlighting"
 
 # Make careful_rm -c default for $HOME
 [ ! -f "$HOME/.rm_recycle_home" ] && touch "$HOME/.rm_recycle_home"
@@ -108,6 +110,10 @@ done
 
 # Fuck it
 eval "$(thefuck --alias)"
+
+# Init completions
+zpcompinit
+zinit cdreplay -q
 
 # If I make another tool than needs to be at the end, then what?
 if [ ! -d "/home/nawordar/.sdkman" ]; then
