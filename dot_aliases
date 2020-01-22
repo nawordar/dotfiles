@@ -27,6 +27,7 @@ alias ta='~/scripts/tmux_attach_or_new.sh'
 alias tks='tmux kill-session -t'
 alias tkss='tmux kill-server'
 
+alias pmx='pulsemixer'
 
 # === File managment === #
 # alias ..='cd ..'
