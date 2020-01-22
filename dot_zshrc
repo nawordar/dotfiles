@@ -16,10 +16,9 @@ zinit ice wait'!' lucid nocd \
   atload'!_agkozak_precmd'
 zinit load "agkozak/agkozak-zsh-prompt"
 
-zinit load "MikeDacre/careful_rm"
-
 # Load asynchronously
 zinit wait lucid for \
+  "MikeDacre/careful_rm" \
   "MikeDacre/cdbk" \
   "MichaelAquilina/zsh-you-should-use" \
   "zsh-users/zsh-autosuggestions" \
