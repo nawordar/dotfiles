@@ -9,6 +9,10 @@ source ~/zsh-scripts/init_zinit.sh
 zinit snippet ~/zsh-scripts/keybindings.sh
 
 # Load prompt
+AGKOZAK_BLANK_LINES=1
+AGKOZAK_LEFT_PROMPT_ONLY=1
+AGKOZAK_PROMPT_CHAR=( '%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f' )
+
 zinit ice wait'!' lucid nocd \
     atload'!_agkozak_precmd'
 zinit load "agkozak/agkozak-zsh-prompt"
@@ -56,6 +60,9 @@ scripts=(
   # Load the zmv command
   ~/zsh-scripts/zmv.sh
 
+  # Make ls colorful
+  ~/zsh-scripts/set_ls_colors.sh
+
 )
 for script in ${scripts[@]}; do
 
@@ -66,6 +73,7 @@ for script in ${scripts[@]}; do
   # fi
 
 done
+
 
 # Fuck it
 eval "$(thefuck --alias)"
