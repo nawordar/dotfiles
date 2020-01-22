@@ -1,35 +1,16 @@
 # Apply colours from pywal
 cat ~/.cache/wal/sequences
 
-# === zsh options === #
-setopt autocd
-setopt correct
-
-# Set emacs mode (what is changing it to vi mode?)
-bindkey -e
-autoload -U select-word-style
-select-word-style bash
-
-# Bind M-. and M-, | Source: https://stackoverflow.com/a/34861762/9327802
-autoload -Uz copy-earlier-word
-zle -N copy-earlier-word
-# bindkey "^[." insert-last-word
-bindkey "^[," copy-earlier-word
-
-# Load cdr
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-
-# Use dynamic directories e.g. ~[1], ~[2] etc.
-add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
-
-# Set completion style to menu
-zstyle ':completion:*:*:cdr:*:*' menu selection
 
 # === zinit === #
 source ~/zsh-scripts/init_zinit.sh
 
+# Load keybindings
+zinit snippet ~/zsh-scripts/keybindings.sh
+
 # Load prompt
+zinit ice wait'!' lucid nocd \
+    atload'!_agkozak_precmd'
 zinit load "agkozak/agkozak-zsh-prompt"
 
 zinit load "MikeDacre/careful_rm"
@@ -47,28 +28,6 @@ zinit wait lucid for \
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# # ex - archive extractor
-# # usage: ex <file>
-ex() {
-  if [ -f $1 ]; then
-    case $1 in
-    *.tar.bz2) tar xjf $1 ;;
-    *.tar.gz) tar xzf $1 ;;
-    *.bz2) bunzip2 $1 ;;
-    *.rar) unrar x $1 ;;
-    *.gz) gunzip $1 ;;
-    *.tar) tar xf $1 ;;
-    *.tbz2) tar xjf $1 ;;
-    *.tgz) tar xzf $1 ;;
-    *.zip) unzip $1 ;;
-    *.Z) uncompress $1 ;;
-    *.7z) 7z x $1 ;;
-    *) echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
 # === Activate scripts === #
 scripts=(
