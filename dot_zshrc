@@ -5,6 +5,26 @@ cat ~/.cache/wal/sequences
 setopt autocd
 setopt correct
 
+# History options | Source: https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+SAVEHIST=5000
+HISTSIZE=2000
+
+# Share history across multiple zsh sessions
+setopt share_history
+
+# Append to history instead of overwriting
+setopt append_history
+
+# Adds commands as they are typed, not at shell exit
+setopt inc_append_history
+
+# Removes blank lines from history
+setopt hist_reduce_blanks
+
+# Show the substituted command in the prompt
+setopt hist_verify
+
 # Set emacs mode (what is changing it to vi mode?)
 bindkey -e
 autoload -U select-word-style
@@ -16,6 +36,10 @@ zle -N copy-earlier-word
 # bindkey "^[." insert-last-word
 bindkey "^[," copy-earlier-word
 
+bindkey '^[[3~' delete-char
+bindkey ';5D' backward-word
+bindkey ';5C' forward-word
+
 # Load cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -23,13 +47,24 @@ add-zsh-hook chpwd chpwd_recent_dirs
 # Use dynamic directories e.g. ~[1], ~[2] etc.
 add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
 
+# Source: https://unix.stackexchange.com/a/214699
+# Do menu-driven completion.
+zstyle ':completion:*' menu selection
+
 # Set completion style to menu
-zstyle ':completion:*:*:cdr:*:*' menu selection
+# zstyle ':completion:*:*:cdr:*:*' menu selection
+
+# === zsh-autosuggestions === #
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 # === zinit === #
 source ~/zsh-scripts/init_zinit.sh
 
 # Load prompt
+AGKOZAK_BLANK_LINES=1
+AGKOZAK_LEFT_PROMPT_ONLY=1
+AGKOZAK_PROMPT_CHAR=( '%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f' )
 zinit load "agkozak/agkozak-zsh-prompt"
 
 zinit load "MikeDacre/careful_rm"
@@ -97,6 +132,9 @@ scripts=(
   # Load the zmv command
   ~/zsh-scripts/zmv.sh
 
+  # Make ls colorful
+  ~/zsh-scripts/set_ls_colors.sh
+
 )
 for script in ${scripts[@]}; do
 
@@ -107,6 +145,10 @@ for script in ${scripts[@]}; do
   # fi
 
 done
+
+# Color completion for some things.
+# http://linuxshellaccount.blogspot.com/2008/12/color-completion-using-zsh-modules-on.html
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Fuck it
 eval "$(thefuck --alias)"
