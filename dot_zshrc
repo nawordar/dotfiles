@@ -8,17 +8,10 @@ source ~/zsh-scripts/init_zinit.sh
 zinit ice wait lucid
 zinit snippet ~/zsh-scripts/keybindings.sh
 
-# Load prompt
-AGKOZAK_BLANK_LINES=1
-AGKOZAK_LEFT_PROMPT_ONLY=1
-AGKOZAK_PROMPT_CHAR=('%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f')
-zinit ice wait'!' lucid nocd \
-  atload'!_agkozak_precmd'
-zinit load "agkozak/agkozak-zsh-prompt"
+zinit load "MikeDacre/careful_rm"
 
 # Load asynchronously
 zinit wait lucid for \
-  "MikeDacre/careful_rm" \
   "MikeDacre/cdbk" \
   "MichaelAquilina/zsh-you-should-use" \
   "zsh-users/zsh-autosuggestions" \
@@ -71,6 +64,14 @@ for script in ${scripts[@]}; do
   # fi
 
 done
+
+# Load prompt
+AGKOZAK_BLANK_LINES=1
+AGKOZAK_LEFT_PROMPT_ONLY=1
+AGKOZAK_PROMPT_CHAR=('%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f')
+# zinit ice wait'!' lucid nocd \
+#   atload'!_agkozak_precmd'
+zinit load "agkozak/agkozak-zsh-prompt"
 
 # Fuck it
 eval "$(thefuck --alias)"
