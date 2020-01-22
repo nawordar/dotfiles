@@ -1,6 +1,9 @@
 # Apply colours from pywal
 cat ~/.cache/wal/sequences
 
+# Set basic zsh options
+source ~/zsh-scripts/zsh_options.sh
+
 # Initialize zinit/zplugin
 source ~/zsh-scripts/init_zinit.sh
 
@@ -13,8 +16,8 @@ zinit load "MikeDacre/careful_rm"
 # Load asynchronously
 zinit wait lucid for \
   "MikeDacre/cdbk" \
-  "MichaelAquilina/zsh-you-should-use" \
-  "zsh-users/zsh-autosuggestions" \
+  atload'_flush_ysu_buffer' "MichaelAquilina/zsh-you-should-use" \
+  atload'_zsh_autosuggest_start' "zsh-users/zsh-autosuggestions" \
   atinit'zpcompinit' "zdharma/fast-syntax-highlighting"
 
 # Make careful_rm -c default for $HOME
@@ -71,6 +74,7 @@ AGKOZAK_LEFT_PROMPT_ONLY=1
 AGKOZAK_PROMPT_CHAR=('%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f')
 # zinit ice wait'!' lucid nocd \
 #   atload'!_agkozak_precmd'
+
 zinit load "agkozak/agkozak-zsh-prompt"
 
 # Fuck it
