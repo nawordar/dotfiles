@@ -2,19 +2,17 @@
 cat ~/.cache/wal/sequences
 
 
-# === zinit === #
+# Initialize zinit/zplugin
 source ~/zsh-scripts/init_zinit.sh
 
 # Load keybindings
+zinit ice wait lucid
 zinit snippet ~/zsh-scripts/keybindings.sh
 
 # Load prompt
 AGKOZAK_BLANK_LINES=1
 AGKOZAK_LEFT_PROMPT_ONLY=1
 AGKOZAK_PROMPT_CHAR=( '%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f' )
-
-zinit ice wait'!' lucid nocd \
-    atload'!_agkozak_precmd'
 zinit load "agkozak/agkozak-zsh-prompt"
 
 zinit load "MikeDacre/careful_rm"
@@ -69,7 +67,8 @@ for script in ${scripts[@]}; do
   # -s: True if file exists and has a size greater than zero.
   # Source: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
   # if [ -s "$script" ]; then
-    source "$script"
+    zinit ice wait lucid
+    zinit snippet "$script"
   # fi
 
 done
