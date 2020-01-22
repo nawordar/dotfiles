@@ -22,7 +22,6 @@ setopt hist_reduce_blanks
 # Show the substituted command in the prompt
 setopt hist_verify
 
-
 # Load cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
