@@ -29,6 +29,9 @@ bindkey "\033[1~" beginning-of-line
 bindkey "\e[F"  end-of-line
 bindkey "\033[4~" end-of-line
 
+# S-Tab | Source: https://stackoverflow.com/a/842370/9327802
+bindkey '^[[Z' reverse-menu-complete
+
 # M-z
 bindkey "\033z"  undo
 
