@@ -19,12 +19,20 @@ bindkey "\e[1;5C" forward-word
 
 # ctrl-bs and ctrl-del
 bindkey "\e[3;5~" kill-word
+bindkey "\033d" kill-word
 bindkey "\C-_"    backward-kill-word
 
 # del, home and end
 bindkey "\e[3~" delete-char
 bindkey "\e[H"  beginning-of-line
+bindkey "\033[1~" beginning-of-line
 bindkey "\e[F"  end-of-line
+bindkey "\033[4~" end-of-line
 
-# alt-bs
-bindkey "\e\d"  undo
+# M-z
+bindkey "\033z"  undo
+
+# Fullscreen editor | Source: https://unix.stackexchange.com/a/34251
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
