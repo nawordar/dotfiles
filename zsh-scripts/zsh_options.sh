@@ -32,6 +32,9 @@ add-zsh-hook -Uz zsh_directory_name zsh_directory_name_cdr
 # Do menu-driven completion. | Source: https://unix.stackexchange.com/a/214699
 zstyle ':completion:*' menu selection
 
+# Approximate match from oh-my-zsh | Source: https://unix.stackexchange.com/a/259511
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+
 # === zsh-autosuggestions === #
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=1
