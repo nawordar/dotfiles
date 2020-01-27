@@ -32,6 +32,10 @@ bindkey "\033[4~" end-of-line
 # S-Tab | Source: https://stackoverflow.com/a/842370/9327802
 bindkey '^[[Z' reverse-menu-complete
 
+# Partial search
+bindkey '^[OA' up-line-or-search
+bindkey '^[OB' down-line-or-search
+
 # M-z
 bindkey "\033z"  undo
 
