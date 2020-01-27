@@ -8,8 +8,7 @@ source ~/zsh-scripts/zsh_options.sh
 source ~/zsh-scripts/init_zinit.sh
 
 # Load keybindings
-zinit ice wait lucid
-zinit snippet ~/zsh-scripts/keybindings.sh
+source ~/zsh-scripts/keybindings.sh
 
 zinit load "MikeDacre/careful_rm"
 
@@ -62,11 +61,12 @@ for script in ${scripts[@]}; do
   # -s: True if file exists and has a size greater than zero.
   # Source: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
   # if [ -s "$script" ]; then
-  zinit ice wait lucid
-  zinit snippet "$script"
+  source "$script"
   # fi
 
 done
+
+alias src='source ~/.zshrc'
 
 # Load prompt
 AGKOZAK_BLANK_LINES=1
