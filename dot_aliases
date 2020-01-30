@@ -34,7 +34,9 @@ alias pmx='pulsemixer'
 alias md=mkdir
 alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
 alias selpwd='basename "$PWD" | xsel -'
+alias dad='dragon-drag-and-drop'
 alias dadx='dragon-drag-and-drop -x'
+alias dadxa='dragon-drag-and-drop -xa'
 
 # Trash alias
 alias rmt='gio trash'
