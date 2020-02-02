@@ -20,4 +20,4 @@ fi
 
 get_project_path "$1" |
     head -n 1 |
-    xargs -i --no-run-if-empty code "{}"
+    xargs -i --no-run-if-empty /bin/sh -c "code {}"
