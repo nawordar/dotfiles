@@ -30,6 +30,8 @@ exec --no-startup-id picom -b --respect-prop-shadow
 # Launch polkit
 exec --no-startup-id "/usr/lib/polkit-kde-authentication-agent-1"
 
+exec --no-startup-id /usr/lib/kdeconnectd
+
 # Launch autotiling
 exec --no-startup-id autotiling
 
