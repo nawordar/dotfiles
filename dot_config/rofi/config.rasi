@@ -2,4 +2,9 @@ configuration {
     combi-modi: "window,drun,ssh,run-script:~/.config/rofi/run-script.sh";
     modi: "combi,open-project:~/.config/rofi/open-project.sh,run-script:~/.config/rofi/run-script.sh";
     theme: "~/.cache/wal/colors-rofi-dark.rasi";
+    kb-mode-previous: "Shift+Left,ISO_Left_Tab";
+    kb-mode-next: "Shift+Right,Tab";
+    kb-row-up: "Up,Control+p";
+    kb-row-down: "Down,Control+n";
+    kb-row-tab: "Control+Tab";
 }
