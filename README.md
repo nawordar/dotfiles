@@ -10,6 +10,9 @@
 - `chezmoi` — for dotfile synchronization
 - `zsh`
     - `zinit`
+- `emacs`
+    - `chemacs` — for switching emacs configurations
+    - `Doom Emacs` — current emacs bootstrap
 - `multilockscreen`
 - `rofi` — application launcher
 - `rofi-pass` — rofi script for autotyping passwords
