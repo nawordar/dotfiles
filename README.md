@@ -6,16 +6,16 @@
 - Cursor: OpenZone
 
 ## Used applications:
-- `i3` — Window manager
+- `i3` — window manager
 - `chezmoi` — for dotfile synchronization
 - `zsh`
     - `zinit`
 - `multilockscreen`
-- `rofi` — Application launcher
+- `rofi` — application launcher
 - `rofi-pass` — rofi script for autotyping passwords
 - `dunst` — for displaying notifications
-- `kitty` — Terminal emulator
-- `picom` — Composer
-- `autorandr` — Automatic xrandr configuration manager
-- `clipster` — Clipboard manager
+- `kitty` — terminal emulator
+- `picom` — composer
+- `autorandr` — automatic xrandr configuration manager
+- `clipster` — clipboard manager
 - `QGtkStyle` — GTK style for KDE applications (qt5-style-plugin-gtk2 on Ubuntu, qt5-styleplugins on Arch)
