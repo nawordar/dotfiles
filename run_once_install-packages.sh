@@ -59,16 +59,16 @@ if command -v yay >/dev/null; then
 fi
 
 # Install snap
-systemctl-enable() {
+systemctl_enable() {
     if ! systemctl list-unit-files |
         grep enabled |
         grep "$1" >/dev/null; then
         sudo systemctl enable --now "$1"
     fi
 }
-systemctl-enable snapd.socket
-systemctl-enable apparmor.service
-systemctl-enable snapd.apparmor.service
+systemctl_enable snapd.socket
+systemctl_enable apparmor.service
+systemctl_enable snapd.apparmor.service
 
 # Install code
 if ! command -v code >/dev/null; then
