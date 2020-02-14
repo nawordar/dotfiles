@@ -14,3 +14,15 @@
 #     export TERMINAL=/usr/bin/kitty
 #     ;;
 # esac
+
+if command -v apt >/dev/null; then
+    sudo apt install \
+        kitty
+fi
+
+if command -v yay >/dev/null; then
+    yay -S \
+        kitty \
+        polybar \
+        python-pywal
+fi
