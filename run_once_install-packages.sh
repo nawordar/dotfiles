@@ -31,7 +31,8 @@ if command -v apt >/dev/null; then
         kitty \
         feh \
         spotify-client \
-        playerctl
+        playerctl \
+        tmux
 fi
 
 if command -v yay >/dev/null; then
@@ -50,7 +51,8 @@ if command -v yay >/dev/null; then
         betterlockscreen \
         rofi \
         rofi-pass \
-        thefuck
+        thefuck \
+        tmux
 fi
 
 # Install fzf
@@ -66,6 +68,7 @@ if ! systemctl list-unit-files |
     sudo systemctl enable --now snapd.socket
 fi
 
+# Install code
 if ! command -v code >/dev/null; then
     sudo snap install code --classic
 fi
