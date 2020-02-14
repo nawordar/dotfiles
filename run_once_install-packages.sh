@@ -46,7 +46,17 @@ if command -v yay >/dev/null; then
         picom \
         ttf-cascadia-code \
         playerctl \
-        snapd
+        snapd \
+        betterlockscreen \
+        rofi \
+        rofi-pass \
+        thefuck
+fi
+
+# Install fzf
+if [ ! -d "~/.fzf.zsh" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
+        ~/.fzf/install
 fi
 
 # Install snaps
