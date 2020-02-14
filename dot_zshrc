@@ -25,12 +25,6 @@ zinit wait lucid for \
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Install fzf
-if [ ! -d "$HOME/.fzf" ]; then
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
-    ~/.fzf/install
-fi
-
 [ ! -d "$HOME/scripts" ] && mkdir "$HOME/scripts"
 [ ! -x "$HOME/scripts/private.sh" ] &&
   touch "$HOME/scripts/private.sh" &&

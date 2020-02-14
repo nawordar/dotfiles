@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/nawordar/.config/wpg/wallpapers/waterfall.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#011117",
+        "foreground": "#e2e9e1",
+        "cursor": "#e2e9e1"
+    },
+    "colors": {
+        "color0": "#011117",
+        "color1": "#8ad92d",
+        "color2": "#2183bc",
+        "color3": "#26d1d7",
+        "color4": "#3fdd74",
+        "color5": "#61e3aa",
+        "color6": "#97ecaf",
+        "color7": "#e2e9e1",
+        "color8": "#9ea39d",
+        "color9": "#8ad92d",
+        "color10": "#2183bc",
+        "color11": "#26d1d7",
+        "color12": "#3fdd74",
+        "color13": "#61e3aa",
+        "color14": "#97ecaf",
+        "color15": "#e2e9e1"
+    }
+}

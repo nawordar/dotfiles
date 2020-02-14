@@ -55,7 +55,17 @@ if command -v yay >/dev/null; then
         tmux \
         firefox \
         multilockscreen-git \
-        neovim
+        neovim \
+        yarn \
+        npm \
+        xfce-theme-greybird \
+        elementary-icon-theme
+fi
+
+# Install fzf
+if [ ! -d "$HOME/.fzf" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
+        ~/.fzf/install
 fi
 
 # Install snap
@@ -68,7 +78,14 @@ systemctl_enable() {
 }
 systemctl_enable snapd.socket
 systemctl_enable apparmor.service
-systemctl_enable snapd.apparmor.service
+# systemctl_enable snapd.apparmor.service
+
+# Install wpg
+if ! command -v wpg >/dev/null; then
+    git clone https://github.com/deviantfero/wpgtk && cd wpgtk
+    sudo pip install .
+    wpg -ig
+fi
 
 # Install code
 if ! command -v code >/dev/null; then
