@@ -55,7 +55,7 @@ if command -v yay >/dev/null; then
         tmux \
         firefox \
         multilockscreen-git \
-        nvim
+        neovim
 fi
 
 # Install snap
