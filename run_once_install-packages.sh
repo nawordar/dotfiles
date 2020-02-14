@@ -40,5 +40,6 @@ if command -v yay >/dev/null; then
         spotifywm-git \
         python-pywal \
         feh \
-        picom
+        picom \
+        ttf-cascadia-code
 fi
