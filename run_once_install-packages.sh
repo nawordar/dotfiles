@@ -53,15 +53,21 @@ if command -v yay >/dev/null; then
         rofi-pass \
         thefuck \
         tmux \
-        firefox
+        firefox \
+        multilockscreen-git
 fi
 
-# Install snaps
-if ! systemctl list-unit-files |
-    grep enabled |
-    grep snapd.socket >/dev/null; then
-    sudo systemctl enable --now snapd.socket
-fi
+# Install snap
+systemctl-enable() {
+    if ! systemctl list-unit-files |
+        grep enabled |
+        grep "$1" >/dev/null; then
+        sudo systemctl enable --now "$1"
+    fi
+}
+systemctl-enable snapd.socket
+systemctl-enable apparmor.service
+systemctl-enable snapd.apparmor.service
 
 # Install code
 if ! command -v code >/dev/null; then
