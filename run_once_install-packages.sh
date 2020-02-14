@@ -29,7 +29,9 @@ fi
 if command -v apt >/dev/null; then
     sudo apt install \
         kitty \
-        feh
+        feh \
+        spotify-client \
+        playerctl
 fi
 
 if command -v yay >/dev/null; then
@@ -38,10 +40,12 @@ if command -v yay >/dev/null; then
         polybar \
         polybar-spotify-git \
         spotifywm-git \
+        spotify \
         python-pywal \
         feh \
         picom \
         ttf-cascadia-code \
+        playerctl \
         snapd
 fi
 
