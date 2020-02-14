@@ -52,7 +52,8 @@ if command -v yay >/dev/null; then
         rofi \
         rofi-pass \
         thefuck \
-        tmux
+        tmux \
+        firefox
 fi
 
 # Install snaps
