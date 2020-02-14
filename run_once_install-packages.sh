@@ -15,6 +15,17 @@
 #     ;;
 # esac
 
+echo "run_once_install-packages.sh has changed. Do you want to run it now? (Y/n)"
+read answer
+case $answer in
+'' | y | Y | yes) answer="y" ;;
+*) answer="n" ;;
+esac
+
+if [ $answer = "n" ]; then
+    exit
+fi
+
 if command -v apt >/dev/null; then
     sudo apt install \
         kitty
