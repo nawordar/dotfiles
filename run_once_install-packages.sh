@@ -28,12 +28,15 @@ fi
 
 if command -v apt >/dev/null; then
     sudo apt install \
-        kitty
+        kitty \
+        feh
 fi
 
 if command -v yay >/dev/null; then
-    yay -S \
+    yay --needed -S \
         kitty \
         polybar \
-        python-pywal
+        python-pywal \
+        feh \
+        picom
 fi
