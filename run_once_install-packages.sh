@@ -54,7 +54,8 @@ if command -v yay >/dev/null; then
         thefuck \
         tmux \
         firefox \
-        multilockscreen-git
+        multilockscreen-git \
+        nvim
 fi
 
 # Install snap
