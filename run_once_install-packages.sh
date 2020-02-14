@@ -46,7 +46,7 @@ if command -v yay >/dev/null; then
 fi
 
 # Install snaps
-if !systemctl list-unit-files |
+if ! systemctl list-unit-files |
     grep enabled |
     grep snapd.socket >/dev/null; then
     sudo systemctl enable --now snapd.socket
