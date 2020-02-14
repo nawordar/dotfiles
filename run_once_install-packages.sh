@@ -41,5 +41,8 @@ if command -v yay >/dev/null; then
         python-pywal \
         feh \
         picom \
-        ttf-cascadia-code
+        ttf-cascadia-code \
+        snapd
+
+    snap install code
 fi
