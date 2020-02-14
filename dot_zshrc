@@ -27,13 +27,14 @@ zinit wait lucid for \
 
 # Install fzf
 if [ ! -d "$HOME/.fzf" ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
-        ~/.fzf/install
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
+    ~/.fzf/install
 fi
 
 [ ! -d "$HOME/scripts" ] && mkdir "$HOME/scripts"
-[ ! -x "~/scripts/private.sh" ] && touch "~/scripts/private.sh"
-
+[ ! -x "$HOME/scripts/private.sh" ] &&
+  touch "$HOME/scripts/private.sh" &&
+  chmod +x "$HOME/scripts/private.sh"
 
 # === Activate scripts === #
 scripts=(
