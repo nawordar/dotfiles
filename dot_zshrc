@@ -26,14 +26,13 @@ zinit wait lucid for \
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Install fzf
-if [ ! -d "~/.fzf" ]; then
+if [ ! -d "$HOME/.fzf" ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
         ~/.fzf/install
 fi
 
-if [ ! -x "~/scripts/private.sh" ]; then
-  touch "~/scripts/private.sh"
-fi
+[ ! -d "$HOME/scripts" ] && mkdir "$HOME/scripts"
+[ ! -x "~/scripts/private.sh" ] && touch "~/scripts/private.sh"
 
 
 # === Activate scripts === #
