@@ -66,4 +66,6 @@ if ! systemctl list-unit-files |
     sudo systemctl enable --now snapd.socket
 fi
 
-sudo snap install code --classic
+if ! command -v code >/dev/null; then
+    sudo snap install code --classic
+fi
