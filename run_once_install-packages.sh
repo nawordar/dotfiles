@@ -43,6 +43,13 @@ if command -v yay >/dev/null; then
         picom \
         ttf-cascadia-code \
         snapd
-
-    snap install code
 fi
+
+# Install snaps
+if !systemctl list-unit-files |
+    grep enabled |
+    grep snapd.socket >/dev/null; then
+    sudo systemctl enable --now snapd.socket
+fi
+
+snap install code
