@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/nawordar/.config/wpg/wallpapers/mountain-sunshine.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#050816",
+        "foreground": "#cfdcf5",
+        "cursor": "#cfdcf5"
+    },
+    "colors": {
+        "color0": "#050816",
+        "color1": "#9463A3",
+        "color2": "#219FFF",
+        "color3": "#5CB7FE",
+        "color4": "#78BEFA",
+        "color5": "#C5B8C2",
+        "color6": "#90C5FF",
+        "color7": "#cfdcf5",
+        "color8": "#909aab",
+        "color9": "#9463A3",
+        "color10": "#219FFF",
+        "color11": "#5CB7FE",
+        "color12": "#78BEFA",
+        "color13": "#C5B8C2",
+        "color14": "#90C5FF",
+        "color15": "#cfdcf5"
+    }
+}

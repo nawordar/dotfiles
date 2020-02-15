@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 # -*- coding: utf-8 -*-
 
-wallpaper="$HOME/wallpapers/pixelart/waterfall.png"
+wallpaper="mountain-sunshine.png"
+wallpaper_path="$HOME/wallpapers/pixelart/"
 
-wal -i "$wallpaper" --saturate 0.7
-multilockscreen -u "$wallpaper" --display 1
+# wal -i "$wallpaper" --saturate 0.7
+wpg -s "$wallpaper"
+multilockscreen -u "$wallpaper_path" --display 1

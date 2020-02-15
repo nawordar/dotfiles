@@ -59,7 +59,8 @@ if command -v yay >/dev/null; then
         yarn \
         npm \
         xfce-theme-greybird \
-        elementary-icon-theme
+        elementary-icon-theme \
+        gpick
 fi
 
 # Install fzf
@@ -84,7 +85,7 @@ systemctl_enable apparmor.service
 if ! command -v wpg >/dev/null; then
     git clone https://github.com/deviantfero/wpgtk && cd wpgtk
     sudo pip install .
-    wpg -ig
+    wpg-install.sh -ig
 fi
 
 # Install code
