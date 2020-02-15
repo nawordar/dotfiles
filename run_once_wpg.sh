@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-wallpaper="mountain-sunshine.png"
+wallpaper="mountain-sunshine"
 
-wpg -a "~/wallpapers/pixelart/$wallpaper"
-wpg -i "$wallpaper" "~/wpg_schemes/$wallpaper"
+wpg -a "~/wallpapers/pixelart/$wallpaper.png"
+wpg -i "$wallpaper.png" "~/wpg_schemes/$wallpaper"
 ~/scripts/set-wallpaper.sh
