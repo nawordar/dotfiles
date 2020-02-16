@@ -58,7 +58,9 @@ if command -v yay >/dev/null; then
         elementary-icon-theme \
         gpick \
         autorandr \
-        xorg-fonts-misc
+        xorg-fonts-misc \
+        thunar \
+        spectacle
 fi
 
 # Remove 70-no-bitmaps.conf
