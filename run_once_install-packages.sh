@@ -61,8 +61,17 @@ if command -v yay >/dev/null; then
         xfce-theme-greybird \
         elementary-icon-theme \
         gpick \
-        autorandr
+        autorandr \
+        xorg-fonts-misc \
+        siji-git \
+        ttf-unifont
 fi
+
+# Remove 70-no-bitmaps.conf
+if [ -e "/etc/fonts/conf.d/70-no-bitmaps.conf" ]; then
+    sudo rm "/etc/fonts/conf.d/70-no-bitmaps.conf"
+fi
+
 
 # Install fzf
 if [ ! -d "$HOME/.fzf" ]; then
