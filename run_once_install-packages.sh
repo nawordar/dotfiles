@@ -59,7 +59,8 @@ if command -v yay >/dev/null; then
         autorandr \
         xorg-fonts-misc \
         thunar \
-        spectacle
+        spectacle \
+        atril
 fi
 
 # Remove 70-no-bitmaps.conf
