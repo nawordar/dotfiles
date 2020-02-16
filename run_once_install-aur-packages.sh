@@ -16,6 +16,7 @@ fi
 
 yay --needed -S \
     polybar-spotify-git \
+    spotify
     spotifywm-git \
     betterlockscreen \
     multilockscreen-git \

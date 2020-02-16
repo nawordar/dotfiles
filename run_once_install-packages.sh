@@ -39,7 +39,6 @@ if command -v yay >/dev/null; then
     yay --needed -S \
         kitty \
         polybar \
-        spotify \
         python-pywal \
         feh \
         picom \
