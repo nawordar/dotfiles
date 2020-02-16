@@ -16,9 +16,10 @@ fi
 
 yay --needed -S \
     polybar-spotify-git \
-    spotify
+    spotify \
     spotifywm-git \
     betterlockscreen \
     multilockscreen-git \
     siji-git \
-    ttf-unifont
+    ttf-unifont \
+    ferdi-bin
