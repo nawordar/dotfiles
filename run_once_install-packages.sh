@@ -60,7 +60,8 @@ if command -v yay >/dev/null; then
         npm \
         xfce-theme-greybird \
         elementary-icon-theme \
-        gpick
+        gpick \
+        autorandr
 fi
 
 # Install fzf
