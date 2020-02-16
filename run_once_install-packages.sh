@@ -39,8 +39,6 @@ if command -v yay >/dev/null; then
     yay --needed -S \
         kitty \
         polybar \
-        polybar-spotify-git \
-        spotifywm-git \
         spotify \
         python-pywal \
         feh \
@@ -48,13 +46,11 @@ if command -v yay >/dev/null; then
         ttf-cascadia-code \
         playerctl \
         snapd \
-        betterlockscreen \
         rofi \
         rofi-pass \
         thefuck \
         tmux \
         firefox \
-        multilockscreen-git \
         neovim \
         yarn \
         npm \
@@ -63,8 +59,6 @@ if command -v yay >/dev/null; then
         gpick \
         autorandr \
         xorg-fonts-misc \
-        siji-git \
-        ttf-unifont
 fi
 
 # Remove 70-no-bitmaps.conf
