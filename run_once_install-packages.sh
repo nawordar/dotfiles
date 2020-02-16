@@ -87,8 +87,7 @@ systemctl_enable apparmor.service
 
 # Install wpg
 if ! command -v wpg >/dev/null; then
-    git clone https://github.com/deviantfero/wpgtk && cd wpgtk
-    sudo pip install .
+    sudo pip3 install wpgtk
     wpg-install.sh -ig
 fi
 
