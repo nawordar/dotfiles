@@ -60,7 +60,9 @@ if command -v yay >/dev/null; then
         xorg-fonts-misc \
         thunar \
         spectacle \
-        atril
+        atril \
+        libreoffice-still \
+        libreoffice-still-pl
 fi
 
 # Remove 70-no-bitmaps.conf

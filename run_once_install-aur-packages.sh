@@ -22,4 +22,5 @@ yay --needed -S \
     multilockscreen-git \
     siji-git \
     ttf-unifont \
-    ferdi-bin
+    ferdi-bin \
+    dragon-drag-and-drop
