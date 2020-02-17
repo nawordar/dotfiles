@@ -66,7 +66,7 @@ if command -v yay >/dev/null; then
         elementary-xfce-icons \
         xorg-xbacklight \
         playerctl \
-        pamixer \
+        pulsemixer \
         pulseaudio \
         pulseaudio-alsa
 fi
