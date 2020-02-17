@@ -64,7 +64,8 @@ if command -v yay >/dev/null; then
         libreoffice-still \
         libreoffice-still-pl \
         elementary-xfce-icons \
-        xorg-xbacklight
+        xorg-xbacklight \
+        playerctl
 fi
 
 # Remove 70-no-bitmaps.conf
