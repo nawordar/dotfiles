@@ -62,7 +62,8 @@ if command -v yay >/dev/null; then
         spectacle \
         atril \
         libreoffice-still \
-        libreoffice-still-pl
+        libreoffice-still-pl \
+        elementary-xfce-icons
 fi
 
 # Remove 70-no-bitmaps.conf
