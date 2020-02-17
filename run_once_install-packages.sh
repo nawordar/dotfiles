@@ -63,7 +63,8 @@ if command -v yay >/dev/null; then
         atril \
         libreoffice-still \
         libreoffice-still-pl \
-        elementary-xfce-icons
+        elementary-xfce-icons \
+        xorg-xbacklight
 fi
 
 # Remove 70-no-bitmaps.conf
