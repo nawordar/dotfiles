@@ -65,7 +65,10 @@ if command -v yay >/dev/null; then
         libreoffice-still-pl \
         elementary-xfce-icons \
         xorg-xbacklight \
-        playerctl
+        playerctl \
+        pamixer \
+        pulseaudio \
+        pulseaudio-alsa
 fi
 
 # Remove 70-no-bitmaps.conf
