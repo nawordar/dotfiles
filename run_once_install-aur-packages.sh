@@ -23,4 +23,5 @@ yay --needed -S \
     siji-git \
     ttf-unifont \
     ferdi-bin \
-    dragon-drag-and-drop
+    dragon-drag-and-drop \
+    xcursor-openzone

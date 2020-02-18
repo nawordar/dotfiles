@@ -68,7 +68,10 @@ if command -v yay >/dev/null; then
         playerctl \
         pulsemixer \
         pulseaudio \
-        pulseaudio-alsa
+        pulseaudio-alsa \
+        pavucontrol \
+        linux53-headers \
+        acpi_call-dkms
 fi
 
 # Remove 70-no-bitmaps.conf
