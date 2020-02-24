@@ -24,4 +24,6 @@ yay --needed -S \
     ttf-unifont \
     ferdi-bin \
     dragon-drag-and-drop \
-    xcursor-openzone
+    xcursor-openzone \
+    splatmoji-git \
+    rofi-dmenu
