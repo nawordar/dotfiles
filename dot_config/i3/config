@@ -272,17 +272,23 @@ bindsym $mod+shift+e mode "$mode_system"
 bindsym XF86PowerOff mode "$mode_system"
 
 # Keyboard layout switcher mode
-set $keyboard_layout Keyboard layout: (p) Polish programmer's, (c) Colemak
+set $keyboard_layout Keyboard layout: (p) Polish programmer's, (c) Colemak, (u) Ukrainian
 mode "$keyboard_layout" {
-    bindsym p exec --no-startup-id setxkbmap pl, mode "default"
-    bindsym c exec --no-startup-id setxkbmap us -variant colemak, mode "default"
+    bindcode 33 exec --no-startup-id setxkbmap pl, mode "default"
+    bindcode 54 exec --no-startup-id setxkbmap us -variant colemak, mode "default"
+    bindcode 30 exec --no-startup-id setxkbmap ua, mode "default"
 
     # Exit
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+shift+z mode "default"
+    # bindsym $mod+shift+z mode "default"
+    bindcode $mod+shift+52 mode "default"
 }
-bindsym $mod+shift+z mode "$keyboard_layout"
+
+# $mod+shift+z
+# bindsym $mod+shift+z mode "$keyboard_layout"
+# bindsym $mod+shift+Я mode "$keyboard_layout"
+bindcode $mod+shift+52 mode "$keyboard_layout"
 
 
 # === Look & Feel === #
