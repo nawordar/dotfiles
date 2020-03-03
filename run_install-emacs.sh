@@ -18,6 +18,7 @@ if [ ! -d "$HOME/clones/chemacs" ]; then
 
     git clone https://github.com/plexus/chemacs.git "$HOME/clones/chemacs"
     "$HOME/clones/chemacs/install.sh"
+    echo
 fi
 
 if [ ! -d "$HOME/clones/doom-emacs" ]; then
@@ -33,7 +34,8 @@ if [ ! -d "$HOME/clones/doom-emacs" ]; then
     fi
 
     git clone https://github.com/hlissner/doom-emacs "$HOME/clones/doom-emacs"
-    ln -s "$HOME/clones/doom-emacs/bin/doom " "$HOME/.local/bin/doom"
+    ln -s "$HOME/clones/doom-emacs/bin/doom" "$HOME/.local/bin/doom"
 
     doom install
+    echo
 fi
