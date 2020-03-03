@@ -32,7 +32,8 @@ if command -v apt >/dev/null; then
         feh \
         spotify-client \
         playerctl \
-        tmux
+        tmux \
+        emacs
 fi
 
 if command -v yay >/dev/null; then
@@ -71,7 +72,8 @@ if command -v yay >/dev/null; then
         pulseaudio-alsa \
         pavucontrol \
         linux53-headers \
-        acpi_call-dkms
+        acpi_call-dkms \
+        emacs
 fi
 
 # Remove 70-no-bitmaps.conf
