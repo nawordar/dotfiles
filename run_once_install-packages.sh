@@ -73,7 +73,8 @@ if command -v yay >/dev/null; then
         pavucontrol \
         linux53-headers \
         acpi_call-dkms \
-        emacs
+        emacs \
+        otf-fira-code
 fi
 
 # Remove 70-no-bitmaps.conf
