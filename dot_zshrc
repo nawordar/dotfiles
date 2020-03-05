@@ -9,6 +9,8 @@ source ~/zsh-scripts/init_zinit.sh
 
 # Load keybindings
 source ~/zsh-scripts/keybindings.sh
+# zinit load "softmoth/zsh-vim-mode"
+# source ~/zsh-scripts/vi_keybindings.sh
 
 zinit load "MikeDacre/careful_rm"
 
