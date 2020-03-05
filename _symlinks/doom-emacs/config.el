@@ -30,7 +30,39 @@
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
+
+;; LaTeX-mode-map
+(map! (:when (featurep! :lang latex)    ; local conditional
+        (:map LaTeX-mode-map
+          :localleader                  ; Use local leader
+          :desc "View" "v" #'TeX-view ; Add which-key description
+          :desc "Run all" "a" #'TeX-command-run-all))) ; Add which-key description
+
+(setq TeX-parse-self t) ; Enable parse on load.
+(setq TeX-auto-save t) ; Enable parse on save.
+
+(add-hook 'LaTeX-mode-hook
+          '(lambda ()
+             (setq-default TeX-master nil))) ; Query for master file
+
+(add-hook 'TeX-language-pl-hook
+           (lambda () (ispell-change-dictionary "polish")))
+
+;; Add keybindings for C-c and C-x
+;; Source: https://emacs.stackexchange.com/a/48572
+(defun nawordar/C-c ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
+
+(defun nawordar/C-x ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
+
+(map!
+ :leader
+ :desc "C-c" "z" #'nawordar/C-c
+ :desc "C-x" "x" #'nawordar/C-x)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -48,3 +80,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Local Variables:
+;; flycheck-disabled-checkers: (emacs-lisp emacs-lisp-checkdoc)
+;; End:
