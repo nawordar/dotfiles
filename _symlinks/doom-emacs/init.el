@@ -20,9 +20,9 @@
 
        :completion
        company           ; the ultimate code completion backend
-       ;;helm              ; the *other* search engine for love and life
+       helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ivy               ; a search engine for love and life
+       ;;ivy               ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -77,9 +77,9 @@
        ;;vterm             ; another terminals in Emacs
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget
-       ;;spell             ; tasing you for misspelling mispelling
-       ;;grammar           ; tasing grammar mistake every you make
+       syntax            ; tasing you for every semicolon you forget
+       spell             ; tasing you for misspelling mispelling
+       grammar           ; tasing grammar mistake every you make
 
        :tools
        ;;ansible
@@ -178,3 +178,7 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+;; Local Variables:
+;; flycheck-disabled-checkers: (emacs-lisp-checkdoc emacs-lisp)
+;; End:
