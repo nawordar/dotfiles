@@ -402,3 +402,4 @@ bindsym $mod+$alt+c exec code
 bindsym $mod+$alt+f exec thunar # File manager – Thunar
 bindsym $mod+$alt+m exec spotify # Music – Spotify
 bindsym $mod+$alt+p exec gpick
+bindsym $mod+$alt+w exec gtk-launch $(xdg-settings get default-web-browser)
