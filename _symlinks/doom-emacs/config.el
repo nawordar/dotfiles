@@ -64,6 +64,22 @@
  :desc "C-c" "z" #'nawordar/C-c
  :desc "C-x" "x" #'nawordar/C-x)
 
+;; Add Spacemacs-inspired keybindings for iedit-mode
+(map!
+ :leader
+ :desc "iedit-mode" "e" #'evil-iedit-state/iedit-mode)
+
+(map! :map (iedit-mode-keymap iedit-mode-occurrence-keymap)
+ :nv "n" #'iedit-next-occurrence
+ :nv "N" #'iedit-prev-occurrence
+ :nv "F" #'iedit-restrict-function
+ :nv "L" #'iedit-restrict-current-line
+ :nv "R" #'iedit-restrict-region
+ :nv "J" #'iedit-expand-by-a-line
+ :nv "K" #'iedit-expand-up-a-line
+ "<tab>" #'iedit-toggle-selection
+ "<escape>" #'iedit-mode)
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
