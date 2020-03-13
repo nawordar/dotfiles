@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 # -*- coding: utf-8 -*-
 
-x() { (xdg-open "${1}" >/dev/null 2>&1 &); }
+x() {
+	for arg in "$@"; do
+		(xdg-open "${1}" >/dev/null 2>&1 &)
+	done
+}
