@@ -340,6 +340,13 @@ format = <label>
 exec = python /usr/share/polybar/scripts/spotify_status.py -f '{artist}: {song}'
 format-underline = ${colors.primary}
 
+; Module is not optimized enough for use
+[module/clockify]
+type = custom/script
+interval = 10
+exec = ~/projects/polybar-clockify/polybar-clockify.sh
+format-underline = ${colors.primary}
+
 [module/battery]
 type = internal/battery
 battery = BAT0
