@@ -272,7 +272,8 @@ bindsym $mod+shift+e mode "$mode_system"
 bindsym XF86PowerOff mode "$mode_system"
 
 # Keyboard layout switcher mode
-set $keyboard_layout Keyboard layout: (p) Polish programmer's, (c) Colemak, (u) Ukrainian #'
+set $keyboard_layout Keyboard layout: (p) Polish programmer's, (c) Colemak, (u) Ukrainian
+#'
 mode "$keyboard_layout" {
     bindcode 33 exec --no-startup-id setxkbmap pl, mode "default"
     bindcode 54 exec --no-startup-id setxkbmap us -variant colemak, mode "default"
