@@ -69,7 +69,7 @@
   :init
   (map!
    :leader
-   :desc "iedit-mode" "e" #'evil-iedit-state/iedit-mode
+   :desc "iedit-mode" "e" #'evil-iedit-state/iedit-mode))
 
    ;; :map (iedit-mode-keymap iedit-mode-occurrence-keymap)
    ;;   :nv "n" #'iedit-next-occurrence
@@ -81,7 +81,12 @@
    ;;   :nv "K" #'iedit-expand-up-a-line
    ;;   "<tab>" #'iedit-toggle-selection
    ;;   "<escape>" #'iedit-mode))
-   ))
+
+
+;; ;; Configure ~fira-code-mode~
+;; (use-package! fira-code-mode
+;;   :hook prog-mode)
+
 ;; Add mu4e to emacs path
 (add-load-path! "/usr/local/share/emacs/site-lisp/mu4e")
 

@@ -53,3 +53,5 @@
 
 (package! evil-iedit-state)
 
+;; (package! fira-code-mode
+;;   :recipe (:host github :repo "jming422/fira-code-mode"))
