@@ -273,7 +273,7 @@ bindsym XF86PowerOff mode "$mode_system"
 
 # Keyboard layout switcher mode
 set $keyboard_layout Keyboard layout: (p) Polish programmer's, (c) Colemak, (u) Ukrainian
-#'
+#' Fix for emacs treating everything after as a part of a string
 mode "$keyboard_layout" {
     bindcode 33 exec --no-startup-id setxkbmap pl, mode "default"
     bindcode 54 exec --no-startup-id setxkbmap us -variant colemak, mode "default"
