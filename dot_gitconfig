@@ -1,0 +1,5 @@
+[user]
+	email = czarek@drozak.net
+	name = Cezary Drożak
+[alias]
+	adog = log --all --decorate --oneline --graph
