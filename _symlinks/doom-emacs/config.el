@@ -26,7 +26,9 @@
 (setq doom-theme 'doom-one)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/projects/notes")
+(setq org-directory (or
+                     (file-exists-p! "~/notes")
+                     "~/projects/notes"))
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -47,7 +49,7 @@
              (setq-default TeX-master nil))) ; Query for master file
 
 (add-hook 'TeX-language-pl-hook
-           (lambda () (ispell-change-dictionary "polish")))
+          (lambda () (ispell-change-dictionary "polish")))
 
 ;; Add keybindings for C-c and C-x
 ;; Source: https://emacs.stackexchange.com/a/48572
@@ -71,16 +73,16 @@
    :leader
    :desc "iedit-mode" "e" #'evil-iedit-state/iedit-mode))
 
-   ;; :map (iedit-mode-keymap iedit-mode-occurrence-keymap)
-   ;;   :nv "n" #'iedit-next-occurrence
-   ;;   :nv "N" #'iedit-prev-occurrence
-   ;;   :nv "F" #'iedit-restrict-function
-   ;;   :nv "L" #'iedit-restrict-current-line
-   ;;   :nv "R" #'iedit-restrict-region
-   ;;   :nv "J" #'iedit-expand-by-a-line
-   ;;   :nv "K" #'iedit-expand-up-a-line
-   ;;   "<tab>" #'iedit-toggle-selection
-   ;;   "<escape>" #'iedit-mode))
+;; :map (iedit-mode-keymap iedit-mode-occurrence-keymap)
+;;   :nv "n" #'iedit-next-occurrence
+;;   :nv "N" #'iedit-prev-occurrence
+;;   :nv "F" #'iedit-restrict-function
+;;   :nv "L" #'iedit-restrict-current-line
+;;   :nv "R" #'iedit-restrict-region
+;;   :nv "J" #'iedit-expand-by-a-line
+;;   :nv "K" #'iedit-expand-up-a-line
+;;   "<tab>" #'iedit-toggle-selection
+;;   "<escape>" #'iedit-mode))
 
 
 ;; ;; Configure ~fira-code-mode~
