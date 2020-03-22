@@ -13,6 +13,9 @@ font pango:Cascadia Code 10
 
 # === Autostart === #
 
+# Restore last wpg scheme
+exec --no-startup-id ~/scripts/restore_wallpaper.sh
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
@@ -28,7 +31,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id picom -b --respect-prop-shadow
 
 # Launch polkit
-exec --no-startup-id "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1"
+exec --no-startup-id /usr/bin/lxqt-policykit-agent
 
 exec --no-startup-id /usr/lib/kdeconnectd
 
@@ -39,7 +42,7 @@ exec --no-startup-id autotiling
 exec --no-startup-id xbindkeys
 
 # Launch dunst
-exec --no-startup-id dunst
+exec --no-startup-id dunst >~/dunst.log 2>&1
 
 # Launch geoclue
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
@@ -253,7 +256,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Power management mode
-set $mode_system System: (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System: (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (S) shutdown, (m) screen
 mode "$mode_system" {
     bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
@@ -261,6 +264,7 @@ mode "$mode_system" {
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym m exec --no-startup-id xset dpms force off, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
