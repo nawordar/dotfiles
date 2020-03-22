@@ -1,5 +1,5 @@
 # Apply colours from pywal
-cat ~/.cache/wal/sequences
+cat ~/.config/wpg/sequences
 
 # Set basic zsh options
 source ~/zsh-scripts/zsh_options.sh
