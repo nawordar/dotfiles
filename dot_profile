@@ -29,11 +29,13 @@ export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORMTHEME=gtk2
 
-# Add .Net to PATH Source: https://github.com/OmniSharp/omnisharp-vscode/issues/2970#issuecomment-541516806
-DOTNET_BASE=$(dotnet --info | grep "Base Path" | awk '{print $3}')
-DOTNET_ROOT=$(echo $DOTNET_BASE | sed -E "s/^(.*)(\/sdk\/[^\/]+\/)$/\1/")
-export MSBuildSDKsPath=${DOTNET_BASE}Sdks/
-export DOTNET_ROOT=$DOTNET_ROOT
+if command -v dotnet >/dev/null; then
+    # Add .Net to PATH Source: https://github.com/OmniSharp/omnisharp-vscode/issues/2970#issuecomment-541516806
+    DOTNET_BASE=$(dotnet --info | grep "Base Path" | awk '{print $3}')
+    DOTNET_ROOT=$(echo $DOTNET_BASE | sed -E "s/^(.*)(\/sdk\/[^\/]+\/)$/\1/")
+    export MSBuildSDKsPath=${DOTNET_BASE}Sdks/
+    export DOTNET_ROOT=$DOTNET_ROOT
+fi
 
 add_dir_to_path() {
     if [ -d "$1" ]; then
