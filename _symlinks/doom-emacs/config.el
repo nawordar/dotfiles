@@ -26,9 +26,12 @@
 (setq doom-theme 'doom-one)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory (or
-                     (file-exists-p! "~/notes")
-                     "~/projects/notes"))
+(setq notes-dir
+      (or
+       (file-exists-p! "~/notes")
+       "~/projects/notes"))
+(setq org-directory notes-dir)
+(setq deft-directory notes-dir)
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
