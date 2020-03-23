@@ -57,3 +57,5 @@
 ;;   :recipe (:host github :repo "jming422/fira-code-mode"))
 
 (package! ein)
+
+(package! git-auto-commit-mode)

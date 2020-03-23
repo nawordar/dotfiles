@@ -179,7 +179,3 @@
        :config
        ;;literate
        (default +bindings +smartparens))
-
-;; Local Variables:
-;; flycheck-disabled-checkers: (emacs-lisp-checkdoc emacs-lisp)
-;; End:
