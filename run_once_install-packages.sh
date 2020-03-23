@@ -13,64 +13,73 @@ fi
 
 # Install only packages that are not installed yet. Based on: https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list
 echo "Looking for packages that are not installed..."
-packages=$(echo "kitty
-python-pywal
-feh
-picom
-ttf-cascadia-code
-rofi-pass
-thefuck
-tmux
-firefox
-neovim
-yarn
-npm
-elementary-icon-theme
-gpick
-autorandr
-xorg-fonts-misc
-thunar
-spectacle
+packages=$(echo "acpi_call-dkms
 atril
+autorandr
+betterlockscreen
+bluez-utils
+dragon-drag-and-drop
+dunst
+elementary-icon-theme
+elementary-xfce-icons
+emacs
+feh
+ferdi-bin
+firefox
+gpick
+gtkenginemurrine
+htop
+i3-gaps
+kitty
 libreoffice-still
 libreoffice-still-pl
-xorg-xbacklight
-playerctl
-pulsemixer
-pulseaudio
-pulseaudio-alsa
-pavucontrol
-acpi_call-dkms
-emacs
-otf-fira-code
-i3-gaps
-python-pip
-python2
-python2-pip
 lightdm
 lightdm-gtk-greeter
-xorg-server
-xorg-xrdb
-python-gobject
+lxappearance-gtk3
 lxqt-policykit
-shfmt
-qt5-styleplugins
+multilockscreen-git
+ncdu
+neovim
+npm
+otf-fira-code
+pavucontrol
+picom
+playerctl
 polybar-spotify-git
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pulsemixer
+python-gobject
+python-pip
+python-pywal
+python2
+python2-pip
+qt5-styleplugins
+ripgrep
+rofi-dmenu
+rofi-pass
+shellcheck
+shfmt
+siji-git
+snapd
+spectacle
+splatmoji-git
 spotify
 spotifywm-git
-betterlockscreen
-multilockscreen-git
-siji-git
+thefuck
+thunar
+tmux
+ttf-cascadia-code
 ttf-unifont
-ferdi-bin
-dragon-drag-and-drop
 xcursor-openzone
-splatmoji-git
-snapd
 xfce-theme-greybird
-elementary-xfce-icons
-rofi-dmenu
-dunst" | sort)
+xorg-fonts-misc
+xorg-server
+xorg-xbacklight
+xorg-xrdb
+yarn
+zip" | sort)
 installed=$(yay -Qqe | sort)
 not_installed=$(comm -13 <(echo "$installed") <(echo "$packages"))
 not_installed_count=$(echo "$not_installed" | wc -l)
@@ -78,6 +87,7 @@ not_installed_count=$(echo "$not_installed" | wc -l)
 if [ "$not_installed_count" -eq 0 ]; then
 	echo "No new packages, exiting"
 else
+	echo "Found $not_installed_count packages, installing"
 	yay -S "$not_installed"
 fi
 
@@ -123,7 +133,6 @@ if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-# Install snap
 systemctl_enable() {
 	if ! systemctl list-unit-files |
 		grep enabled |
@@ -131,6 +140,16 @@ systemctl_enable() {
 		sudo systemctl enable --now "$1"
 	fi
 }
+
+systemctl_enable_user() {
+	if ! systemctl list-unit-files |
+		grep enabled |
+		grep "$1" >/dev/null; then
+		systemctl enable --user --now "$1"
+	fi
+}
+
+# Install snap
 systemctl_enable snapd.socket
 systemctl_enable apparmor.service
 
@@ -141,3 +160,8 @@ systemctl_enable apparmor.service
 if ! command -v code >/dev/null; then
 	sudo snap install code --classic
 fi
+
+# Enable bluetooth
+systemctl_enable bluetooth.service
+# systemctl_enable bluetooth-autoconnect.service
+# systemctl_enable_user pulseaudio-bluetooth-autoconnect.service
