@@ -95,6 +95,11 @@
 ;; Add mu4e to emacs path
 (add-load-path! "/usr/local/share/emacs/site-lisp/mu4e")
 
+;; Change backup directory. Source: https://stackoverflow.com/a/22176971
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -111,7 +116,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
-
-;; Local Variables:
-;; flycheck-disabled-checkers: (emacs-lisp emacs-lisp-checkdoc)
-;; End:
