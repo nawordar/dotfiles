@@ -4,7 +4,7 @@ style "user-font"
     font_name="Noto Sans Regular"
 }
 widget_class "*" style "user-font"
-gtk-font-name="Noto Sans Regular 10"
+gtk-font-name="Cantarell Regular 10"
 # gtk-theme-name="Breeze"
 # gtk-theme-name = "FlatColor"
 gtk-theme-name = "Greybird"
