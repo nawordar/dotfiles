@@ -1,5 +1,8 @@
 _symlinks/
 _symlinks/**/*
+config_files/
+config_files/**/*
+changed_script_prompt
 LICENSE
 README.md
 watch.sh
