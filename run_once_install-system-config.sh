@@ -1,8 +1,12 @@
 #!/usr/bin/env sh
 
+set -e
+
 . $(chezmoi source-path)/changed_script_prompt
 
+print_nl=1
 xorg_restart_required=1
+config_files_dir="$(chezmoi source-path)/config_files"
 
 cp_conf() {
 	[ ! -d "$2" ] && sudo mkdir -p "$2"
@@ -15,19 +19,57 @@ cp_conf() {
 		return 1
 	fi
 
-	sudo cp "$(chezmoi source-path)/config_files/$1" "$2"
+	sudo cp "$config_files_dir/$1" "$2"
 }
 
-msg="Do you want to install system-wide trackball config for middle-button emulation and scrolling with forward button?"
-if prompt "$msg"; then
-	xorg_restart_required=0
-	cp_conf 10-trackball.conf /etc/X11/xorg.conf.d
-fi
+print_nl() {
+	if [ $print_nl -eq 0 ]; then
+		echo
+		print_nl=1
+	fi
+}
 
-echo
-msg="Do you want to install lightdm settings?"
-if prompt "$msg"; then
-	cp_conf lightdm.conf /etc/lightdm
+install_file() {
+	# If the previous command printed any message, add a new line
+	print_nl
+	if [ "$1" = "--xorg-restart-required" ] || [ "$1" = "-r" ]; then
+		_xorg_restart_required=0
+		shift
+	fi
+
+	conf_file="$1"
+	dest="$2"
+	msg="$3"
+	if ! diff -q "$config_files_dir/$1" "$2/$1" >/dev/null; then
+		if prompt "$msg"; then
+			# A message has been printed. A newline shall be added before the next prompt
+			print_nl=0
+			cp_conf "$conf_file" "$dest"
+
+			if [ $_xorg_restart_required -eq 0 ]; then
+				xorg_restart_required=0
+			fi
+		fi
+	fi
+}
+
+install_file -r 10-trackball.conf /etc/X11/xorg.conf.d \
+	"Do you want to install system-wide trackball config for middle-button emulation and scrolling with forward button?"
+
+install_file lightdm.conf /etc/lightdm \
+	"Do you want to install lightdm settings?"
+
+msg="Do you want to automatically enable bluetooth on boot?"
+path=/etc/bluetooth/main.conf
+grep_res=$(grep -n -m 1 -E 'AutoEnable=(false|true)' "$path" 2>/dev/null)
+grep_exit_code=$?
+line=$(echo "$grep_res" | sed -e 's/:.*//')
+match=$(echo "$grep_res" | sed -e 's/^[[:digit:]*:]//')
+
+if [ $grep_exit_code -eq 0 ] &&       # Found AutoEnable line
+	[ "$match" != "AutoEnable=true" ] && # ...but it's not enabled
+	prompt "$msg"; then                  # Ask if should be enabled
+	sed "${line}s/.*/AutoEnable=true/" "$path" | sudo tee "$path" >/dev/null
 fi
 
 if [ $xorg_restart_required -eq 0 ]; then
