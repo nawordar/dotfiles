@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-echo -n "run_once_install-packages.sh has changed. Do you want to run it now? (Y/n) "
-read answer
-case $answer in
-'' | y | Y | yes) answer="y" ;;
-*) answer="n" ;;
-esac
-
-if [ $answer = "n" ]; then
-	exit
-fi
+. $(chezmoi source-path)/changed_script_prompt
 
 # Install only packages that are not installed yet. Based on: https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list
 echo "Looking for packages that are not installed..."
@@ -26,8 +17,10 @@ emacs
 feh
 ferdi-bin
 firefox
+gimp
+gimp-plugin-resynthesizer
 gpick
-gtkenginemurrine
+gtk-engine-murrine
 htop
 i3-gaps
 kitty
@@ -41,6 +34,7 @@ multilockscreen-git
 ncdu
 neovim
 npm
+numlockx
 otf-fira-code
 pavucontrol
 picom
@@ -67,6 +61,7 @@ spectacle
 splatmoji-git
 spotify
 spotifywm-git
+tex-gyre-fonts
 thefuck
 thunar
 tmux
@@ -88,7 +83,7 @@ if [ "$not_installed_count" -eq 0 ]; then
 	echo "No new packages, exiting"
 else
 	echo "Found $not_installed_count packages, installing"
-	yay -S "$not_installed"
+	yay -S --needed $not_installed
 fi
 
 # Install bash-language-server
