@@ -23,6 +23,7 @@ gpick
 gtk-engine-murrine
 htop
 i3-gaps
+isync
 kitty
 libreoffice-still
 libreoffice-still-pl
@@ -30,6 +31,7 @@ lightdm
 lightdm-gtk-greeter
 lxappearance-gtk3
 lxqt-policykit
+mu
 multilockscreen-git
 ncdu
 neovim
@@ -66,6 +68,7 @@ thefuck
 thunar
 tmux
 ttf-cascadia-code
+ttf-liberation
 ttf-unifont
 xcursor-openzone
 xfce-theme-greybird
@@ -89,6 +92,11 @@ fi
 # Install bash-language-server
 if ! command -v bash-language-server >/dev/null; then
 	sudo yarn global add bash-language-server
+fi
+
+# Install prettier
+if ! command -v prettier >/dev/null; then
+	sudo yarn global add prettier
 fi
 
 # Enable lightdm service

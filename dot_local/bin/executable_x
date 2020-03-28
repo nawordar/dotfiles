@@ -2,5 +2,12 @@
 # -*- coding: utf-8 -*-
 
 for arg in "$@"; do
+	if [ ! -e "$arg" ]; then
+		echo "Could not find file $arg"
+		exit 1
+	fi
+done
+
+for arg in "$@"; do
 	(xdg-open "$1" >/dev/null 2>&1 &)
 done

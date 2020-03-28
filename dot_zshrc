@@ -44,9 +44,6 @@ scripts=(
   # Private things. Don't upload!
   ~/scripts/private.sh
 
-  # Open file in background without output using xdg-open
-  ~/scripts/x.sh
-
   # Apply fzf shortcuts e.g. M-c — go to file
   ~/.fzf.zsh
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 alias cp="cp -i"     # confirm before overwriting something
 alias mv="mv -i"     # confirm before overwriting something
 alias df='df -h'     # human-readable sizes
@@ -10,9 +12,9 @@ alias seti3="vim ~/.config/i3/config"
 
 # apt aliases
 if command -v apt >/dev/null; then
-    alias sai='sudo apt install'
-    alias sau='sudo apt update'
-    alias sag='sudo apt upgrade'
+	alias sai='sudo apt install'
+	alias sau='sudo apt update'
+	alias sag='sudo apt upgrade'
 fi
 
 # Alias tmatrix
@@ -21,6 +23,9 @@ alias tmatrix="tmatrix -C red -s 10"
 # Run emacs in CLI
 # alias emacs="emacs -nw"
 
+# Aliases for chezmoi
+alias ch='chezmoi'
+alias cha='chezmoi apply'
 
 # Aliases for tmux
 alias tn='tmux new-session'
@@ -44,16 +49,16 @@ alias rmt='gio trash'
 
 # Make a dir and slide in
 mdcd() {
-    mkdir $1 && cd $1
+	mkdir $1 && cd $1
 }
 
 # Set up go-to-projects aliases if running bash. Use named directories in zsh
 if [ -n "$BASH_VERSION" ]; then
-    if [ -d "$HOME/Projects" ]; then
-        alias cdp="cd $HOME/Projects"
-    elif [ -d "$HOME/projects" ]; then
-        alias cdp="cd $HOME/projects"
-    fi
+	if [ -d "$HOME/Projects" ]; then
+		alias cdp="cd $HOME/Projects"
+	elif [ -d "$HOME/projects" ]; then
+		alias cdp="cd $HOME/projects"
+	fi
 fi
 
 # hostnamectl | grep "Operating System" | gawk 'match($0, /: (.+)/, os) {print os[1]}'

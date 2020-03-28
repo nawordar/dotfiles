@@ -53,6 +53,12 @@ install_file() {
 	fi
 }
 
+# Activate elephant keys
+msg="Do you want to enable the Magic SysRq key?"
+if [ $(cat /proc/sys/kernel/sysrq) -ne 1 ] && prompt "$msg"; then
+	echo 1 | sudo tee /proc/sys/kernel/sysrq >/dev/null
+fi
+
 install_file -r 10-trackball.conf /etc/X11/xorg.conf.d \
 	"Do you want to install system-wide trackball config for middle-button emulation and scrolling with forward button?"
 
@@ -60,16 +66,16 @@ install_file lightdm.conf /etc/lightdm \
 	"Do you want to install lightdm settings?"
 
 msg="Do you want to automatically enable bluetooth on boot?"
-path=/etc/bluetooth/main.conf
-grep_res=$(grep -n -m 1 -E 'AutoEnable=(false|true)' "$path" 2>/dev/null)
+conf_path=/etc/bluetooth/main.conf
+grep_res=$(grep -n -m 1 -E 'AutoEnable=(false|true)' "$conf_path" 2>/dev/null)
 grep_exit_code=$?
 line=$(echo "$grep_res" | sed -e 's/:.*//')
-match=$(echo "$grep_res" | sed -e 's/^[[:digit:]*:]//')
+match=$(echo "$grep_res" | sed -e 's/^[[:digit:]]\+://')
 
 if [ $grep_exit_code -eq 0 ] &&       # Found AutoEnable line
 	[ "$match" != "AutoEnable=true" ] && # ...but it's not enabled
 	prompt "$msg"; then                  # Ask if should be enabled
-	sed "${line}s/.*/AutoEnable=true/" "$path" | sudo tee "$path" >/dev/null
+	sed "${line}s/.*/AutoEnable=true/" "$conf_path" | sudo tee "$conf_path" >/dev/null
 fi
 
 if [ $xorg_restart_required -eq 0 ]; then
