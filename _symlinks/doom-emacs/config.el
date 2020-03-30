@@ -100,6 +100,17 @@
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
 
+;; Based on: https://github.com/HarrisonTotty/dotfiles/blob/a3973dd61de6aa22b141571026f2eb6c0a684c98/src/emacs/config.el
+(add-hook! 'typescript-mode-hook
+  (set-pretty-symbols! 'typescript-mode nil)
+  (set-pretty-symbols! 'typescript-mode :lambda "() =>"
+                                        :power_2 "^2"))
+
+
+;; Remove all default pretty-code symbols
+(setq +pretty-code-symbols '(:lambda "λ"
+                             :power_2 "²"))
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
