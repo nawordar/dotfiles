@@ -9,16 +9,17 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar, using default config location ~/.config/polybar/config
 if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    # MONITOR=$m polybar dummy &
-    MONITOR=$m polybar main &
-  done
+	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+		# MONITOR=$m polybar dummy &
+		MONITOR=$m polybar main &
+	done
 else
-  # polybar dummy &
-  polybar main &
+	# polybar dummy &
+	polybar main &
 fi
 
-# Picom breaks after launching polybar
-killall -q picom; picom -b &
+# Restart Picom
+killall -q picom
+picom -b --experimental-backends &
 
 echo "Polybar launched..."
