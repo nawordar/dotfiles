@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Apply colours from pywal
 cat ~/.config/wpg/sequences
 
@@ -16,10 +18,10 @@ zinit load "MikeDacre/careful_rm"
 
 # Load asynchronously
 zinit wait lucid for \
-  "MikeDacre/cdbk" \
-  atload'_flush_ysu_buffer' "MichaelAquilina/zsh-you-should-use" \
-  atload'_zsh_autosuggest_start' "zsh-users/zsh-autosuggestions" \
-  atinit'zpcompinit' "zdharma/fast-syntax-highlighting"
+	"MikeDacre/cdbk" \
+	atload'_flush_ysu_buffer' "MichaelAquilina/zsh-you-should-use" \
+	atload'_zsh_autosuggest_start' "zsh-users/zsh-autosuggestions" \
+	atinit'zpcompinit' "zdharma/fast-syntax-highlighting"
 
 # Make careful_rm -c default for $HOME
 [ ! -f "$HOME/.rm_recycle_home" ] && touch "$HOME/.rm_recycle_home"
@@ -29,44 +31,44 @@ zinit wait lucid for \
 
 [ ! -d "$HOME/scripts" ] && mkdir "$HOME/scripts"
 [ ! -x "$HOME/scripts/private.sh" ] &&
-  touch "$HOME/scripts/private.sh" &&
-  chmod +x "$HOME/scripts/private.sh"
+	touch "$HOME/scripts/private.sh" &&
+	chmod +x "$HOME/scripts/private.sh"
 
 # === Activate scripts === #
 scripts=(
 
-  # Adds function for checking if given command is available. Required by debian-arch-bridge.sh
-  ~/scripts/cmd_available.sh
+	# Adds function for checking if given command is available. Required by debian-arch-bridge.sh
+	~/scripts/cmd_available.sh
 
-  # Adds apt ↔ yay bridge [WIP]
-  ~/scripts/debian-arch-bridge.sh
+	# Private things. Don't upload!
+	~/scripts/private.sh
 
-  # Private things. Don't upload!
-  ~/scripts/private.sh
+	# Apply fzf shortcuts e.g. M-c — go to file
+	~/.fzf.zsh
 
-  # Apply fzf shortcuts e.g. M-c — go to file
-  ~/.fzf.zsh
+	# Load aliases (file is compatible with both bash and zsh)
+	~/.aliases
 
-  # Load aliases (file is compatible with both bash and zsh)
-  ~/.aliases
+	# Load global aliases
+	~/zsh-scripts/global_aliases.zsh
 
-  # Load the calc plugin
-  ~/zsh-scripts/calc.sh
+	# Load the calc plugin
+	~/zsh-scripts/calc.sh
 
-  # Load the zmv command
-  ~/zsh-scripts/zmv.sh
+	# Load the zmv command
+	~/zsh-scripts/zmv.sh
 
-  # Make ls colorful
-  ~/zsh-scripts/set_ls_colors.sh
+	# Make ls colorful
+	~/zsh-scripts/set_ls_colors.sh
 
 )
 for script in ${scripts[@]}; do
 
-  # -s: True if file exists and has a size greater than zero.
-  # Source: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
-  # if [ -s "$script" ]; then
-  source "$script"
-  # fi
+	# -s: True if file exists and has a size greater than zero.
+	# Source: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+	# if [ -s "$script" ]; then
+	source "$script"
+	# fi
 
 done
 
@@ -87,7 +89,7 @@ zinit cdreplay -q
 
 # If I make another tool than needs to be at the end, then what?
 if [ ! -d "/home/nawordar/.sdkman" ]; then
-  return 0
+	return 0
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
