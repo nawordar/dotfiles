@@ -63,6 +63,7 @@ spectacle
 splatmoji-git
 spotify
 spotifywm-git
+subversion
 tex-gyre-fonts
 thefuck
 thunar
