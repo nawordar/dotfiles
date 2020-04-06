@@ -37,6 +37,8 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
+(setq typescript-indent-level 2)
+
 ;; LaTeX-mode-map
 (map! (:when (featurep! :lang latex)    ; local conditional
         (:map LaTeX-mode-map
@@ -48,27 +50,13 @@
 (setq TeX-auto-save t) ; Enable parse on save.
 
 (add-hook 'LaTeX-mode-hook
-          '(lambda ()
-             (setq-default TeX-master nil))) ; Query for master file
+          (lambda ()
+            (setq-default TeX-master nil))) ; Query for master file
 
 (add-hook 'TeX-language-pl-hook
           (lambda () (ispell-change-dictionary "polish")))
 
-;; Add keybindings for C-c and C-x
-;; Source: https://emacs.stackexchange.com/a/48572
-(defun nawordar/C-c ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
-
-(defun nawordar/C-x ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
-
-(map!
- :leader
- :desc "C-c" "z" #'nawordar/C-c
- :desc "C-x" "x" #'nawordar/C-x)
-
+;;
 ;; Add Spacemacs-inspired keybindings for iedit-mode
 (use-package! evil-iedit-state
   :init
@@ -76,41 +64,60 @@
    :leader
    :desc "iedit-mode" "e" #'evil-iedit-state/iedit-mode))
 
-;; :map (iedit-mode-keymap iedit-mode-occurrence-keymap)
-;;   :nv "n" #'iedit-next-occurrence
-;;   :nv "N" #'iedit-prev-occurrence
-;;   :nv "F" #'iedit-restrict-function
-;;   :nv "L" #'iedit-restrict-current-line
-;;   :nv "R" #'iedit-restrict-region
-;;   :nv "J" #'iedit-expand-by-a-line
-;;   :nv "K" #'iedit-expand-up-a-line
-;;   "<tab>" #'iedit-toggle-selection
-;;   "<escape>" #'iedit-mode))
-
-
-;; ;; Configure ~fira-code-mode~
-;; (use-package! fira-code-mode
-;;   :hook prog-mode)
-
-;; Add mu4e to emacs path
 (add-load-path! "/usr/local/share/emacs/site-lisp/mu4e")
 
 ;; Change backup directory. Source: https://stackoverflow.com/a/22176971
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
+;; (defvar --auto-save-dir (concat user-emacs-directory "auto-save/"))
+;; (if (not (file-exists-p --auto-save-dir))
+;;     (make-directory --auto-save-dir t))
+;; (setq auto-save-file-name-transforms
+;;       `((".*" ,--auto-save-dir t)))
+
+;; (defvar --backup-dir (concat user-emacs-directory "backups"))
+;; (if (not (file-exists-p --backup-dir))
+;;     (make-directory --backup-dir t))
+;; (setq backup-directory-alist
+;;       `(("." . ,(expand-file-name --backup-dir))))
 
 ;; Based on: https://github.com/HarrisonTotty/dotfiles/blob/a3973dd61de6aa22b141571026f2eb6c0a684c98/src/emacs/config.el
 (add-hook! 'typescript-mode-hook
   (set-pretty-symbols! 'typescript-mode nil)
   (set-pretty-symbols! 'typescript-mode :lambda "() =>"
-                                        :power_2 "^2"))
+    :power_2 "^2"))
 
+;; (add-hook! 'LaTeX-mode-hook
+;;   (setq prettify-symbols-alist
+;;         (seq-remove
+;;          (lambda (elt)
+;;            (string= (car elt) "x"))
+;;          prettify-symbols-alist)))
+;; (prettify-symbols-mode -1)
+;; (prettify-symbols-mode 1))
+
+;; (add-hook 'LaTeX-mode-hook
+;;           (lambda ()
+;;             (push '("x" . ?x) prettify-symbols-alist)))
+
+(add-hook! 'prettify-symbols-mode-hook
+  (when (derived-mode-p 'latex-mode)
+    (push '("x" . ?x) prettify-symbols-alist)))
 
 ;; Remove all default pretty-code symbols
-(setq +pretty-code-symbols '(:lambda "λ"
+(setq +pretty-code-symbols '(
+                             :lambda "λ"
                              :power_2 "²"))
 
+;; Don't break my json-c!
+(setq +format-on-save-enabled-modes
+      (append +format-on-save-enabled-modes
+              '(json-mode)))
+
+(prodigy-define-service
+  :name "Typescript watch inline-style-injector"
+  :command "tsc"
+  :args '("--watch")
+  :cwd "~/projects/inline-style-injector"
+  :tags '(typescript node))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

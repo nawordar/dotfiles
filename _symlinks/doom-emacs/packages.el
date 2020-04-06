@@ -57,3 +57,5 @@
 ;;   :recipe (:host github :repo "jming422/fira-code-mode"))
 
 (package! git-auto-commit-mode)
+
+(package! yasnippet-snippets)
