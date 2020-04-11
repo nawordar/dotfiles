@@ -23,6 +23,21 @@ zinit wait lucid for \
 	atload'_zsh_autosuggest_start' "zsh-users/zsh-autosuggestions" \
 	atinit'zpcompinit' "zdharma/fast-syntax-highlighting"
 
+zinit snippet OMZ::lib/git.zsh
+
+zinit svn for OMZ::plugins/emacs
+
+omz_plugins=(
+	archlinux
+	emacs
+	git
+	thefuck
+	yarn
+)
+for plugin in ${omz_plugins[@]}; do
+	zinit snippet OMZ::plugins/$plugin/$plugin.plugin.zsh
+done
+
 # Make careful_rm -c default for $HOME
 [ ! -f "$HOME/.rm_recycle_home" ] && touch "$HOME/.rm_recycle_home"
 
@@ -87,11 +102,12 @@ eval "$(thefuck --alias)"
 zpcompinit
 zinit cdreplay -q
 
-# If I make another tool than needs to be at the end, then what?
-if [ ! -d "/home/nawordar/.sdkman" ]; then
-	return 0
-fi
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# Shut up, have you ever programmed in shell?
+if [ -d "$HOME/.sdkman" ]; then
+	export SDKMAN_DIR="$HOME/.sdkman"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/nawordar/.sdkman"
-[[ -s "/home/nawordar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/nawordar/.sdkman/bin/sdkman-init.sh"
+	if [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]; then
+		source "/home/nawordar/.sdkman/bin/sdkman-init.sh"
+	fi
+fi
