@@ -59,3 +59,4 @@
 (package! git-auto-commit-mode)
 
 (package! yasnippet-snippets)
+

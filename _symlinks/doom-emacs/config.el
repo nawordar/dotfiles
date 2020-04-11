@@ -46,15 +46,19 @@
           :desc "View" "v" #'TeX-view ; Add which-key description
           :desc "Run all" "a" #'TeX-command-run-all))) ; Add which-key description
 
-(setq TeX-parse-self t) ; Enable parse on load.
-(setq TeX-auto-save t) ; Enable parse on save.
+;;   (load-theme 'doom-one-light t))
 
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (setq-default TeX-master nil))) ; Query for master file
-
+;; TODO: Use flyspell-babel.el instead -- https://tex.stackexchange.com/a/82191
 (add-hook 'TeX-language-pl-hook
           (lambda () (ispell-change-dictionary "polish")))
+
+(use-package! tex
+  :custom
+  (TeX-master     nil "Query for master file")
+  (TeX-PDF-mode   t   "Compile to pdf instead of dvi")
+  (TeX-parse-self t   "Enable parse on load.")
+  (TeX-auto-save  t   "Enable parse on save.")
+  (+latex-viewers '(zathura)))
 
 ;;
 ;; Add Spacemacs-inspired keybindings for iedit-mode
