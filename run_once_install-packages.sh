@@ -9,6 +9,7 @@ atril
 autorandr
 betterlockscreen
 bluez-utils
+code
 dragon-drag-and-drop
 dunst
 elementary-icon-theme
@@ -153,19 +154,19 @@ systemctl_enable_user() {
 	fi
 }
 
-# Install snap
-systemctl_enable snapd.socket
-systemctl_enable apparmor.service
+# # Install snap
+# systemctl_enable snapd.socket
+# systemctl_enable apparmor.service
 
-# Create symlink to enable classic confinement
-[ ! -L /snap ] && sudo ln -s /var/lib/snapd/snap /snap
+# # Create symlink to enable classic confinement
+# [ ! -L /snap ] && sudo ln -s /var/lib/snapd/snap /snap
 
-# Install code
-if ! command -v code >/dev/null; then
-	sudo snap install code --classic
-fi
+# # Install code
+# if ! command -v code >/dev/null; then
+# 	sudo snap install code --classic
+# fi
 
 # Enable bluetooth
 systemctl_enable bluetooth.service
-# systemctl_enable bluetooth-autoconnect.service
+systemctl_enable bluetooth-autoconnect.service
 # systemctl_enable_user pulseaudio-bluetooth-autoconnect.service
