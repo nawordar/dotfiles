@@ -45,7 +45,7 @@ playerctl
 polybar-spotify-git
 pulseaudio
 pulseaudio-alsa
-pulseaudio-bluetooth
+pulseaudio-modules-bt-git
 pulsemixer
 python-gobject
 python-pip
