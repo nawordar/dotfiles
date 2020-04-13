@@ -49,18 +49,54 @@
 ;;   (load-theme 'doom-one-light t))
 
 ;; TODO: Use flyspell-babel.el instead -- https://tex.stackexchange.com/a/82191
-(add-hook 'TeX-language-pl-hook
-          (lambda () (ispell-change-dictionary "polish")))
+(add-hook! 'TeX-language-pl-hook
+  (ispell-change-dictionary "polish"))
+
+;; Automatically change the global theme according to major mode
+;; Source: https://stackoverflow.com/a/56770454
+;; https://hg.serna.eu/emacs/per-buffer-theme
+(use-package! per-buffer-theme
+  :custom
+  (per-buffer-theme/use-timer t)
+  (per-buffer-theme/timer-idle-delay 0.1)
+  (per-buffer-theme/default-theme 'doom-one)
+  (per-buffer-theme/themes-alist
+   '(((:theme . doom-one-light)
+      (:buffernames nil)
+      (:modes tex-mode plain-tex-mode TeX-special-mode latex-mode bibtex-mode))))
+
+  :config
+  (setq per-buffer-theme/ignored-buffernames-regex
+        (append '("*anaconda-mode*"
+                  "*Backtrace*"
+                  "*Buffer List*"
+                  "*compilation*"
+                  "*Compile-Log*"
+                  "*Completions*"
+                  "*ESS*"
+                  "*Flymake log*"
+                  "*Help*"
+                  "*Ibuffer"
+                  "*info*"
+                  "*Messages*"
+                  "*Warnings*")
+                per-buffer-theme/ignored-buffernames-regex)))
 
 (use-package! tex
   :custom
   (TeX-master     nil "Query for master file")
   (TeX-PDF-mode   t   "Compile to pdf instead of dvi")
-  (TeX-parse-self t   "Enable parse on load.")
-  (TeX-auto-save  t   "Enable parse on save.")
+  (TeX-parse-self t   "Enable parse on load")
+  (TeX-auto-save  t   "Enable parse on save")
+  (TeX-fold-auto  t   "Automaticaly fold macros")
   (+latex-viewers '(zathura)))
 
-;;
+(add-hook! 'find-file-hook
+  (when (derived-mode-p 'latex-mode)
+    (TeX-fold-buffer)))
+
+(setq preview-auto-cache-preamble t)
+
 ;; Add Spacemacs-inspired keybindings for iedit-mode
 (use-package! evil-iedit-state
   :init

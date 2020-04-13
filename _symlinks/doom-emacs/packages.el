@@ -60,3 +60,4 @@
 
 (package! yasnippet-snippets)
 
+(package! per-buffer-theme)
