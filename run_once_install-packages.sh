@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. $(chezmoi source-path)/changed_script_prompt
+. $(chezmoi source-path)/tools/changed_script_prompt
 
 # Install only packages that are not installed yet. Based on: https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list
 echo "Looking for packages that are not installed..."
@@ -8,8 +8,10 @@ packages=$(echo "acpi_call-dkms
 atril
 autorandr
 betterlockscreen
+bluetooth-autoconnect
 bluez-utils
 code
+dash
 dragon-drag-and-drop
 dunst
 elementary-icon-theme
@@ -24,7 +26,6 @@ gpick
 gtk-engine-murrine
 htop
 i3-gaps
-isync
 kitty
 libreoffice-still
 libreoffice-still-pl
@@ -32,7 +33,6 @@ lightdm
 lightdm-gtk-greeter
 lxappearance-gtk3
 lxqt-policykit
-mu
 multilockscreen-git
 ncdu
 neovim
@@ -42,6 +42,7 @@ otf-fira-code
 pavucontrol
 picom
 playerctl
+polybar
 polybar-spotify-git
 pulseaudio
 pulseaudio-alsa
@@ -70,6 +71,7 @@ thefuck
 thunar
 tmux
 ttf-cascadia-code
+ttf-iosevka
 ttf-liberation
 ttf-unifont
 xcursor-openzone
@@ -79,7 +81,8 @@ xorg-server
 xorg-xbacklight
 xorg-xrdb
 yarn
-zip" | sort)
+zip
+zsh" | sort)
 installed=$(yay -Qqe | sort)
 not_installed=$(comm -13 <(echo "$installed") <(echo "$packages"))
 not_installed_count=$(echo "$not_installed" | wc -l)
@@ -169,4 +172,4 @@ systemctl_enable_user() {
 # Enable bluetooth
 systemctl_enable bluetooth.service
 systemctl_enable bluetooth-autoconnect.service
-# systemctl_enable_user pulseaudio-bluetooth-autoconnect.service
+systemctl_enable_user pulseaudio-bluetooth-autoconnect.service

@@ -2,7 +2,8 @@
 
 set -e
 
-. $(chezmoi source-path)/changed_script_prompt
+. "$(chezmoi source-path)/tools/changed_script_prompt"
+prompt="$(chezmoi source-path)/tools/prompt"
 
 print_nl=1
 xorg_restart_required=1
