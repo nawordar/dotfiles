@@ -10,7 +10,6 @@ autorandr
 betterlockscreen
 bluetooth-autoconnect
 bluez-utils
-code
 dash
 dragon-drag-and-drop
 dunst
@@ -20,6 +19,7 @@ emacs
 feh
 ferdi-bin
 firefox
+fzf
 gimp
 gimp-plugin-resynthesizer
 gpick
@@ -74,6 +74,7 @@ ttf-cascadia-code
 ttf-iosevka
 ttf-liberation
 ttf-unifont
+unzip
 xcursor-openzone
 xfce-theme-greybird
 xorg-fonts-misc

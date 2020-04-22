@@ -59,7 +59,8 @@ scripts=(
 	~/scripts/private.sh
 
 	# Apply fzf shortcuts e.g. M-c — go to file
-	~/.fzf.zsh
+	/usr/share/fzf/completion.zsh
+	/usr/share/fzf/key-bindings.zsh
 
 	# Load aliases (file is compatible with both bash and zsh)
 	~/.aliases
