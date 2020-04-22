@@ -1,0 +1,12 @@
+#!/bin/sh
+# Source: https://askubuntu.com/a/354907
+
+ff_dir="$HOME/.mozilla/firefox/"
+
+if grep '\[Profile[^0]\]' "$ff_dir/profiles.ini" >/dev/null; then
+	profile_path=$(grep -E '^\[Profile|^Path|^Default' "$ff_dir/profiles.ini" | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
+else
+	profile_path=$(grep 'Path=' "$ff_dir/profiles.ini" | sed 's/^Path=//')
+fi
+
+echo $profile_path
