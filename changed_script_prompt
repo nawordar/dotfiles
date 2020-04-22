@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-script_name=$(echo $(basename "$0") | sed 's/^[[:digit:]]\+\./run_once_/')
-msg="$script_name has changed. Do you want to run it now?"
-if ! prompt "$msg"; then
-	exit
-fi
-echo
