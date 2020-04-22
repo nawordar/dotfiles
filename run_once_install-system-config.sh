@@ -16,8 +16,6 @@ cp_conf() {
 	if [ -e $dest_path ] &&
 		prompt "File $dest_path already exists. Do you want to overwrite it?"; then
 		sudo rm "$dest_path"
-	else
-		return 1
 	fi
 
 	sudo cp "$config_files_dir/$1" "$2"
@@ -41,7 +39,7 @@ install_file() {
 	conf_file="$1"
 	dest="$2"
 	msg="$3"
-	if ! diff -q "$config_files_dir/$1" "$2/$1" >/dev/null; then
+	if [ ! -f "$2/$1" ] || ! diff -q "$config_files_dir/$1" "$2/$1" >/dev/null; then
 		if prompt "$msg"; then
 			# A message has been printed. A newline shall be added before the next prompt
 			print_nl=0
