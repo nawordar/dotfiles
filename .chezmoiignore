@@ -3,6 +3,10 @@ _symlinks/**/*
 config_files/
 config_files/**/*
 changed_script_prompt
+tools/
+tools/**/*
+install_scripts/
+install_scripts/**/*
 LICENSE
 README.md
 watch.sh
