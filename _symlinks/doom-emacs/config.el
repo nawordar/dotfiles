@@ -63,7 +63,7 @@
   (per-buffer-theme/themes-alist
    '(((:theme . doom-one-light)
       (:buffernames nil)
-      (:modes tex-mode plain-tex-mode TeX-special-mode latex-mode bibtex-mode))))
+      (:modes reftex-mode tex-mode plain-tex-mode TeX-special-mode latex-mode bibtex-mode))))
 
   :config
   (setq per-buffer-theme/ignored-buffernames-regex
