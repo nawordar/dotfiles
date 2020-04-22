@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+if [ $# -eq 0 ]; then
+	echo "No message was given."
+	exit 2
+fi
+
+echo -n "$@ (Y/n) "
+while true; do
+	read answer
+	case $answer in
+	'' | y | Y | yes | Yes | YES) exit 0 ;;
+	n | N | no | No | NO) exit 1 ;;
+	*) answer="incorrect" ;;
+	esac
+
+	echo "Incorrect answer. Please answer with 'y', 'n', 'yes', 'no' or press 'return'."
+done
