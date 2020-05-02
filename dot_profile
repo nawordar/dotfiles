@@ -32,6 +32,16 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORMTHEME=gtk2
 export MOZ_USE_XINPUT2=1
 
+# Add TeX Live related variables
+export TEXDIR="/usr/local/texlive/2020"
+export TEXMFLOCAL="/usr/local/texlive/texmf-local"
+export TEXMFSYSVAR="/usr/local/texlive/2020/texmf-var"
+export TEXMFSYSCONFIG="/usr/local/texlive/2020/texmf-config"
+
+export TEXMFVAR="$HOME/.texlive2020/texmf-var"
+export TEXMFCONFIG="$HOME/.texlive2020/texmf-config"
+export TEXMFHOME="$HOME/texmf"
+
 # This kind of directory should always be hidden
 export GOPATH="$HOME/.go"
 
@@ -45,7 +55,7 @@ fi
 
 add_dir_to_path() {
 	if [ -d "$1" ]; then
-		PATH="$1:$PATH"
+		export PATH="$1:$PATH"
 	fi
 }
 
@@ -61,6 +71,7 @@ fi
 add_dir_to_path "/bin"
 add_dir_to_path "/usr/local/bin"
 add_dir_to_path "/usr/local/go/bin"
+add_dir_to_path "/usr/local/texlive/2020/bin/x86_64-linux"
 add_dir_to_path "$HOME/bin"
 add_dir_to_path "$HOME/.local/bin"
 add_dir_to_path "$HOME/.cargo/bin"
