@@ -49,8 +49,15 @@
 ;;   (load-theme 'doom-one-light t))
 
 ;; TODO: Use flyspell-babel.el instead -- https://tex.stackexchange.com/a/82191
-(add-hook! 'TeX-language-pl-hook
-  (ispell-change-dictionary "polish"))
+;; (add-hook! 'TeX-language-pl-hook
+;;   (ispell-change-dictionary "polish"))
+(use-package! ispell
+  :config
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary   "pl_PL,en_US")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "pl_PL,en_US"))
+
 
 ;; Automatically change the global theme according to major mode
 ;; Source: https://stackoverflow.com/a/56770454
