@@ -98,12 +98,15 @@
   (TeX-PDF-mode   t   "Compile to pdf instead of dvi")
   (TeX-parse-self t   "Enable parse on load")
   (TeX-auto-save  t   "Enable parse on save")
-  ;; (TeX-fold-auto  t   "Automaticaly fold macros")
+  (TeX-fold-auto  nil "Automaticaly fold macros")
   (auto-fill-mode t   "Automaticaly fill paragraphs")
   (+latex-viewers '(zathura)))
 
 (add-hook! 'LaTeX-mode-hook
   (turn-on-auto-fill))
+  ;; (TeX-fold-mode 1))
+
+;; (add-hook 'find-file-hook 'TeX-fold-buffer t)
 
 (setq preview-auto-cache-preamble t)
 

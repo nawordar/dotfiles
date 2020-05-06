@@ -131,8 +131,8 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        julia             ; a better, faster MATLAB
        (kotlin +lsp)            ; a better, slicker Java(Script)
-       (latex +latexmk
-              +fold)             ; writing papers in Emacs has never been so fun
+       (latex +latexmk          ; writing papers in Emacs has never been so fun
+              +fold)
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
