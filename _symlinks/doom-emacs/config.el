@@ -18,7 +18,10 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Iosevka" :size 14))
+(setq doom-font
+        (font-spec :family "Iosevka" :size 14)
+      doom-variable-pitch-font
+        (font-spec :family "Cantarell" :size 12))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -100,11 +103,7 @@
   (+latex-viewers '(zathura)))
 
 (add-hook! 'LaTeX-mode-hook
-           (turn-on-auto-fill))
-
-;; (add-hook! 'find-file-hook
-;;   (when (derived-mode-p 'latex-mode)
-;;     (TeX-fold-buffer)))
+  (turn-on-auto-fill))
 
 (setq preview-auto-cache-preamble t)
 
