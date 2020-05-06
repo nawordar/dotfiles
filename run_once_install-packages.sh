@@ -5,6 +5,7 @@
 # Install only packages that are not installed yet. Based on: https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list
 echo "Looking for packages that are not installed..."
 packages=$(echo "acpi_call-dkms
+atool
 atril
 autorandr
 betterlockscreen
