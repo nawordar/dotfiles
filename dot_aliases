@@ -47,6 +47,7 @@ alias dad='dragon-drag-and-drop -x -a'
 alias at='atool'
 alias atx='atool -x'
 alias ata='atool -a'
+alias ath='atool -X .'
 
 # Trash alias
 alias rmt='gio trash'
