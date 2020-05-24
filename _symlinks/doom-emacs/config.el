@@ -163,7 +163,8 @@
 ;; Don't break my json-c!
 (setq +format-on-save-enabled-modes
       (append +format-on-save-enabled-modes
-              '(json-mode)))
+              '(json-mode)
+              '(c++-mode)))
 
 (prodigy-define-service
   :name "Typescript watch inline-style-injector"
