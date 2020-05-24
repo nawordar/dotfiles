@@ -37,6 +37,10 @@ alias pmx='pulsemixer'
 alias bctl='bluetoothctl'
 alias bch='bluetoothctl connect 00:16:94:42:1B:8E'
 
+# Aliases for emacsclient
+alias ec='emacsclient'
+alias ecc='emacsclient -cn'
+
 # === File managment === #
 # alias ..='cd ..'
 alias md=mkdir
