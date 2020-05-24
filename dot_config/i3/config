@@ -401,7 +401,7 @@ bindsym $mod+period exec "splatmoji type"
 
 # Application shortcuts
 bindsym $mod+$alt+c exec code
-bindsym $mod+$alt+e exec emacs
+bindsym $mod+$alt+e exec emacsclient -cna emacs
 bindsym $mod+$alt+f exec thunar # File manager – Thunar
 bindsym $mod+$alt+m exec spotify # Music – Spotify
 bindsym $mod+$alt+p exec gpick
