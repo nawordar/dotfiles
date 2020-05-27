@@ -9,5 +9,5 @@ for arg in "$@"; do
 done
 
 for arg in "$@"; do
-	(xdg-open "$1" >/dev/null 2>&1 &)
+	(xdg-open "$arg" >/dev/null 2>&1 &)
 done
