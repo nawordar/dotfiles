@@ -51,6 +51,9 @@ exec --no-startup-id clipster -d
 # Launch mpris-proxy for headset controls
 exec --no-startup-id mpris-proxy
 
+# Launch emacs daemon
+exec --no-startup-id emacs --daemon
+
 # Clean downloads
 exec --no-startup-id ~/scripts/clean-downloads.sh
 
