@@ -1,0 +1,72 @@
+#!/usr/bin/env sh
+# Download directory or file from GitHub
+
+usage() {
+	cat <<EOF
+Usage: $(basename "$0") [OPTION]... REPOSITORY FILE...
+Download FILE(s) from the GitHub REPOSITORY using svn checkout.
+
+Options:
+  -f    quietly overwrite if file/directory already exists
+EOF
+}
+
+# Parse arguments
+overwrite=1
+for arg in "$@"; do
+
+	case "$arg" in
+
+	# -f option found
+	-f) overwrite=0 ;;
+
+	# Unknown option found
+	-*) echo "Unknown option $arg" ;;
+
+	*)
+		# First non-flag argument is a repo name
+		if [ -z "$repo" ]; then
+			repo="$arg"
+
+		# Rest of arguments are paths
+		else
+			paths="$paths $arg"
+		fi
+		;;
+	esac
+done
+
+if [ -z "$paths" ]; then
+
+	if [ -z "$repo" ]; then
+		echo "Missing repository and file operands"
+	else
+		echo "Missing file operand"
+	fi
+
+	echo
+	usage
+	exit 1
+fi
+
+# Get repository address and tmp directory location
+trunk=https://github.com/"$repo/trunk"
+tmp_dir="${TMPDDIR:-/tmp}/download_github/$repo"
+
+# Create tmp directory
+if [ ! -e "$tmp_dir" ]; then
+	mkdir -p "$tmp_dir"
+
+	svn checkout $trunk "$tmp_dir" --depth empty
+fi
+
+# Download requested files
+pushd "$tmp_dir" >/dev/null
+svn up --parents $paths
+popd >/dev/null
+
+if [ $overwrite -eq 0 ]; then
+	cp -r "$tmp_dir"/* .
+else
+	cp -ir "$tmp_dir"/* .
+fi
