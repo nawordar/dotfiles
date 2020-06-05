@@ -9,6 +9,11 @@
 (setq user-full-name "Cezary Drożak"
       user-mail-address "czarek@drozak.net")
 
+;; ;; Synchronize environment variables
+;; (exec-path-from-shell-initialize)
+;; (setenv "PATH" (concat (getenv "PATH") ":~/bin"))
+;; (setq exec-path (append exec-path '("~/bin")))
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -39,6 +44,9 @@
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
+
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 (setq typescript-indent-level 2)
 

@@ -61,3 +61,7 @@
 (package! yasnippet-snippets)
 
 (package! per-buffer-theme)
+
+(package! exec-path-from-shell)
+
+(package! d-mode)
