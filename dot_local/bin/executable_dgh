@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+# Download directory or file from GitHub
+
+usage() {
+	cat <<EOF
+Usage: $(basename "$0") REPOSITORY DIRECTORY...
+Download DIRECTORY(ies) from the GitHub REPOSITORY using svn checkout.
+EOF
+}
+
+if [ $# -lt 2 ]; then
+	case $# in
+	0) echo "Missing repository and file operands" ;;
+	1) echo "Missing file operand" ;;
+	esac
+
+	usage
+	exit 1
+fi
+
+trunk=https://github.com/"$1/trunk"
+tmp_dir=/tmp/download_github/"$1"
+shift
+
+# Create tmp directory
+if [ ! -e $tmp_dir ]; then
+    mkdir -p "$tmp_dir"
+    svn checkout $trunk "$tmp_dir" --depth empty
+fi
+
+pushd "$tmp_dir"
+svn up "$@"
+popd
+
+cp -ir "$tmp_dir"/* .
