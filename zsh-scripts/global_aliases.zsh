@@ -1,3 +1,3 @@
 #!/usr/bin/env zsh
 
-alias xsb=' | xsel -b'
+alias -g xsb=' | xsel -b'
