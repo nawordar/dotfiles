@@ -27,6 +27,9 @@ gimp-plugin-resynthesizer
 gpick
 gtk-engine-murrine
 htop
+hunspell
+hunspell-en_US
+hunspell-pl
 i3-gaps
 kitty
 libreoffice-still
@@ -84,6 +87,8 @@ xorg-server
 xorg-xbacklight
 xorg-xrdb
 yarn
+zathura
+zathura-pdf-poppler
 zip
 zsh" | sort)
 installed=$(yay -Qqe | sort)
@@ -94,7 +99,7 @@ if [ "$not_installed_count" -eq 0 ]; then
 	echo "No new packages, exiting"
 else
 	echo "Found $not_installed_count packages, installing"
-	yay -S --needed $not_installed
+	yay -S $not_installed
 fi
 
 # Install bash-language-server
