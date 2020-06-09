@@ -21,6 +21,7 @@ emacs
 feh
 ferdi-bin
 firefox
+freetype2-cleartype
 fzf
 gimp
 gimp-plugin-resynthesizer
@@ -41,6 +42,7 @@ lxqt-policykit
 multilockscreen-git
 ncdu
 neovim
+noto-fonts-emoji
 npm
 numlockx
 otf-fira-code
@@ -77,6 +79,7 @@ thunar
 tmux
 ttf-cascadia-code
 ttf-iosevka
+ttf-jetbrains-mono
 ttf-liberation
 ttf-unifont
 unzip
