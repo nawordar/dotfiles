@@ -51,11 +51,18 @@
 (setq typescript-indent-level 2)
 
 ;; LaTeX-mode-map
-(map! (:when (featurep! :lang latex)    ; local conditional
+(map! (:when (featurep! :lang latex)
         (:map LaTeX-mode-map
-          :localleader                  ; Use local leader
-          :desc "View" "v" #'TeX-view ; Add which-key description
-          :desc "Run all" "a" #'TeX-command-run-all))) ; Add which-key description
+          :localleader
+          :desc "View" "v" #'TeX-view
+          :desc "Run all" "a" #'TeX-command-run-all)))
+
+;; c++-mode-map
+(map! (:when (featurep! :lang cc)
+        (:map (c++-mode-map c-mode-map)
+          "C-c C-o" #'ff-find-other-file)
+        :leader
+        :desc "Find other file" "f o" #'ff-find-other-file))
 
 ;;   (load-theme 'doom-one-light t))
 
@@ -112,7 +119,7 @@
 
 (add-hook! 'LaTeX-mode-hook
   (turn-on-auto-fill))
-  ;; (TeX-fold-mode 1))
+;; (TeX-fold-mode 1))
 
 ;; (add-hook 'find-file-hook 'TeX-fold-buffer t)
 
