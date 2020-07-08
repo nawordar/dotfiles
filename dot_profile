@@ -69,6 +69,7 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 add_dir_to_path "/bin"
+add_dir_to_path "/usr/bin"
 add_dir_to_path "/usr/local/bin"
 add_dir_to_path "/usr/local/go/bin"
 add_dir_to_path "/usr/local/texlive/2020/bin/x86_64-linux"
