@@ -370,6 +370,9 @@ for_window [class="Teensy"] floating enable
 # Jetbrains splash screen
 for_window [class="jetbrains-.*" title="win0"] floating enable
 
+# MEGAsync
+for_window [class="MEGAsync"] floating enable
+
 
 bindsym $mod+shift+q kill
 
@@ -401,8 +404,8 @@ bindsym $mod+Control+s swap container with mark /
 # Set \text{} keybind
 bindsym $mod+q exec --no-startup-id ~/scripts/wrap-in-text.py
 
-# Set panic script keybinding
-bindsym $mod+semicolon exec --no-startup-id ~/scripts/panic.sh
+# Set mouse/keyboard attach keybinding
+bindsym $mod+semicolon exec --no-startup-id ~/.VFIOinput/input_attach.sh
 
 # Splatmoji keybinding
 bindsym $mod+period exec "splatmoji type"
