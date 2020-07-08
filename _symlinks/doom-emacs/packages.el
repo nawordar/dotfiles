@@ -57,11 +57,9 @@
 ;;   :recipe (:host github :repo "jming422/fira-code-mode"))
 
 (package! git-auto-commit-mode)
-
 (package! yasnippet-snippets)
-
 (package! per-buffer-theme)
-
 (package! exec-path-from-shell)
-
 (package! d-mode)
+(package! meson-mode)
+(package! anzu)

@@ -10,9 +10,9 @@
       user-mail-address "czarek@drozak.net")
 
 ;; ;; Synchronize environment variables
-;; (exec-path-from-shell-initialize)
-;; (setenv "PATH" (concat (getenv "PATH") ":~/bin"))
-;; (setq exec-path (append exec-path '("~/bin")))
+(exec-path-from-shell-initialize)
+(setenv "PATH" (concat (getenv "PATH") ":~/bin"))
+(setq exec-path (append exec-path '("~/bin")))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -48,6 +48,9 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+
 (setq typescript-indent-level 2)
 
 ;; LaTeX-mode-map
@@ -64,7 +67,12 @@
         :leader
         :desc "Find other file" "f o" #'ff-find-other-file))
 
-;;   (load-theme 'doom-one-light t))
+;; Enable anzu
+(use-package! anzu
+  :config
+  (global-anzu-mode +1)
+  (global-set-key [remap query-replace] 'anzu-query-replace)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
 
 ;; TODO: Use flyspell-babel.el instead -- https://tex.stackexchange.com/a/82191
 ;; (add-hook! 'TeX-language-pl-hook
