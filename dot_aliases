@@ -43,6 +43,24 @@ alias ecn='emacsclient -n'
 alias ect='emacsclient -t'
 alias eccn='emacsclient -cn'
 
+# Aliases for systemctl
+alias si='  systemctl status'
+
+alias sen=' sudo systemctl enable --now'
+alias se='  sudo systemctl enable'
+alias ss='  sudo systemctl start'
+alias sdn=' sudo systemctl disable --now'
+alias sd='  sudo systemctl disable'
+alias st='  sudo systemctl stop'
+alias sr='  sudo systemctl restart'
+
+alias suen='sudo systemctl --user enable --now'
+alias sue=' sudo systemctl --user enable'
+alias sus=' sudo systemctl --user start'
+alias sudn='sudo systemctl --user disable --now'
+alias sud=' sudo systemctl --user disable'
+alias sut=' sudo systemctl --user stop'
+alias sur=' sudo systemctl --user restart'
 
 # === File managment === #
 # alias ..='cd ..'
