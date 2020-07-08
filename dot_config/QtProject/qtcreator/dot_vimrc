@@ -1,0 +1,30 @@
+" " highlight matched
+" set hlsearch
+
+" " case insensitive search
+" set ignorecase
+" set smartcase
+
+" " search while typing
+" set incsearch
+
+" " wrap-around when searching
+" set wrapscan
+
+" let mapleader = "\<Space>"
+
+" move line/block
+nnoremap <C-S-J> :m+<CR>==
+nnoremap <C-S-K> :m-2<CR>==
+inoremap <C-S-J> <Esc>:m+<CR>==gi
+inoremap <C-S-K> <Esc>:m-2<CR>==gi
+vnoremap <C-S-J> :m'>+<CR>gv=gv
+vnoremap <C-S-K> :m-2<CR>gv=gv
+
+"" Leader commands
+nnoremap <Space>pR       :run               <CR>
+nnoremap <Space><Space>  :e                 <CR>
+nnoremap <Space>cf       :aindent  :aformat <CR>
+nnoremap gcc             :comment           <CR>
+nnoremap gcip            vip:comment        <CR>
+vnoremap gc              :comment           <CR>

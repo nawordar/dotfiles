@@ -1,2 +1,5 @@
 _symlinks/emacs/custom.el~
 \#.chezmoiignore#
+
+dot_config/QtProject/**/*
+!dot_config/QtProject/qtcreator/.vimrc
