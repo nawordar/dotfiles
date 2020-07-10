@@ -42,6 +42,9 @@ export TEXMFVAR="$HOME/.texlive2020/texmf-var"
 export TEXMFCONFIG="$HOME/.texlive2020/texmf-config"
 export TEXMFHOME="$HOME/texmf"
 
+# If emacs server is not opened, open it now
+export ALTERNATE_EDITOR=''
+
 # This kind of directory should always be hidden
 export GOPATH="$HOME/.go"
 
