@@ -24,7 +24,8 @@ vnoremap <C-S-K> :m-2<CR>gv=gv
 "" Leader commands
 nnoremap <Space>pR       :run               <CR>
 nnoremap <Space><Space>  :e                 <CR>
-nnoremap <Space>cf       :aindent  :aformat <CR>
+" nnoremap <Space>cf       :aindent  :aformat <CR>
+nnoremap <Space>cf       :format            <CR>
 nnoremap gcc             :comment           <CR>
 nnoremap gcip            vip:comment        <CR>
 vnoremap gc              :comment           <CR>
