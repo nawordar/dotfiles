@@ -1,0 +1,8 @@
+name: mopidy
+windows:
+  - name: mopidy
+    layout: even-horizontal
+    panes:
+      - mopidy
+      - snapserver
+      - snapclient -s pulse -h localhost

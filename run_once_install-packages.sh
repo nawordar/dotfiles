@@ -82,6 +82,7 @@ ttf-iosevka
 ttf-jetbrains-mono
 ttf-liberation
 ttf-unifont
+teamocil
 unzip
 xcursor-openzone
 xfce-theme-greybird
