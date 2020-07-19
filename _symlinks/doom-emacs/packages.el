@@ -63,3 +63,4 @@
 (package! d-mode)
 (package! meson-mode)
 (package! anzu)
+(package! srefactor)

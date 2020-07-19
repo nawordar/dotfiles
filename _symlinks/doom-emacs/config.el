@@ -84,6 +84,16 @@
   (ispell-set-spellchecker-params)
   (ispell-hunspell-add-multi-dic "pl_PL,en_US"))
 
+(use-package! company-dict
+  :custom
+  (company-dict-enable-fuzzy t))
+
+(use-package! srefactor
+  :config
+  (semantic-mode 1)
+  :init
+  (map! (:map (c++-mode-map c-mode-map)
+          "M-RET" #'srefactor-refactor-at-point)))
 
 ;; Automatically change the global theme according to major mode
 ;; Source: https://stackoverflow.com/a/56770454
@@ -160,6 +170,11 @@
   (set-pretty-symbols! 'typescript-mode nil)
   (set-pretty-symbols! 'typescript-mode :lambda "() =>"
     :power_2 "^2"))
+
+(add-hook! 'c++-mode-hook
+  (set-pretty-symbols! 'c++-mode nil))
+  ;; (set-pretty-symbols! 'typescript-mode :lambda "() =>"
+  ;;   :power_2 "^2"))
 
 ;; (add-hook! 'LaTeX-mode-hook
 ;;   (setq prettify-symbols-alist
