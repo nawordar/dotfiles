@@ -410,6 +410,9 @@ bindsym $mod+semicolon exec --no-startup-id ~/.VFIOinput/input_attach.sh
 # Splatmoji keybinding
 bindsym $mod+period exec "splatmoji type"
 
+# xkill keybinding
+bindsym --release $mod+Delete exec xkill
+
 # Application shortcuts
 bindsym $mod+$alt+c exec code
 bindsym $mod+$alt+e exec emacsclient -cna emacs
