@@ -45,13 +45,13 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
-
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
 
-(setq typescript-indent-level 2)
+(setq-default indent-tabs-mode       nil)
+(setq-default tab-width              4)
+(setq         indent-line-function   'insert-tab)
+(setq         typescript-indent-level 2)
 
 ;; LaTeX-mode-map
 (map! (:when (featurep! :lang latex)
