@@ -3,6 +3,6 @@ windows:
   - name: mopidy
     layout: even-horizontal
     panes:
-      - mopidy
+      - ~/scripts/launch_mopidy_and_firefox.sh
       - snapserver
-      - snapclient -s pulse -h localhost
+      - snapclient -s pulse -h arch-pc
