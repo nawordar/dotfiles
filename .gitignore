@@ -4,4 +4,4 @@ _symlinks/emacs/custom.el~
 dot_config/QtProject/**/*
 !dot_config/QtProject/qtcreator/.vimrc
 
-dot_teamocil/**/.keep
+**/.keep
