@@ -45,7 +45,6 @@ neovim
 noto-fonts-emoji
 npm
 numlockx
-otf-fira-code
 pavucontrol
 picom
 playerctl
@@ -79,6 +78,7 @@ thunar
 tmux
 ttf-cascadia-code
 ttf-iosevka
+ttf-fira-code
 ttf-jetbrains-mono
 ttf-liberation
 ttf-unifont
