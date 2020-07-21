@@ -24,24 +24,29 @@ alias tmatrix="tmatrix -C red -s 10"
 # alias emacs="emacs -nw"
 
 # Aliases for chezmoi
-alias ch='chezmoi'
-alias cha='chezmoi apply'
+alias ch='  chezmoi'
+alias cha=' chezmoi apply'
 
 # Aliases for tmux
-alias tn='tmux new-session'
-alias ta='~/scripts/tmux_attach_or_new.sh'
-alias tks='tmux kill-session -t'
+alias tn='  tmux new-session'
+alias ta='  ~/scripts/tmux_attach_or_new.sh'
+alias tks=' tmux kill-session -t'
 alias tkss='tmux kill-server'
 
-alias pmx='pulsemixer'
+alias pmx=' pulsemixer'
 alias bctl='bluetoothctl'
-alias bch='bluetoothctl connect 00:16:94:42:1B:8E'
+alias bch=' bluetoothctl connect 00:16:94:42:1B:8E'
 
 # Aliases for emacsclient
-alias ec='emacsclient'
-alias ecn='emacsclient -n'
-alias ect='emacsclient -t'
-alias eccn='emacsclient -cn'
+alias ec='  emacsclient'
+alias ecn=' emacsclient -n'  # Don't wait for the server to return
+alias ect=' emacsclient -t'  # Open a new Emacs frame on the current terminal
+alias eccn='emacsclient -cn' # Create a new frame instead of trying to use the current Emacs frame
+
+# Not an alias, but it cannot work without using function
+sect() {
+	emacsclient -t /sudo:root@localhost:"$PWD/$@"
+}
 
 # Aliases for systemctl
 alias si='  systemctl status'
@@ -65,16 +70,16 @@ alias sur=' sudo systemctl --user restart'
 # === File managment === #
 # alias ..='cd ..'
 alias md=mkdir
-alias rm.='YEET=`pwd` && cd .. && gio trash "$YEET"'
-alias dad='dragon-drag-and-drop -x -a'
+alias rm.=' YEET=`pwd` && cd .. && gio trash "$YEET"'
+alias dad=' dragon-drag-and-drop -x -a'
 
-alias at='atool'
-alias atx='atool -x'
-alias ata='atool -a'
-alias ath='atool -X .'
+alias at='  atool'
+alias atx=' atool -x'
+alias ata=' atool -a'
+alias ath=' atool -X .'
 
 # Trash alias
-alias rmt='gio trash'
+alias rmt=' gio trash'
 
 # Make a dir and slide in
 mdcd() {
