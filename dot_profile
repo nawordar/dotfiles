@@ -84,9 +84,5 @@ add_dir_to_path "$HOME/.dotnet/tools"
 add_dir_to_path "$HOME/clones/doom-emacs/bin"
 add_dir_to_path "$HOME/clones/mxe/usr/bin"
 add_dir_to_path "$DOTNET_ROOT"
-
-# Add Yarn to PATH
-export PATH="$(yarn global bin --offline)":$PATH
-
-# Add Go to PATH
-export PATH="$(go env GOPATH)/bin":$PATH
+add_dir_to_path "$(yarn global bin --offline)"
+add_dir_to_path "$(go env GOPATH)/bin"
