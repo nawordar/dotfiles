@@ -18,8 +18,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    
-    " refer to doc to add more commands
+    nmap <buffer> <localleader>f <plug>(lsp-document-format)
 endfunction
 
 augroup lsp_install

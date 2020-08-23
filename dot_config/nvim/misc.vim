@@ -1,4 +1,4 @@
-let mapleader = "\<Space>"
+let mapleader      = "\<Space>"
 let maplocalleader = "\\"
 
 set showbreak=→    " Prepend arrow to splitted lines
@@ -13,35 +13,21 @@ set number         " Display line numbers
 set relativenumber " Display numbers relatively
 set undofile       " Make backups 
 set hidden         " Allow changing buffers without saving
+set smartcase      " Smart search and replace
+set gdefault       " Make 'g' a default replace flag
+set foldmethod 
+  \=syntax         " Fold basing on syntax
 
-" Show buffer list
-nnoremap <leader>b :Buffers<cr>
+                   " " Copy to system clipboard
+" set clipboard=unnamedplus
 
-" Show list of files in the current directory
-nnoremap <leader>. :Files %:h<cr>
+" Easier window mappings
+nnoremap <leader>w 
 
 " Open last file
 nnoremap <leader>` :e #<cr>
 
 " Delete buffer using fzf
-" Source: https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
-function! s:list_buffers()
-  redir => list
-  silent ls
-  redir END
-  return split(list, "\n")
-endfunction
-
-function! s:delete_buffers(lines)
-  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
-endfunction
-
-command! BDelete call fzf#run(fzf#wrap({
-  \ 'source': s:list_buffers(),
-  \ 'sink*': { lines -> s:delete_buffers(lines) },
-  \ 'options': '--reverse'
-\ }))
-
 nnoremap <leader>Q :BDelete<cr>
 
 " Delete current buffer
@@ -49,5 +35,3 @@ nnoremap <leader>q :Bdelete<cr>
 
 " Stop highlighting search result
 nnoremap <silent> <esc> :noh<cr>
-
-command Cha execute "!chezmoi apply"
