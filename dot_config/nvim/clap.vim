@@ -2,7 +2,7 @@
 nnoremap <leader>b :Clap buffers<cr>
 
 " Show list of files in the current directory
-nnoremap <leader>. :Clap filer<cr>
+nnoremap <leader>. :Clap files<cr>
 
 " Grep on files in current directory
 nnoremap <leader>g :Clap grep2<cr>

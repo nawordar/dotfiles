@@ -18,3 +18,9 @@ command! BDelete call fzf#run(fzf#wrap({
   \ }))
 
 command! Cha execute "!chezmoi apply"
+
+" Update Vim config
+command! CUpdate
+      \ write
+      \ | call system("chezmoi apply")
+      \ | source %

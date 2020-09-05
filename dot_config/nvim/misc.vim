@@ -15,11 +15,18 @@ set undofile       " Make backups
 set hidden         " Allow changing buffers without saving
 set smartcase      " Smart search and replace
 set gdefault       " Make 'g' a default replace flag
+set conceallevel=2 " Enable character concealing
+set list           " Show redundant spaces
 set foldmethod 
   \=syntax         " Fold basing on syntax
+set nofoldenable   " Don't fold at start
 
                    " " Copy to system clipboard
 " set clipboard=unnamedplus
+
+" Highlight SCons files
+autocmd BufReadPre SConstruct set filetype=python
+autocmd BufReadPre SConscript set filetype=python
 
 " Easier window mappings
 nnoremap <leader>w 
@@ -35,3 +42,5 @@ nnoremap <leader>q :Bdelete<cr>
 
 " Stop highlighting search result
 nnoremap <silent> <esc> :noh<cr>
+
+" TODO Make '#' and '*' not move cursor on the first select

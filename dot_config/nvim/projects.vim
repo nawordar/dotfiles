@@ -1,8 +1,16 @@
 call project#rc("~/projects")
 
-Project 'libfoodin'
+Project  'foodin-qt'
+Callback 'foodin-qt' , 'FoodinQtHook'
+function! FoodinQtHook(...) abort
+  if filereadable(getcwd() . '/build/build.ninja')
+    setlocal makeprg=ninja\ -C\ build
+  endif
+endfunction
 
-Project '~/.local/share/chezmoi'
-Project '~/.local/share/chezmoi/dot_config/nvim'
+Project  'foodin'
 
-Project '~/notes'
+Project  '~/.local/share/chezmoi'
+Project  '~/.local/share/chezmoi/dot_config/nvim'
+
+Project  '~/notes'
