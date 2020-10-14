@@ -10,25 +10,11 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# case $HOSTNAME in
-
-# # PC
-# nawordar-H81M-S1)
-#     export EDITOR=vim
-#     export TERMINAL=/usr/bin/xfce4-terminal
-#     ;;
-
-# # Notebook
-# cezary-notebook)
-#     export EDITOR=vim
-#     export TERMINAL=/usr/bin/kitty
-#     ;;
-# esac
-
 export EDITOR=nvim
 export GIT_EDITOR="$EDITOR"
 export TERMINAL=/usr/bin/kitty
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 export QT_QPA_PLATFORMTHEME=gtk2
 export MOZ_USE_XINPUT2=1
 
@@ -46,14 +32,14 @@ export TEXMFHOME="$HOME/texmf"
 export ALTERNATE_EDITOR=''
 
 # This kind of directory should always be hidden
-export GOPATH="$HOME/.go"
+export GOPATH="$XDG_DATA_HOME/go"
 
 if command -v dotnet >/dev/null; then
 	# Add .Net to PATH Source: https://github.com/OmniSharp/omnisharp-vscode/issues/2970#issuecomment-541516806
-	DOTNET_BASE=$(dotnet --info | grep "Base Path" | awk '{print $3}')
-	DOTNET_ROOT=$(echo $DOTNET_BASE | sed -E "s/^(.*)(\/sdk\/[^\/]+\/)$/\1/")
-	export MSBuildSDKsPath=${DOTNET_BASE}Sdks/
-	export DOTNET_ROOT=$DOTNET_ROOT
+	dotnet_base=$(dotnet --info | grep "Base Path" | awk '{print $3}')
+	dotnet_root=$(echo $dotnet_base | sed -E "s/^(.*)(\/sdk\/[^\/]+\/)$/\1/")
+	export MSBuildSDKsPath=${dotnet_base}Sdks/
+	export DOTNET_ROOT=$dotnet_root
 fi
 
 add_dir_to_path() {
@@ -70,13 +56,14 @@ if [ -n "$BASH_VERSION" ]; then
 	fi
 fi
 
-# set PATH so it includes user's private bin if it exists
+# Add directories to $PATH
 add_dir_to_path "/bin"
 add_dir_to_path "/usr/bin"
 add_dir_to_path "/usr/local/bin"
 add_dir_to_path "/usr/local/go/bin"
 add_dir_to_path "/usr/local/texlive/2020/bin/x86_64-linux"
 add_dir_to_path "/opt/miktex/bin"
+add_dir_to_path "/opt/luametatex/texmf-linux-64/bin"
 add_dir_to_path "$HOME/bin"
 add_dir_to_path "$HOME/.local/bin"
 add_dir_to_path "$HOME/.cargo/bin"
