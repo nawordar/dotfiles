@@ -17,10 +17,6 @@ command! BDelete call fzf#run(fzf#wrap({
   \ 'options': '--reverse'
   \ }))
 
-command! Cha execute "!chezmoi apply"
-
 " Update Vim config
-command! CUpdate
-      \ write
-      \ | call system("chezmoi apply")
-      \ | source %
+command! ChezmoiUpdate call chezmoi#Update()
+cnoreabbrev CU ChezmoiUpdate
