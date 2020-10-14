@@ -57,6 +57,9 @@ exec --no-startup-id emacs --daemon
 # Clean downloads
 exec --no-startup-id ~/scripts/clean-downloads.sh
 
+# Run scream for playing sound from a VM
+exec --no-startup-id scream -i bridge0
+
 # Launch polybar and picom
 exec_always --no-startup-id ~/scripts/polycom.sh
 
@@ -372,6 +375,9 @@ for_window [class="jetbrains-.*" title="win0"] floating enable
 
 # MEGAsync
 for_window [class="MEGAsync"] floating enable
+
+# QjackCtl
+for_window [class="QjackCtl"] floating enable
 
 
 bindsym $mod+shift+q kill
