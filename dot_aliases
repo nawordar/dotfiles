@@ -66,6 +66,8 @@ alias sud=' sudo systemctl --user disable'
 alias sut=' sudo systemctl --user stop'
 alias sur=' sudo systemctl --user restart'
 
+alias winetricks='winetricks -q'
+
 # === File managment === #
 # alias ..='cd ..'
 alias md=mkdir
