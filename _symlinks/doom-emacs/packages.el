@@ -60,7 +60,14 @@
 (package! yasnippet-snippets)
 (package! per-buffer-theme)
 (package! exec-path-from-shell)
+;; (package! auto-complete)
+;; (package! ac-dcd)
+(package! company-dcd)
 (package! d-mode)
 (package! meson-mode)
 (package! anzu)
 (package! srefactor)
+(package! lsp-mode
+  :recipe (:local-repo "~/clones/lsp-mode"
+           :files ("*.el")
+           :no-byte-compile t))

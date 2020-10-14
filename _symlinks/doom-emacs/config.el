@@ -150,6 +150,8 @@
    :leader
    :desc "iedit-mode" "e" #'evil-iedit-state/iedit-mode))
 
+(load! "major-mode/d-lang.el")
+
 (add-load-path! "/usr/local/share/emacs/site-lisp/mu4e")
 
 ;; Change backup directory. Source: https://stackoverflow.com/a/22176971
@@ -173,8 +175,8 @@
 
 (add-hook! 'c++-mode-hook
   (set-pretty-symbols! 'c++-mode nil))
-  ;; (set-pretty-symbols! 'typescript-mode :lambda "() =>"
-  ;;   :power_2 "^2"))
+;; (set-pretty-symbols! 'typescript-mode :lambda "() =>"
+;;   :power_2 "^2"))
 
 ;; (add-hook! 'LaTeX-mode-hook
 ;;   (setq prettify-symbols-alist
