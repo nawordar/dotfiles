@@ -37,6 +37,7 @@ call plug#begin()
 
   " Visual
   Plug 'mhartington/oceanic-next'              " Oceanic theme
+  Plug 'morhetz/gruvbox'                       " Gruvbox theme
   Plug 'machakann/vim-highlightedyank'         " Highlight yanked region
   Plug 'nathanaelkane/vim-indent-guides'       " Indent guides
 
