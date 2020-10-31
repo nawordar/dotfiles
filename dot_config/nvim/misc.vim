@@ -21,6 +21,7 @@ set list           " Show redundant spaces
 set foldmethod
   \=syntax         " Fold basing on syntax
 set nofoldenable   " Don't fold at start
+set mouse=a        " Enable mouse support
 
                    " " Copy to system clipboard
 " set clipboard=unnamedplus
