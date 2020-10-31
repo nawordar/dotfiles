@@ -12,6 +12,7 @@ source <sfile>:h/ultisnips.vim
 source <sfile>:h/easyalign.vim
 source <sfile>:h/dotoo.vim
 source <sfile>:h/vimtex.vim
+source <sfile>:h/autosave.vim
 
 if filereadable(expand('<sfile>:h') . '/private.vim')
   source <sfile>:h/private.vim
