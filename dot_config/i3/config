@@ -70,8 +70,8 @@ exec_always --no-startup-id ~/scripts/polycom.sh
 # === Autostart on a specific workspace === #
 
 # Launch spotify on 10th workspace. Needs spotifywm to work
-exec --no-startup-id /usr/local/bin/spotify
-assign [class="^Spotify$"] → 10
+# exec --no-startup-id /usr/local/bin/spotify
+# assign [class="^Spotify$"] → 10
 
 
 # === Set up the scratchpad === #
