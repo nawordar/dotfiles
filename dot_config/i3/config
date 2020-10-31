@@ -28,6 +28,9 @@ exec --no-startup-id nm-applet
 # Launch xfce4-power-manager
 exec --no-startup-id xfce4-power-manager
 
+# Launch xsettingsd
+exec --no-startup-id xsettingsd
+
 # Launch polkit
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 
