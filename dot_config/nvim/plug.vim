@@ -18,9 +18,11 @@ call plug#begin()
   Plug 'tpope/vim-projectionist'               " Quickly switch between files in project
   Plug 'tpope/vim-dispatch'                    " Project command runner
   Plug 'tpope/vim-eunuch'                      " UNIX helpers
+  Plug 'tpope/vim-rsi'                         " Emacs keybindings outside INSERT mode
 
   " Editing
   Plug 'junegunn/vim-easy-align'               " Align by character usint ga
+  " Plug 'junegunn/vim-peekaboo'                 " Peek register content
   Plug 'Raimondi/delimitMate'                  " Automatically insert closing parens
   Plug 'dhruvasagar/vim-table-mode'            " Mode for editing tables
   Plug 'tomtom/tcomment_vim'                   " Easy commenting using gc
@@ -37,9 +39,9 @@ call plug#begin()
 
   " Visual
   Plug 'mhartington/oceanic-next'              " Oceanic theme
+  Plug 'junegunn/seoul256.vim'                 " Seoul theme
   Plug 'morhetz/gruvbox'                       " Gruvbox theme
   Plug 'machakann/vim-highlightedyank'         " Highlight yanked region
-  Plug 'nathanaelkane/vim-indent-guides'       " Indent guides
 
   " LSP and snippets
   Plug 'editorconfig/editorconfig-vim'         " .editorconfig support
@@ -66,10 +68,14 @@ call plug#begin()
     \ { 'for': 'elvish' }
   Plug 'aklt/plantuml-syntax'                  " PlantUML support
     \ { 'for': 'plantuml' }
+  Plug 'kongo2002/fsharp-vim'                  " F# syntax file
+  Plug 'Raku/vim-raku'                         " Raku support
+  Plug 'udalov/kotlin-vim'                     " Kotlin support
 
   " Other
   Plug 'moll/vim-bbye'                         " Sane buffer deleting
   Plug '~/clones/vim-autoformat'               " Autoformatting
   Plug 'puremourning/vimspector'               " Debugging
+  Plug '907th/vim-auto-save'                   " Automatically save changes
 
 call plug#end()
