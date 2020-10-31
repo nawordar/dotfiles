@@ -9,7 +9,7 @@ set smarttab       " Automatically insert proper number of tabs/spaces
 set smartindent    " Insert tabs on <Return>
 set shiftwidth=4   " Number of spaces to use for autoindenting
 set softtabstop=4  " When hitting <BS>, pretend like a tab is removed, even if spaces
-set tabstop=4      " Tabs are n spaces
+set tabstop=8      " Tabs are n spaces
 set number         " Display line numbers
 set relativenumber " Display numbers relatively
 set undofile       " Make backups
@@ -31,18 +31,21 @@ autocmd BufReadPre SConstruct set filetype=python
 autocmd BufReadPre SConscript set filetype=python
 
 " Easier window mappings
-nnoremap <leader>w 
+nnoremap <silent> <leader>w 
 
 " Open last file
-nnoremap <leader>` :e #<cr>
+nnoremap <silent> <leader>` :e #<cr>
 
 " Delete buffer using fzf
 nnoremap <leader>Q :BDelete<cr>
 
 " Delete current buffer
-nnoremap <leader>q :Bdelete<cr>
+nnoremap <silent> <leader>q :Bdelete<cr>
 
 " Stop highlighting search result
 nnoremap <silent> <esc> :noh<cr>
+
+nnoremap <silent> <leader>tn :tabnew<cr>
+nnoremap <silent> <leader>tc :tabclose<cr>
 
 " TODO Make '#' and '*' not move cursor on the first select
