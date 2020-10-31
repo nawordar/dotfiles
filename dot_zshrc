@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Apply colours from pywal
-cat ~/.config/wpg/sequences
+# cat ~/.config/wpg/sequences
 
 # Set basic zsh options
 source ~/zsh-scripts/zsh_options.sh
