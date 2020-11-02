@@ -26,6 +26,7 @@ fzf
 gimp
 gimp-plugin-resynthesizer
 gpick
+great-imd-evo
 gtk-engine-murrine
 htop
 hunspell
@@ -72,17 +73,17 @@ splatmoji-git
 spotify
 spotifywm-git
 subversion
+teamocil
 tex-gyre-fonts
 thefuck
 thunar
 tmux
 ttf-cascadia-code
-ttf-iosevka
 ttf-fira-code
+ttf-iosevka
 ttf-jetbrains-mono
 ttf-liberation
 ttf-unifont
-teamocil
 unzip
 xcursor-openzone
 xfce-theme-greybird
