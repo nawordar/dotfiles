@@ -21,7 +21,7 @@ endfunction
 
 augroup lsp_install
   autocmd!
-  " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+  " call s:on_lsp_buffer_enabled only for languages that have the server registered.
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
