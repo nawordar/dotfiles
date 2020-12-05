@@ -56,6 +56,8 @@ exec --no-startup-id mpris-proxy
 
 # Launch emacs daemon
 exec --no-startup-id emacs --daemon
+# Launch Workrave
+exec --no-startup-id workrave
 
 # Clean downloads
 exec --no-startup-id ~/scripts/clean-downloads.sh
