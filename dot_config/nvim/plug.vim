@@ -45,11 +45,12 @@ call plug#begin()
 
   " LSP and snippets
   Plug 'editorconfig/editorconfig-vim'         " .editorconfig support
-  Plug 'prabirshrestha/vim-lsp'                " LSP support for Vim
-  Plug 'mattn/vim-lsp-settings'                " Easy LS installation
   Plug 'SirVer/ultisnips'                      " Snippet engine
   Plug 'Shougo/deoplete.nvim',                 " Asynchronous completion
     \ { 'do': ':UpdateRemotePlugins' }
+  " Plug 'dense-analysis/ale'                    " Syntax checker and LSP
+  Plug 'prabirshrestha/vim-lsp'                " LSP support for Vim
+  Plug 'mattn/vim-lsp-settings'                " Easy LS installation
   Plug 'lighttiger2505/deoplete-vim-lsp'       " vim-lsp deoplete integration
   Plug 'thomasfaingnaert/vim-lsp-ultisnips'    " vim-lsp Ultisnips integration
 
@@ -75,8 +76,9 @@ call plug#begin()
 
   " Other
   Plug 'moll/vim-bbye'                         " Sane buffer deleting
-  Plug '~/clones/vim-autoformat'               " Autoformatting
+  Plug 'Chiel92/vim-autoformat'                " Autoformatting
   Plug 'puremourning/vimspector'               " Debugging
   Plug '907th/vim-auto-save'                   " Automatically save changes
+  Plug 'KabbAmine/zeavim.vim'                  " Open documentation in Zeal
 
 call plug#end()

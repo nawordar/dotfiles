@@ -1,6 +1,29 @@
 let g:lsp_settings = {
-      \ 'clangd': {'cmd': ['clangd', '--hidden-features']}
+      \   'clangd': {
+      \     'cmd': [
+      \       '/home/nawordar/apps/clangd-11/bin/clangd',
+      \       '--header-insertion=never',
+      \       '--log=verbose',
+      \     ],
+      \   },
+      \   'pyls': {
+      \     'plugins': {
+      \       'pydocstyle': {'enabled':   v:true},
+      \       'pyls_mypy':  {'enabled':   v:true,
+      \                      'live_mode': v:false},
+      \     },
+      \   },
       \ }
+
+if (executable('haskell-language-server-wrapper'))
+  au User lsp_setup call lsp#register_server({
+      \ 'name': 'haskell-language-server-wrapper',
+      \ 'cmd': {server_info->['haskell-language-server-wrapper', '--lsp']},
+      \ 'whitelist': ['haskell'],
+      \ })
+endif
+
+" let g:lsp_documentation_float = 0
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
