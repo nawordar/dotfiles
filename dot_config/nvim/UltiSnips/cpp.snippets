@@ -19,6 +19,25 @@ $0
 #endif // `!p unique_qt_header()`
 endsnippet
 
+snippet ih "#ifdef header"
+#ifndef $1
+#define $1
+
+$0
+
+#endif // $1
+endsnippet
+
+snippet cfo "clang-format off"
+// clang-format off
+${VISUAL}
+// clang-format on
+endsnippet
+
+snippet lam "C++ lambda"
+[${1:&}]($2) { $0 }
+endsnippet
+
 snippet ctth "Catch2 THEN" b
 THEN("$1") {
 	$0
