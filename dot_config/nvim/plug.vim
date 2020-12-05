@@ -71,6 +71,7 @@ call plug#begin()
   Plug 'kongo2002/fsharp-vim'                  " F# syntax file
   Plug 'Raku/vim-raku'                         " Raku support
   Plug 'udalov/kotlin-vim'                     " Kotlin support
+  Plug 'mboughaba/i3config.vim'                " i3 config highlighting
 
   " Other
   Plug 'moll/vim-bbye'                         " Sane buffer deleting

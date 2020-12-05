@@ -1,4 +1,4 @@
-# vim: set ts=4 sw=4 expandtab:
+# vim: set filetype=i3config ts=4 sw=4 expandtab:
 
 # Sources:
 # Locking when lid is closed: https://www.reddit.com/r/i3wm/comments/9ebemt/locking_i3_when_lid_of_laptop_is_closed/
