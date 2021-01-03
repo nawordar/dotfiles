@@ -42,13 +42,14 @@ call plug#begin()
   Plug 'junegunn/seoul256.vim'                 " Seoul theme
   Plug 'morhetz/gruvbox'                       " Gruvbox theme
   Plug 'machakann/vim-highlightedyank'         " Highlight yanked region
+  Plug 'junegunn/goyo.vim'                     " Distraction-free writing
 
   " LSP and snippets
   Plug 'editorconfig/editorconfig-vim'         " .editorconfig support
   Plug 'SirVer/ultisnips'                      " Snippet engine
   Plug 'Shougo/deoplete.nvim',                 " Asynchronous completion
     \ { 'do': ':UpdateRemotePlugins' }
-  " Plug 'dense-analysis/ale'                    " Syntax checker and LSP
+  Plug 'dense-analysis/ale'                    " Syntax checker and LSP
   Plug 'prabirshrestha/vim-lsp'                " LSP support for Vim
   Plug 'mattn/vim-lsp-settings'                " Easy LS installation
   Plug 'lighttiger2505/deoplete-vim-lsp'       " vim-lsp deoplete integration
@@ -73,6 +74,7 @@ call plug#begin()
   Plug 'Raku/vim-raku'                         " Raku support
   Plug 'udalov/kotlin-vim'                     " Kotlin support
   Plug 'mboughaba/i3config.vim'                " i3 config highlighting
+  Plug 'Vimjas/vim-python-pep8-indent'         " Better Python indentation
 
   " Other
   Plug 'moll/vim-bbye'                         " Sane buffer deleting
@@ -80,5 +82,6 @@ call plug#begin()
   Plug 'puremourning/vimspector'               " Debugging
   Plug '907th/vim-auto-save'                   " Automatically save changes
   Plug 'KabbAmine/zeavim.vim'                  " Open documentation in Zeal
+  Plug 'rhysd/vim-grammarous'                  " LanguageTool based spell checker
 
 call plug#end()

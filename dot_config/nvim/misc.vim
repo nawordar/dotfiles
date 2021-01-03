@@ -46,7 +46,9 @@ nnoremap <silent> <leader>q :Bdelete<cr>
 nnoremap <silent> <esc> :noh<cr>
 
 " vim-projectile
+nnoremap <silent> <leader>cm :Make<cr>
 nnoremap <silent> <leader>cc :Start<cr>
 nnoremap <silent> <leader>ct :Test<cr>
+nnoremap <silent> <leader>cw :Watch<cr>
 
 " TODO Make '#' and '*' not move cursor on the first select

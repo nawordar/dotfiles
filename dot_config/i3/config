@@ -55,7 +55,7 @@ exec --no-startup-id clipster -d
 exec --no-startup-id mpris-proxy
 
 # Launch Workrave
-exec --no-startup-id workrave
+# exec --no-startup-id workrave
 
 # Clean downloads
 exec --no-startup-id ~/scripts/clean-downloads.sh

@@ -16,6 +16,7 @@ source <sfile>:h/dotoo.vim
 source <sfile>:h/vimtex.vim
 source <sfile>:h/autosave.vim
 source <sfile>:h/zeal.vim
+source <sfile>:h/goyo.vim
 
 if filereadable(expand('<sfile>:h') . '/private.vim')
   source <sfile>:h/private.vim

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-# Restart polybar
-$HOME/scripts/polycom.sh >/dev/null &
-
 # Set wallpaper
 ~/scripts/set-wallpaper.sh >/dev/null &
+
+# Restart polybar
+~/scripts/polycom.sh >/dev/null &

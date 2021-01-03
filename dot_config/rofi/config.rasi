@@ -4,7 +4,9 @@ configuration {
     theme: "~/.cache/wal/colors-rofi-dark.rasi";
     kb-mode-previous: "Shift+Left,ISO_Left_Tab";
     kb-mode-next: "Shift+Right,Tab";
-    kb-row-up: "Up,Control+p";
-    kb-row-down: "Down,Control+n";
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
     kb-row-tab: "Control+Tab";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-to-eol: "";
 }

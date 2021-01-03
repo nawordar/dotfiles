@@ -26,4 +26,4 @@ fi
 
 get_script_path "$1" |
     head -n 1 |
-    xargs -i --no-run-if-empty /bin/sh -c "{}" >/dev/null
+    xargs -i --no-run-if-empty /bin/sh -c "{}" >/dev/null &

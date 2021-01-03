@@ -59,6 +59,10 @@ if [ -n "$BASH_VERSION" ]; then
 	fi
 fi
 
+if command -v ruby >/dev/null && command -v gem >/dev/null; then
+	add_dir_to_path "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
+fi
+
 # Add directories to $PATH
 add_dir_to_path "/bin"
 add_dir_to_path "/usr/bin"
