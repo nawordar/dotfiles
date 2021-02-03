@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This is a script for swapping two files
+set -euo pipefail
+
+tmp_dir="$(mktemp -d)"
+
+if [ $# -lt 2 ]; then
+    echo The script needs two arguments >&2
+    exit 1
+fi
+
+mv "$1" "$tmp_dir"
+mv "$2" "$1"
+mv "$tmp_dir/$(basename "$1")" "$2"
+
+# Clean temporary directory
+rm -r "$tmp_dir"
