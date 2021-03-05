@@ -1,5 +1,7 @@
 <h1 align="center"><img src="mld.svg" alt="My Little Dotfiles" /></h1>
 
+**Note** I have moved my dotfiles to a private repo. I will no longer update this one.
+
 ## Cursor and GTK Theme:
 - GTK Theme: Greybird
 - Icons: elementary-xfce
